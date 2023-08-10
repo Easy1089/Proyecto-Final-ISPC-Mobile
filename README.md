@@ -11,9 +11,19 @@ LE MONE E-commerce de productos para Vinotecas.
 - Melisa Apaz: Analista, diseñador y programador. Usuario Github: melisaapaz
 - Salvador Beron:Analista, diseñador y programador usuario Github: SalvadorBeron
 
+
+
+
+
+
+
+
 ***Link a repositorio de trabajo remoto del año pasado 2022*** 
 
 (https://github.com/Easy1089/Proyecto-Fullstack-ISPC-G1)
+***Link a repositorio de trabajo remoto de este ciclo 2023*** 
+
+https://github.com/Easy1089/Proyecto-Final-ISPC-G1-V2
 
 ***Link a wiki del proyecto de este ciclo 2023*** 
 
