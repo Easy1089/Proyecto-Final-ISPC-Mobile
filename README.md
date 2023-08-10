@@ -5,11 +5,11 @@ LE MONE E-commerce de productos para Vinotecas.
 
 # Personal involucrado
 
-Fabiola Benitez: Scrum Master, Analista, diseñador y programador. Usuario de Github: Easy1089
-Enzo Mateo Antunez: Analista, diseñador y programador. Usuario De Github: MateoAntunez7
-Marcelo Apaz: Analista, diseñador y programador. Usuario Github: marceapaz
-Melisa Apaz: Analista, diseñador y programador. Usuario Github: melisaapaz
-Salvador Beron:Analista, diseñador y programador usuario Github: SalvadorBeron
+- Fabiola Benitez: Scrum Master, Analista, diseñador y programador. Usuario de Github: Easy1089
+- Enzo Mateo Antunez: Analista, diseñador y programador. Usuario De Github: MateoAntunez7
+- Marcelo Apaz: Analista, diseñador y programador. Usuario Github: marceapaz
+- Melisa Apaz: Analista, diseñador y programador. Usuario Github: melisaapaz
+- Salvador Beron:Analista, diseñador y programador usuario Github: SalvadorBeron
 
 # Link a repositorio de trabajo remoto del año pasado 2022
 
