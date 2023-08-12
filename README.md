@@ -1,7 +1,6 @@
-# Proyecto-Final-ISPC-G1-V3
-Repositorio del Proyecto-Final-ISPC-G1-V3 LE MONE Sistema de Gestion para Vinotecas.
+#Proyecto-Final-ISPC-Mobile
 
-LE MONE E-commerce de productos para Vinotecas.
+Repositorio del Proyecto-Final-ISPC-Mobile LE MONE Sistema de Gestion para Vinotecas.
 
 # Personal involucrado
 
