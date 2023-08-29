@@ -9,4 +9,21 @@ Repositorio del Proyecto-Final-ISPC-Mobile LE MONE Sistema de Gestion para Vinot
 - Marcelo Apaz: Analista, diseñador y programador. Usuario Github: marceapaz
 - Melisa Apaz: Analista, diseñador y programador. Usuario Github: melisaapaz
 - Salvador Beron:Analista, diseñador y programador usuario Github: SalvadorBeron
+- Andrea Caligiuri:Analista, diseñador y programador usuario Github: Andrea-Cal
+- Natalin Acuña:Analista, diseñador y programador usuario Github: Natalinacn
+- Maximiliano Veron:Analista, diseñador y programador usuario Github: MaxiGithub11
+- Priscila Teruel:Analista, diseñador y programador usuario Github: Priscilat93
+- Emiliano Guazzetti:Analista, diseñador y programador usuario Github: edguazzetti
+
+
+# Links de repositorios anteriores del proyecto
+
+- Repositorio del Proyecto de Fullstack ISPC Grupo 9 - Sistema de Gestion de Vinoteca: https://github.com/Easy1089/Proyecto-Fullstack-ISPC-G1.git
+- Repositorio del Proyecto-Final-ISPC-G1-V2 LE MONE E-commerce de productos para Vinotecas: https://github.com/Easy1089/Proyecto-Final-ISPC-G1-V2.git
+
+# Link de la wiki del proyecto actual
+
+- Wiki : https://github.com/Easy1089/Proyecto-Final-ISPC-Mobile/wiki
+
+
 
