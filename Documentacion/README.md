@@ -30,3 +30,7 @@ Repositorio del Proyecto-Final-ISPC-Mobile LE MONE Sistema de Gestion para Vinot
 
 - Wiki : https://github.com/Easy1089/Proyecto-Final-ISPC-Mobile/wiki
 
+# Link del Documento IEEE830
+
+- https://docs.google.com/document/d/1teEI3Sh6F4p7sDLyfiwrmpkyUIb4CTWq/edit?usp=drive_link&ouid=106912637373357061264&rtpof=true&sd=true
+
