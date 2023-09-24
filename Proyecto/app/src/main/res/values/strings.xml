@@ -5,7 +5,7 @@
 
     <!--    login    -->
     <string name="usuario">Usuario</string>
-    <string name="contraseña">Contraseña clave</string>
+    <string name="contraseña">Contraseña</string>
     <string name="msj_login">Ingrese con su cuenta</string>
     <string name="msj_btn_ingresar">Ingresar</string>
     <string name="login_pass_olvidada">¿Olvidó su contraseña?</string>
