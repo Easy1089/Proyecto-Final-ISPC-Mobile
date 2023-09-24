@@ -1,0 +1,15 @@
+<resources>
+    <!--    globales    -->
+    <string name="app_name">Lemone</string>
+    <string name="msj_presentacion">Sistema de Gestion de Stock para Vinotecas</string>
+
+    <!--    login    -->
+    <string name="usuario">Usuario</string>
+    <string name="contraseña">Contraseña clave</string>
+    <string name="msj_login">Ingrese con su cuenta</string>
+    <string name="msj_btn_ingresar">Ingresar</string>
+    <string name="login_pass_olvidada">¿Olvidó su contraseña?</string>
+
+    <!--        -->
+
+</resources>
