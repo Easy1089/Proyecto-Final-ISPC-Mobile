@@ -51,11 +51,12 @@
         android:id="@+id/buttonUsuarios"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
         android:layout_marginBottom="400dp"
         android:backgroundTint="@color/bordo"
         android:insetTop="10dp"
         android:insetBottom="10dp"
-        android:text="Gestión de usuarios"
+        android:text="@string/btnGestionUs"
         android:textColor="@color/crema"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -64,17 +65,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonProveedores"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="344dp"
+        android:layout_marginBottom="320dp"
         android:backgroundTint="@color/bordo"
         android:insetTop="10dp"
         android:insetBottom="10dp"
-        android:text="Gestión de proovedores"
+        android:text="@string/btnGestionProv"
         android:textColor="@color/crema"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -83,17 +86,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonUsuarios"
+        app:layout_constraintVertical_bias="0.0" />
+
 
     <Button
         android:id="@+id/buttonConsumidores"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="288dp"
+        android:layout_marginBottom="264dp"
         android:backgroundTint="@color/bordo"
         android:insetTop="10dp"
         android:insetBottom="10dp"
-        android:text="Gestión de consumidores finales"
+        android:text="@string/btnGestionConsumidor"
         android:textColor="@color/crema"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -102,18 +108,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonProveedores"
+        app:layout_constraintVertical_bias="0.0" />
 
 
     <Button
         android:id="@+id/buttonProductos"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="232dp"
+        android:layout_marginBottom="208dp"
         android:backgroundTint="@color/bordo"
         android:insetTop="10dp"
         android:insetBottom="10dp"
-        android:text="Gestión de productos"
+        android:text="@string/btnGestionProducto"
         android:textColor="@color/crema"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -122,18 +130,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonConsumidores"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonInforme"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="176dp"
+        android:layout_marginBottom="152dp"
         android:backgroundTint="@color/bordo"
         android:insetTop="10dp"
         android:insetBottom="10dp"
-        android:text="Generar informe"
+        android:text="@string/btnInforme"
         android:textColor="@color/crema"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -142,17 +151,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonProductos"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonInformeStock"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="100dp"
         android:backgroundTint="@color/bordo"
         android:insetTop="10dp"
         android:insetBottom="10dp"
-        android:text="Generar informe stock mínimo"
+        android:text="@string/btnInformeStock"
         android:textColor="@color/crema"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -161,17 +172,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonInforme"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonSalir"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/bordo"
         android:insetTop="10dp"
         android:insetBottom="10dp"
-        android:text="Salir"
+        android:text="@string/btnSalir"
         android:textColor="@color/crema"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -180,7 +193,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonInformeStock"
+        app:layout_constraintVertical_bias="0.791" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

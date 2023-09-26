@@ -9,18 +9,22 @@
 
     <!--    ATRAS-->
 
+
+    <!--    LOGO-->
+
     <FrameLayout
-        android:id="@+id/frameLayoutAtras"
+        android:id="@+id/buttonAtras"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="28dp"
         android:background="@drawable/elemento_esquina_redondeada"
         android:elevation="2dp"
         app:circularflow_radiusInDP="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023">
 
         <ImageView
             android:id="@+id/imageViewAtras"
@@ -32,10 +36,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:tint="#FFFFFF" />
     </FrameLayout>
-
-
-
-    <!--    LOGO-->
 
     <TextView
         android:id="@+id/textView2"
@@ -70,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="196dp"
-        android:text="Agregar Producto"
+        android:text="@string/tituloAgregarProducto"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -82,7 +82,7 @@
     <!--    campo CÓDIGO-->
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/textCodigo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -106,8 +106,8 @@
         android:layout_marginTop="232dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintEnd_toStartOf="@+id/textCodigo"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -119,10 +119,10 @@
     </FrameLayout>
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/textNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Nombre"
         android:inputType="text"
@@ -131,19 +131,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textCodigo" />
+
+    <!--    Campo DESCRIPCIÓN-->
+
 
     <FrameLayout
         android:id="@+id/frameLayoutNombre"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="292dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintEnd_toStartOf="@+id/textNombre"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/frameLayoutCodigo">
 
         <ImageView
             android:layout_width="20dp"
@@ -152,14 +155,11 @@
             android:src="@drawable/product_icon" />
     </FrameLayout>
 
-    <!--    Campo DESCRIPCIÓN-->
-
-
     <EditText
-        android:id="@+id/editTextText4"
+        android:id="@+id/textDescripcion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Descripción"
         android:inputType="text"
@@ -168,19 +168,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textNombre" />
+
+
+    <!--    Campo INVENTARIO MINIMO-->
 
     <FrameLayout
         android:id="@+id/frameDescripcion"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="352dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintEnd_toStartOf="@+id/textDescripcion"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/frameLayoutNombre">
 
         <ImageView
             android:layout_width="20dp"
@@ -189,14 +192,11 @@
             android:src="@drawable/product_icon" />
     </FrameLayout>
 
-
-    <!--    Campo INVENTARIO MINIMO-->
-
     <EditText
-        android:id="@+id/editTextText5"
+        android:id="@+id/textInventario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Inventario mínimo"
         android:inputType="text"
@@ -205,19 +205,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textDescripcion" />
+
+
+    <!--    Campo PRECIO DE COSTO-->
+
 
     <FrameLayout
         android:id="@+id/frameInventario"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="412dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintEnd_toStartOf="@+id/textInventario"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/frameDescripcion">
 
         <ImageView
             android:layout_width="20dp"
@@ -226,15 +230,11 @@
             android:src="@drawable/product_icon" />
     </FrameLayout>
 
-
-    <!--    Campo PRECIO DE COSTO-->
-
-
     <EditText
-        android:id="@+id/editTextText6"
+        android:id="@+id/textPrecioCosto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="252dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Precio de costo"
         android:inputType="text"
@@ -243,19 +243,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textInventario" />
+
+    <!--    Campo PRECIO DE VENTA-->
+
+
+    <!--    campo CATEGORIA-->
 
     <FrameLayout
         android:id="@+id/framePrecioCosto"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="476dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintEnd_toStartOf="@+id/textPrecioCosto"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/frameInventario">
 
         <ImageView
             android:layout_width="20dp"
@@ -264,14 +269,11 @@
             android:src="@drawable/product_icon" />
     </FrameLayout>
 
-    <!--    Campo PRECIO DE VENTA-->
-
-
     <EditText
-        android:id="@+id/editTextText7"
+        android:id="@+id/textPrecioVenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="316dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Precio de venta"
         android:inputType="text"
@@ -280,19 +282,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textPrecioCosto" />
+
 
     <FrameLayout
         android:id="@+id/framePrecioVenta"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="540dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintEnd_toStartOf="@+id/textPrecioVenta"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/framePrecioCosto">
 
         <ImageView
             android:layout_width="20dp"
@@ -301,14 +304,11 @@
             android:src="@drawable/product_icon" />
     </FrameLayout>
 
-
-    <!--    campo CATEGORIA-->
-
     <EditText
-        android:id="@+id/editTextText8"
+        android:id="@+id/textCategoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="376dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Categoría"
         android:inputType="text"
@@ -317,19 +317,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textPrecioVenta" />
 
     <FrameLayout
         android:id="@+id/frameCategoria"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="596dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintEnd_toStartOf="@+id/textCategoria"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/framePrecioVenta">
 
         <ImageView
             android:layout_width="20dp"
@@ -337,7 +337,6 @@
             android:layout_gravity="center"
             android:src="@drawable/product_icon" />
     </FrameLayout>
-
 
     <Button
         android:id="@+id/buttonGuardarAddProduct"
@@ -347,7 +346,7 @@
         android:backgroundTint="@color/bordo"
         android:insetTop="10dp"
         android:insetBottom="10dp"
-        android:text="Guardar"
+        android:text="@string/btnGuardar"
         android:textColor="@color/crema"
         android:textSize="18sp"
         android:textStyle="bold"
