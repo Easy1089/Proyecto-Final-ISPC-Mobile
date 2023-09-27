@@ -22,9 +22,17 @@
     <!--   edit product     -->
     <string name="tituloEditarProducto">Editar Producto</string>
     <string name="subtitulo">Sistema de Gestión de Stock para Vinotecas</string>
-    <!--   consultar producto     -->
+    <!--   find product     -->
     <string name="tituloConsultaProducto">Consulta de productos</string>
     <string name="btnBuscar">Buscar</string>
+    <string name="tituloNombreProducto">Vino Tinto Chateau Les Martineaux</string>
+    <string name="presentacioProducto">Botella 1 L</string>
+    <string name="precioProducto">$ 3000</string>
+    <string name="stockProducto">Stock: 500 u.</string>
+    <string name="activar">Activar</string>
+    <string name="editar">Editar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="btnAgregarProd">+ Agregar producto</string>
 
 
 </resources>
