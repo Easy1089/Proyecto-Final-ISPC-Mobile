@@ -21,5 +21,10 @@
 
     <!--   edit product     -->
     <string name="tituloEditarProducto">Editar Producto</string>
+    <string name="subtitulo">Sistema de Gestión de Stock para Vinotecas</string>
+    <!--   consultar producto     -->
+    <string name="tituloConsultaProducto">Consulta de productos</string>
+    <string name="btnBuscar">Buscar</string>
+
 
 </resources>
