@@ -18,7 +18,9 @@
     <string name="btnSalir">Salir</string>
     <string name="btnGuardar">Guardar</string>
     <string name="tituloAgregarProducto">Agregar Producto</string>
-
+    <string name="tituloProveedores">Proveedores</string>
+    <string name="tituloSistema">Sistema de Gestion de Stock para Vinotecas</string>
+    <string name="tituloConsumidor">Consumidores finales</string>
     <!--        -->
 
 </resources>
