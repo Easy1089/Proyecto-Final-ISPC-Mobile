@@ -18,6 +18,8 @@
     <string name="btnSalir">Salir</string>
     <string name="btnGuardar">Guardar</string>
     <string name="tituloAgregarProducto">Agregar Producto</string>
+    <string name="tituloAgregarUsuario">Crear cuenta de usuario</string>
+    <!--        -->
 
     <!--   edit product     -->
     <string name="tituloEditarProducto">Editar Producto</string>
