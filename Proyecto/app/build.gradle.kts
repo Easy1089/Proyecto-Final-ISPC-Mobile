@@ -1,7 +1,6 @@
 plugins {
-    id("com.android.application")
+    id("com.android.application") version "8.0.0"
 }
-
 android {
     namespace = "com.ispc.lemone"
     compileSdk = 33
@@ -29,6 +28,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    buildToolsVersion = "30.0.3"
 }
 
 dependencies {
