@@ -1,4 +1,4 @@
-package com.example.lemone;
+package com.ispc.lemone;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,6 @@ public class EliminarUsuario extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eliminar_usuario);
+        setContentView(R.layout.activity_eliminarusuario);
     }
 }
