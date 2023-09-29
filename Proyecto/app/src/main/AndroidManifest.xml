@@ -13,22 +13,25 @@
         android:theme="@style/Theme.Lemone"
         tools:targetApi="31">
         <activity
-            android:name=".ConsultUser"
+            android:name=".Contacto"
             android:exported="false" />
         <activity
-            android:name=".EdidUser"
+            android:name=".AcercaDe"
             android:exported="false" />
         <activity
             android:name=".ResetPassword"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"/>
+        <activity
+            android:name=".Consumidores_finales"
+            android:exported="true"/>
+        <activity
+            android:name=".Proveed"
+            android:exported="true"/>
         <activity
             android:name=".AddUser"
+            android:exported="false" />
+        <activity
+            android:name=".MainMenuActivity"
             android:exported="false" />
         <activity
             android:name=".Login"
@@ -44,10 +47,10 @@
         </activity>
         <activity
             android:name=".AddConsumer"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".AddProvider"
-            android:exported="true" />
+            android:exported="false" />
     </application>
 
 </manifest>
