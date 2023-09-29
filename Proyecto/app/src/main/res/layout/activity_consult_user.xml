@@ -8,12 +8,15 @@
     tools:context=".ConsultUser">
 
     <LinearLayout
+        android:id="@+id/linearLayout8"
         android:layout_width="375dp"
         android:layout_height="69dp"
         android:background="@color/white"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="508dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
         <ImageView
             android:id="@+id/userImageView1"
@@ -75,8 +78,10 @@
         android:layout_height="69dp"
         android:background="@color/white"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="430dp">
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
         <ImageView
             android:id="@+id/userImageView2"
@@ -134,13 +139,15 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout7"
         android:layout_width="375dp"
         android:layout_height="69dp"
         android:background="@color/white"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="352dp"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="352dp">
 
         <ImageView
             android:id="@+id/userImageView3"
@@ -202,8 +209,9 @@
         android:layout_height="69dp"
         android:background="@color/white"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="274dp">
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/userImageView4"

@@ -58,9 +58,6 @@
             android:name=".AddProduct"
             android:exported="false"/>
         <activity
-            android:name="Consumidores_finales"
-            android:exported="false"/>
-        <activity
             android:name="EdidUser"
             android:exported="false"/>
         <activity
@@ -71,9 +68,6 @@
             android:exported="false"/>
         <activity
             android:name=".FindProduct"
-            android:exported="false"/>
-        <activity
-            android:name=".Proveed"
             android:exported="false"/>
         <activity
             android:name=".RestClave"
