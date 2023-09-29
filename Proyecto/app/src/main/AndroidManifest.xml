@@ -51,6 +51,35 @@
         <activity
             android:name=".AddProvider"
             android:exported="false" />
+        <activity
+            android:name=".ConsultUser"
+            android:exported="false"/>
+        <activity
+            android:name=".AddProduct"
+            android:exported="false"/>
+        <activity
+            android:name="EdidUser"
+            android:exported="false"/>
+        <activity
+            android:name=".EditProduct"
+            android:exported="false"/>
+        <activity
+            android:name=".EliminarUsuario"
+            android:exported="false"/>
+        <activity
+            android:name=".FindProduct"
+            android:exported="false"/>
+        <activity
+            android:name=".RestClave"
+            android:exported="false"/>
+        <activity
+            android:name=".UserActivarDesactivar"
+            android:exported="false"/>
+        <activity
+            android:name=".VistaProducto"
+            android:exported="false">
+        </activity>
+
     </application>
 
 </manifest>
