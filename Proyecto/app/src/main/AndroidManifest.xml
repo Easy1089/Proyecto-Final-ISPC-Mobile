@@ -20,8 +20,13 @@
             android:exported="false" />
         <activity
             android:name=".ResetPassword"
-            android:exported="false">
-        </activity>
+            android:exported="false"/>
+        <activity
+            android:name=".Consumidores_finales"
+            android:exported="true"/>
+        <activity
+            android:name=".Proveed"
+            android:exported="true"/>
         <activity
             android:name=".AddUser"
             android:exported="false" />
