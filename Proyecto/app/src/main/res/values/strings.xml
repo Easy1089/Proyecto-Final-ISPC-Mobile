@@ -35,6 +35,26 @@
     <string name="editar">Editar</string>
     <string name="eliminar">Eliminar</string>
     <string name="btnAgregarProd">+ Agregar producto</string>
+    <!--        -->
 
+    <!--   Acerca De    -->
+    <string name="msj_btn_regresar">Menu Principal</string>
+    <string name="msj_titulo">Lemone</string>
+    <string name="msj_textoacercade">Sistema de Gestion de Stock para Vinotecas, permite al usuario realizar control de Stock de sus mercaderias ahora en version movil</string>
+    <!--        -->
 
+    <!--   Contacto    -->
+    <string name="msj_btn_enviar">Enviar</string>
+    <string name="msj_textomensaje">Dejanos tu mensaje</string>
+    <string name="msj_nombreyapellido">Nombre y Apellido</string>
+    <string name="msj_celular">Celular</string>
+    <string name="msj_textoemail1">E-mail</string>
+    <string name="msj_mensajetextoamplio">Mensaje</string>
+    <string name="msj_textotelefono">Telefono</string>
+    <string name="msj_nrotelefono">1234567</string>
+    <string name="msj_textoemail">E-mail</string>
+    <string name="msj_email">info@lemone.com</string>
+    <string name="msj_textohelp">HelpDesk</string>
+    <string name="msj_help">http://lemonehelpdesk.com</string>
+    <!--        -->
 </resources>
