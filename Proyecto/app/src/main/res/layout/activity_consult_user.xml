@@ -7,81 +7,18 @@
     android:background="@color/crema"
     tools:context=".ConsultUser">
 
-    <LinearLayout
-        android:id="@+id/linearLayout8"
-        android:layout_width="375dp"
-        android:layout_height="69dp"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
-
-        <ImageView
-            android:id="@+id/userImageView1"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:src="@drawable/user" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/usernameTextView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nombre de usuario" />
-
-            <TextView
-                android:id="@+id/emailTextView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="usuario@usuario.com" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/buttonModificar1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/bordo"
-                    android:text="Modificar"
-                    android:textSize="10dp" />
-
-                <Button
-                    android:id="@+id/buttonEliminar1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/bordo"
-                    android:text="Eliminar"
-                    android:textSize="10dp" />
-
-                <Button
-                    android:id="@+id/buttonActivar1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/bordo"
-                    android:text="Activar"
-                    android:textSize="10dp" />
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout10"
         android:layout_width="375dp"
         android:layout_height="69dp"
+        android:layout_marginBottom="28dp"
         android:background="@color/white"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
+        app:layout_constraintBottom_toTopOf="@+id/buttonGuardar2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/userImageView2"
@@ -90,8 +27,8 @@
             android:src="@drawable/user" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="311dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
@@ -136,18 +73,21 @@
                     android:textSize="10dp" />
             </LinearLayout>
         </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout7"
         android:layout_width="375dp"
         android:layout_height="69dp"
+        android:layout_marginBottom="40dp"
         android:background="@color/white"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout9"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="352dp">
+        tools:ignore="MissingConstraints">
 
         <ImageView
             android:id="@+id/userImageView3"
@@ -156,8 +96,8 @@
             android:src="@drawable/user" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="310dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
@@ -202,16 +142,22 @@
                     android:textSize="10dp" />
             </LinearLayout>
         </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout9"
         android:layout_width="375dp"
         android:layout_height="69dp"
+        android:layout_marginTop="444dp"
         android:background="@color/white"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/userImageView4"
@@ -220,8 +166,8 @@
             android:src="@drawable/user" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="309dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
@@ -266,6 +212,7 @@
                     android:textSize="10dp" />
             </LinearLayout>
         </LinearLayout>
+
     </LinearLayout>
 
     <Button
@@ -363,16 +310,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="184dp"
-        android:text="Consulta de usuarios"
         android:backgroundTint="@color/white"
+        android:text="Consulta de usuarios"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextFilter"
