@@ -9,6 +9,11 @@
     <string name="msj_login">Ingrese con su cuenta</string>
     <string name="msj_btn_ingresar">Ingresar</string>
     <string name="login_pass_olvidada">¿Olvidó su contraseña?</string>
+    <string name="msj_contacto">Contacto</string>
+    <string name="msj_acerca_de">Acerca de</string>
+
+    <!--        -->
+
     <string name="btnGestionUs">Gestión de usuarios</string>
     <string name="btnGestionProv">Gestión de proovedores</string>
     <string name="btnGestionConsumidor">Gestión de consumidores finales</string>
@@ -18,6 +23,7 @@
     <string name="btnSalir">Salir</string>
     <string name="btnGuardar">Guardar</string>
     <string name="tituloAgregarProducto">Agregar Producto</string>
+    <string name="tituloAgregarUsuario">Crear cuenta de usuario</string>
 
     <!--        -->
 
@@ -57,4 +63,8 @@
     <string name="msj_textohelp">HelpDesk</string>
     <string name="msj_help">http://lemonehelpdesk.com</string>
     <!--        -->
+    <string name="tituloSistema">ejemplo1</string>
+    <string name="tituloProveedores">ejemplo2</string>
+    <string name="tituloConsumidor">ejemplo3</string>
+
 </resources>

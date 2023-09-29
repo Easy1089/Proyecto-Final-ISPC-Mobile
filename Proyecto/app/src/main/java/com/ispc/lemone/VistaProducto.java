@@ -1,4 +1,4 @@
-package com.example.lemone;
+package com.ispc.lemone;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,6 @@ public class VistaProducto extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vista_producto);
+        setContentView(R.layout.activity_vistaproducto);
     }
 }

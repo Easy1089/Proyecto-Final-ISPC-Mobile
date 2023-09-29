@@ -47,7 +47,7 @@
         app:layout_constraintHorizontal_bias="0.228"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon" />
+        app:srcCompat="@drawable/icon_lemone" />
 
     <TextView
         android:id="@+id/textView"
@@ -109,7 +109,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/FondoProductos" />
+        app:srcCompat="@drawable/fondoproductos" />
 
     <TextView
         android:id="@+id/textView3"
