@@ -135,7 +135,292 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="#FFFFFF" />
-    </FrameLayout>
 
+    </FrameLayout>
+    <!-- aca -->
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="375dp"
+        android:layout_height="75dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.521">
+
+           <ImageView
+               android:id="@+id/userImageViewA"
+               android:layout_width="64dp"
+               android:layout_height="64dp"
+               android:src="@drawable/user" />
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
+
+               <TextView
+                   android:id="@+id/usernameTextViewA"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Nombre de usuario" />
+
+               <TextView
+                   android:id="@+id/emailTextViewA"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="usuario@usuario.com" />
+
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+
+                   <Button
+                       android:id="@+id/buttonModificarA"
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:backgroundTint="@color/bordo"
+                       android:text="Modificar"
+                       android:textAlignment="center"
+                       android:textSize="10dp"
+                       android:textColor="@color/crema"/>
+
+                   <Button
+                       android:id="@+id/buttonEliminarA"
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:backgroundTint="@color/bordo"
+                       android:text="Eliminar"
+                       android:textAlignment="center"
+                       android:textSize="10dp"
+                       android:textColor="@color/crema"/>
+
+                   <Button
+                       android:id="@+id/buttonActivarA"
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:backgroundTint="@color/bordo"
+                       android:text="Activar"
+                       android:textAlignment="center"
+                       android:textSize="10dp"
+                       android:textColor="@color/crema"/>
+               </LinearLayout>
+           </LinearLayout>
+       </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="375dp"
+        android:layout_height="75dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.643">
+
+           <ImageView
+               android:id="@+id/userImageViewB"
+               android:layout_width="64dp"
+               android:layout_height="64dp"
+               android:src="@drawable/user" />
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
+
+               <TextView
+                   android:id="@+id/usernameTextViewB"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Nombre de usuario" />
+
+               <TextView
+                   android:id="@+id/emailTextViewB"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="usuario@usuario.com" />
+
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+
+                   <Button
+                       android:id="@+id/buttonModificarB"
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:backgroundTint="@color/bordo"
+                       android:text="Modificar"
+                       android:textSize="10dp"
+                       android:textColor="@color/crema"/>
+
+                   <Button
+                       android:id="@+id/buttonEliminarB"
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:backgroundTint="@color/bordo"
+                       android:text="Eliminar"
+                       android:textSize="10dp"
+                       android:textColor="@color/crema"/>
+
+                   <Button
+                       android:id="@+id/buttonActivarB"
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:backgroundTint="@color/bordo"
+                       android:text="Activar"
+                       android:textSize="10dp"
+                       android:textColor="@color/crema"/>
+               </LinearLayout>
+           </LinearLayout>
+       </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="375dp"
+        android:layout_height="75dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.765">
+
+
+                         <ImageView
+                             android:id="@+id/userImageViewC"
+                             android:layout_width="64dp"
+                             android:layout_height="64dp"
+                             android:src="@drawable/user" />
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="vertical">
+                             <TextView
+                                 android:id="@+id/usernameTextViewC"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="Nombre de usuario" />
+
+                             <TextView
+                                 android:id="@+id/emailTextViewC"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="usuario@usuario.com" />
+
+                             <LinearLayout
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:orientation="horizontal">
+
+                                 <Button
+                                     android:id="@+id/buttonModificarC"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="match_parent"
+                                     android:backgroundTint="@color/bordo"
+                                     android:text="Modificar"
+                                     android:textSize="10dp"
+                                     android:textColor="@color/crema"/>
+
+                                 <Button
+                                     android:id="@+id/buttonEliminarC"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="match_parent"
+                                     android:backgroundTint="@color/bordo"
+                                     android:text="Eliminar"
+                                     android:textSize="10dp"
+                                     android:textColor="@color/crema"/>
+
+                                 <Button
+                                     android:id="@+id/buttonActivarC"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="match_parent"
+                                     android:backgroundTint="@color/bordo"
+                                     android:text="Activar"
+                                     android:textSize="10dp"
+                                     android:textColor="@color/crema"/>
+                             </LinearLayout>
+                         </LinearLayout>
+                     </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="375dp"
+        android:layout_height="75dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.879">
+
+                       <ImageView
+                           android:id="@+id/userImageViewD"
+                           android:layout_width="64dp"
+                           android:layout_height="64dp"
+                           android:src="@drawable/user" />
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:orientation="vertical">
+                           <TextView
+                               android:id="@+id/usernameTextViewD"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="Nombre de usuario" />
+
+                           <TextView
+                               android:id="@+id/emailTextViewD"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="usuario@usuario.com" />
+
+                           <LinearLayout
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:orientation="horizontal">
+
+                               <Button
+                                   android:id="@+id/buttonModificarD"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="match_parent"
+                                   android:backgroundTint="@color/bordo"
+                                   android:text="Modificar"
+                                   android:textSize="10dp"
+                                   android:textColor="@color/crema"/>
+
+                               <Button
+                                   android:id="@+id/buttonEliminarD"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="match_parent"
+                                   android:backgroundTint="@color/bordo"
+                                   android:text="Eliminar"
+                                   android:textSize="10dp"
+                                   android:textColor="@color/crema"/>
+
+                               <Button
+                                   android:id="@+id/buttonActivarD"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="match_parent"
+                                   android:backgroundTint="@color/bordo"
+                                   android:text="Activar"
+                                   android:textSize="10dp"
+                                   android:textColor="@color/crema"/>
+                           </LinearLayout>
+                       </LinearLayout>
+                   </LinearLayout>  -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,87 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/crema"
-    tools:context=".AddProvider">
+    tools:context=".AddConsumer">
 
 
     <!--    BOTON ATRAS-->
-
-    <EditText
-        android:id="@+id/textApellido8"
-        android:layout_width="317dp"
-        android:layout_height="45dp"
-        android:ems="10"
-        android:hint="Datos de contacto"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gris"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.765"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.641" />
-
-    <EditText
-        android:id="@+id/textApellido4"
-        android:layout_width="317dp"
-        android:layout_height="45dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gris"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.765"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.788" />
-
-    <EditText
-        android:id="@+id/textApellido3"
-        android:layout_width="317dp"
-        android:layout_height="45dp"
-        android:ems="10"
-        android:hint="Nro.documento"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gris"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.765"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.559" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="50dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="340dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/elemento_esquina_redondeada" />
-
-    <FrameLayout
-        android:id="@+id/frameProfile6"
-        android:layout_width="49dp"
-        android:layout_height="42dp"
-        android:background="@drawable/elemento_esquina_redondeada"
-        app:circularflow_radiusInDP="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textNombre"
-        app:layout_constraintHorizontal_bias="0.298"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.322" >
-
-        <ImageView
-            android:id="@+id/imageView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/profilewhite" />
-    </FrameLayout>
 
     <FrameLayout
         android:id="@+id/buttonAtras"
@@ -94,12 +17,10 @@
         android:background="@drawable/elemento_esquina_redondeada"
         android:elevation="2dp"
         app:circularflow_radiusInDP="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageViewAtras"
@@ -149,7 +70,7 @@
         android:layout_width="284dp"
         android:layout_height="22dp"
         android:layout_marginTop="132dp"
-        android:text="@string/tituloSistema"
+        android:text="@string/msj_presentacion"
         android:textColor="@color/black"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -161,9 +82,9 @@
     <!--    H3-->
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="239dp"
-        android:layout_height="32dp"
+        android:id="@+id/titleProviders"
+        android:layout_width="249dp"
+        android:layout_height="39dp"
         android:layout_marginTop="164dp"
         android:text="@string/tituloConsumidor"
         android:textColor="@color/black"
@@ -174,11 +95,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--    GIRL PICTURE-->
-
-    <!--    NAME  -->
-
-    <!--    SURNAME-->
-
     <ImageView
         android:id="@+id/imageGirl"
         android:layout_width="98dp"
@@ -189,6 +105,94 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.33" />
+    <!--    NAME  -->
+
+    <FrameLayout
+        android:id="@+id/layout1"
+        android:layout_width="49dp"
+        android:layout_height="42dp"
+        android:background="@drawable/elemento_esquina_redondeada"
+        app:circularflow_radiusInDP="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textNombre"
+        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.322" >
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/profilewhite" />
+    </FrameLayout>
+
+    <!--    SURNAME-->
+
+    <FrameLayout
+        android:id="@+id/layout2"
+        android:layout_width="49dp"
+        android:layout_height="42dp"
+        android:background="@drawable/elemento_esquina_redondeada"
+        app:circularflow_radiusInDP="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textNombre"
+        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.393" >
+
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/profilewhite" />
+    </FrameLayout>
+
+
+    <EditText
+        android:id="@+id/textApellido"
+        android:layout_width="233dp"
+        android:layout_height="41dp"
+        android:ems="10"
+        android:hint="@string/editApellido"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gris"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <FrameLayout
+        android:layout_width="61dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="152dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.031"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView26"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/elemento_esquina_redondeada" />
+
+        <ImageView
+            android:id="@+id/imageView27"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/elemento_esquina_redondeada" />
+
+        <ImageView
+            android:id="@+id/imageView32"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/profilewhite" />
+    </FrameLayout>
 
     <EditText
         android:id="@+id/textNombre"
@@ -206,27 +210,31 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <!--   DNI   -->
-
-    <EditText
-        android:id="@+id/textApellido"
-        android:layout_width="233dp"
+    <FrameLayout
+        android:layout_width="61dp"
         android:layout_height="41dp"
-        android:ems="10"
-        android:hint="Apellido"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gris"
+        android:layout_marginBottom="372dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.91"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintHorizontal_bias="0.031"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <!--    DNI NUMBER-->
+        <ImageView
+            android:id="@+id/imageView26"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/elemento_esquina_redondeada" />
+
+        <ImageView
+            android:id="@+id/imageView30"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/profilewhite" />
+
+    </FrameLayout>
 
     <EditText
-        android:id="@+id/textApellido2"
+        android:id="@+id/textTipoDoc"
         android:layout_width="317dp"
         android:layout_height="45dp"
         android:ems="10"
@@ -241,45 +249,130 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.483" />
 
-    <FrameLayout
-        android:id="@+id/frameProfile6"
-        android:layout_width="49dp"
-        android:layout_height="42dp"
-        android:background="@drawable/elemento_esquina_redondeada"
-        app:circularflow_radiusInDP="50dp"
+    <!--    DNI NUMBER-->
+
+    <EditText
+        android:id="@+id/editMail"
+        android:layout_width="317dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="@string/editMail"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gris"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textNombre"
-        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.765"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.393" >
+        app:layout_constraintVertical_bias="0.559" />
 
-        <ImageView
-            android:id="@+id/imageView15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/profilewhite" />
-    </FrameLayout>
 
 
     <!--    CONTACT-->
+    <FrameLayout
+        android:layout_width="61dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="260dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.031"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView26"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/elemento_esquina_redondeada" />
+
+        <ImageView
+            android:id="@+id/imageView34"
+            android:layout_width="53dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/profilewhite" />
+
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/text_edit_datos_de_contacto"
+        android:layout_width="317dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="@string/editContacto"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gris"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.765"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.641" />
 
 
     <!--    PHONE    -->
+    <FrameLayout
+        android:layout_width="61dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="208dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.031"
+        app:layout_constraintStart_toStartOf="parent">
 
+        <ImageView
+            android:id="@+id/imageView26"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/elemento_esquina_redondeada" />
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="50dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="504dp"
+        <ImageView
+            android:id="@+id/imageView33"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/profilewhite" />
+
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/editPhone"
+        android:layout_width="317dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="@string/editPhone"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gris"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.765"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/elemento_esquina_redondeada" />
+        app:layout_constraintVertical_bias="0.788" />
 
     <!--    MAIL-->
+    <FrameLayout
+        android:layout_width="61dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="320dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.031"
+        app:layout_constraintStart_toStartOf="parent">
 
+        <ImageView
+            android:id="@+id/imageView26"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/elemento_esquina_redondeada" />
 
+        <ImageView
+            android:id="@+id/imageView35"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/profilewhite" />
+
+    </FrameLayout>
     <!--    SAVE BTN-->
 
 
@@ -298,35 +391,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.717" />
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="50dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="552dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/elemento_esquina_redondeada" />
-
-    <ImageView
-        android:id="@+id/imageView21"
-        android:layout_width="50dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="504dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/elemento_esquina_redondeada" />
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="50dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="448dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/elemento_esquina_redondeada" />
 
     <Button
         android:id="@+id/buttonGuardarConsumidor"
@@ -347,13 +411,10 @@
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="50dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="396dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/elemento_esquina_redondeada" />
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
