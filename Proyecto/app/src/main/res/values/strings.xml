@@ -63,4 +63,8 @@
     <string name="msj_textohelp">HelpDesk</string>
     <string name="msj_help">http://lemonehelpdesk.com</string>
     <!--        -->
+    <string name="tituloSistema">ejemplo1</string>
+    <string name="tituloProveedores">ejemplo2</string>
+    <string name="tituloConsumidor">ejemplo3</string>
+
 </resources>
