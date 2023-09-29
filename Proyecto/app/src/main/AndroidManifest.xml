@@ -13,26 +13,21 @@
         android:theme="@style/Theme.Lemone"
         tools:targetApi="31">
         <activity
-            android:name=".ConsultUser"
-            android:exported="false" />
+            android:name=".Contacto"
+            android:exported="true" />
         <activity
-            android:name=".EdidUser"
-            android:exported="false" />
+            android:name=".AcercaDe"
+            android:exported="true" />
         <activity
             android:name=".ResetPassword"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
         <activity
             android:name=".AddUser"
             android:exported="false" />
         <activity
             android:name=".Login"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
