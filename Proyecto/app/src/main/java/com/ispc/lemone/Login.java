@@ -63,7 +63,7 @@ public class Login extends AppCompatActivity {
             Intent intent = new Intent(Login.this, MainMenuActivity.class);
             startActivity(intent);
         } else if(usuario.equals("admin") && password.equals("123")){
-            Intent intent = new Intent(Login.this, MainMenuActivity.class);
+            Intent intent = new Intent(Login.this, EliminarUsuario.class);
             startActivity(intent);
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);

@@ -8,7 +8,7 @@
     tools:context=".RestClave" >
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/btn_cancelar"
         android:layout_width="345dp"
         android:layout_height="48dp"
         android:layout_marginTop="628dp"
@@ -44,7 +44,7 @@
         android:textColor="#3A3434"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button10"
+        app:layout_constraintBottom_toTopOf="@+id/btn_cancelar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

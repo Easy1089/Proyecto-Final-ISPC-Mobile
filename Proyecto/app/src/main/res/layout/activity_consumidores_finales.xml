@@ -62,7 +62,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_eliminar"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
