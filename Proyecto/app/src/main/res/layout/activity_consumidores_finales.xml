@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="208dp"
-        android:text="@string/leyenda_subtitulo"
+        android:text="@string/msj_presentacion"
         android:textColor="@color/bordo"
         android:textSize="15sp"
         android:textStyle="bold"
