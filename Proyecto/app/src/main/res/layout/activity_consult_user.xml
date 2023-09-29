@@ -264,6 +264,7 @@
         android:id="@+id/buttonBuscar"
         android:layout_width="98dp"
         android:layout_height="52dp"
+        android:layout_marginTop="208dp"
         android:backgroundTint="@color/bordo"
         android:insetTop="10dp"
         android:insetBottom="10dp"
@@ -273,8 +274,10 @@
         android:textStyle="bold"
         app:cornerRadius="10dp"
         app:iconPadding="10dp"
-        tools:layout_editor_absoluteX="294dp"
-        tools:layout_editor_absoluteY="206dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.948"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -367,11 +370,14 @@
         android:id="@+id/editTextFilter"
         android:layout_width="281dp"
         android:layout_height="42dp"
+        android:layout_marginTop="216dp"
         android:ems="10"
         android:inputType="text"
         android:text="Filtro de búsqueda"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="216dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
