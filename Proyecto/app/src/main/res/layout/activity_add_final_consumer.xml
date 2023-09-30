@@ -11,14 +11,15 @@
     <!--    BOTON ATRAS-->
 
     <FrameLayout
-        android:id="@+id/buttonAtras"
+        android:id="@+id/backACNS"
         android:layout_width="37dp"
         android:layout_height="36dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/elemento_esquina_redondeada"
         android:elevation="2dp"
         app:circularflow_radiusInDP="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -83,10 +84,10 @@
 
     <TextView
         android:id="@+id/titleProviders"
-        android:layout_width="249dp"
-        android:layout_height="39dp"
+        android:layout_width="145dp"
+        android:layout_height="44dp"
         android:layout_marginTop="164dp"
-        android:text="@string/tituloConsumidor"
+        android:text="@string/tituloProveedores"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,55 +106,78 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.33" />
+
+
     <!--    NAME  -->
-
-    <FrameLayout
-        android:id="@+id/layout1"
-        android:layout_width="49dp"
-        android:layout_height="42dp"
-        android:background="@drawable/elemento_esquina_redondeada"
-        app:circularflow_radiusInDP="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textNombre"
-        app:layout_constraintHorizontal_bias="0.298"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.322" >
-
-        <ImageView
-            android:id="@+id/image1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/profilewhite" />
-    </FrameLayout>
 
     <!--    SURNAME-->
 
     <FrameLayout
-        android:id="@+id/layout2"
-        android:layout_width="49dp"
-        android:layout_height="42dp"
-        android:background="@drawable/elemento_esquina_redondeada"
-        app:circularflow_radiusInDP="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textNombre"
-        app:layout_constraintHorizontal_bias="0.298"
+        android:layout_width="62dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="224dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.361"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.393" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/image2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/imageView13"
+            android:layout_width="47dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/elemento_esquina_redondeada" />
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/profilewhite" />
+
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="210dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:hint="@string/editNombre"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gris"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.321" />
+
+    <FrameLayout
+        android:layout_width="61dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="276dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="47dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/elemento_esquina_redondeada" />
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
             app:srcCompat="@drawable/profilewhite" />
     </FrameLayout>
 
-
+    <!--    MAIL-->
     <EditText
-        android:id="@+id/textApellido"
-        android:layout_width="233dp"
-        android:layout_height="41dp"
+        android:id="@+id/editSur"
+        android:layout_width="210dp"
+        android:layout_height="44dp"
         android:ems="10"
         android:hint="@string/editApellido"
         android:inputType="text"
@@ -161,10 +185,10 @@
         android:textColorHint="@color/gris"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintHorizontal_bias="0.89"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintVertical_bias="0.391" />
 
     <FrameLayout
         android:layout_width="61dp"
@@ -176,40 +200,35 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/imageView26"
+            android:id="@+id/imageView28"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/elemento_esquina_redondeada" />
 
         <ImageView
-            android:id="@+id/imageView27"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            app:srcCompat="@drawable/elemento_esquina_redondeada" />
-
-        <ImageView
-            android:id="@+id/imageView32"
+            android:id="@+id/imageView39"
             android:layout_width="56dp"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/profilewhite" />
     </FrameLayout>
 
     <EditText
-        android:id="@+id/textNombre"
-        android:layout_width="233dp"
-        android:layout_height="41dp"
-        android:layout_marginBottom="12dp"
+        android:id="@+id/editMail"
+        android:layout_width="317dp"
+        android:layout_height="45dp"
         android:ems="10"
-        android:hint="Nombre"
+        android:hint="@string/editMail"
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/gris"
-        app:layout_constraintBottom_toTopOf="@+id/textApellido"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.765"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.784" />
 
-    <!--   DNI   -->
+    <!--   DNI type   -->
     <FrameLayout
         android:layout_width="61dp"
         android:layout_height="41dp"
@@ -234,11 +253,11 @@
     </FrameLayout>
 
     <EditText
-        android:id="@+id/textTipoDoc"
+        android:id="@+id/textTipoDoc2"
         android:layout_width="317dp"
         android:layout_height="45dp"
         android:ems="10"
-        android:hint="Tipo de documento"
+        android:hint="@string/editDni"
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/gris"
@@ -249,27 +268,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.483" />
 
-    <!--    DNI NUMBER-->
-
-    <EditText
-        android:id="@+id/editMail"
-        android:layout_width="317dp"
-        android:layout_height="45dp"
-        android:ems="10"
-        android:hint="@string/editMail"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gris"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.765"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.559" />
-
-
 
     <!--    CONTACT-->
+
     <FrameLayout
         android:layout_width="61dp"
         android:layout_height="41dp"
@@ -311,6 +312,7 @@
 
 
     <!--    PHONE    -->
+
     <FrameLayout
         android:layout_width="61dp"
         android:layout_height="41dp"
@@ -334,12 +336,13 @@
 
     </FrameLayout>
 
+
     <EditText
-        android:id="@+id/editPhone"
+        android:id="@+id/textApellido5"
         android:layout_width="317dp"
         android:layout_height="45dp"
         android:ems="10"
-        android:hint="@string/editPhone"
+        android:hint="Telefono"
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/gris"
@@ -348,9 +351,10 @@
         app:layout_constraintHorizontal_bias="0.765"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.788" />
+        app:layout_constraintVertical_bias="0.717" />
 
-    <!--    MAIL-->
+    <!--    DNI NUMBER-->
+
     <FrameLayout
         android:layout_width="61dp"
         android:layout_height="41dp"
@@ -373,15 +377,14 @@
             app:srcCompat="@drawable/profilewhite" />
 
     </FrameLayout>
-    <!--    SAVE BTN-->
 
 
     <EditText
-        android:id="@+id/textApellido5"
+        android:id="@+id/textTipoDoc"
         android:layout_width="317dp"
         android:layout_height="45dp"
         android:ems="10"
-        android:hint="Telefono"
+        android:hint="@string/editNumDni"
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/gris"
@@ -390,7 +393,11 @@
         app:layout_constraintHorizontal_bias="0.765"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.717" />
+        app:layout_constraintVertical_bias="0.561" />
+
+
+
+    <!--    SAVE BTN-->
 
     <Button
         android:id="@+id/buttonGuardarConsumidor"
@@ -410,11 +417,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent" />
-
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
