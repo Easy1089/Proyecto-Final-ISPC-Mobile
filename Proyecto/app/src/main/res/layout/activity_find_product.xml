@@ -10,8 +10,8 @@
     <!--   FLECHA VOLVER ATRAS -->
 
     <FrameLayout
-        android:id="@+id/buttonAtras"
-        android:layout_width="49dp"
+        android:id="@+id/btn_volverFP"
+        android:layout_width="48dp"
         android:layout_height="42dp"
         android:background="@drawable/elemento_esquina_redondeada"
         android:elevation="2dp"
@@ -96,7 +96,7 @@
     <EditText
         android:id="@+id/editTextText"
         android:layout_width="260dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginTop="236dp"
         android:ems="10"
         android:hint="Filtro de búsqueda"
@@ -225,7 +225,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/editarFP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="428dp"
@@ -245,11 +245,11 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.791"
-        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintStart_toEndOf="@+id/editarFP"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_agregarFP"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
