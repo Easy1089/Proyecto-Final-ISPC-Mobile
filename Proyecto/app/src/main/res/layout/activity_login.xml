@@ -55,7 +55,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/txt_olvidemipassword"
         android:layout_width="145dp"
         android:layout_height="33dp"
         android:layout_marginBottom="256dp"
