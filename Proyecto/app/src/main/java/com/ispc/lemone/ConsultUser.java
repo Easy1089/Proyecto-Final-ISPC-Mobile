@@ -29,4 +29,9 @@ public class ConsultUser extends AppCompatActivity {
             }
         });
     }
+
+    public void volver(View view) {
+        Intent intent = new Intent(this, MainMenuActivity.class);
+        startActivity(intent);
+    }
 }
