@@ -8,11 +8,12 @@
     tools:context=".RestClave" >
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/menuprincipal"
         android:layout_width="345dp"
         android:layout_height="48dp"
         android:layout_marginTop="628dp"
         android:backgroundTint="#8C1C13"
+        android:onClick="buttonPress"
         android:text="Menú principal"
         android:textColor="#FFFFFF"
         android:textSize="18dp"
@@ -49,7 +50,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.263" />
+        app:layout_constraintVertical_bias="0.263"
+        tools:ignore="UnknownId" />
 
     <ImageView
         android:id="@+id/imageView3"
