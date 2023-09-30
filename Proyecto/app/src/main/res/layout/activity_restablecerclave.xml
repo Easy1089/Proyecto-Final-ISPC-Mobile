@@ -8,7 +8,7 @@
     tools:context=".RestClave" >
 
     <Button
-        android:id="@+id/btn_cancelar"
+        android:id="@+id/menuprincipal"
         android:layout_width="345dp"
         android:layout_height="48dp"
         android:layout_marginTop="628dp"

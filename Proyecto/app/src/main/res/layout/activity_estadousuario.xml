@@ -48,7 +48,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/act_desact_usuario"
         android:layout_width="345dp"
         android:layout_height="48dp"
         android:layout_marginTop="508dp"
@@ -62,10 +62,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btn_cancelar_user"
         android:layout_width="345dp"
         android:layout_height="48dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#8C1C13"
         android:text="Cancelar"
         android:textColor="#FFFFFF"
@@ -73,6 +73,6 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/act_desact_usuario" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
