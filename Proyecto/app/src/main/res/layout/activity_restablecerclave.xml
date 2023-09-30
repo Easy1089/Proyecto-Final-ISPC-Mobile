@@ -45,7 +45,7 @@
         android:textColor="#3A3434"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button10"
+        app:layout_constraintBottom_toTopOf="@+id/menuprincipal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

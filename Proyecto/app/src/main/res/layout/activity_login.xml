@@ -27,26 +27,26 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="240dp"
         android:text="@string/msj_login"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_login"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="148dp"
+        android:layout_marginBottom="168dp"
         android:backgroundTint="@color/bordo"
         android:insetTop="10dp"
         android:insetBottom="10dp"
         android:text="@string/msj_btn_ingresar"
+        android:textColor="@color/crema"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="@color/crema"
         app:cornerRadius="10dp"
         app:iconPadding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,17 +55,42 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/txt_olvidemipassword"
         android:layout_width="145dp"
         android:layout_height="33dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="256dp"
         android:text="@string/login_pass_olvidada"
         android:textColor="@color/bordo"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.62"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_password"
+        app:layout_constraintVertical_bias="0.153" />
+
+    <TextView
+        android:id="@+id/txt_contacto"
+        android:layout_width="145dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="76dp"
+        android:text="@string/msj_contacto"
+        android:textColor="@color/bordo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.218"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_acerca_de"
+        android:layout_width="145dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="76dp"
+        android:text="@string/msj_acerca_de"
+        android:textColor="@color/bordo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.996"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -79,15 +104,15 @@
         app:srcCompat="@drawable/icon_lemone" />
 
     <EditText
-        android:id="@+id/textCodigo"
+        android:id="@+id/txt_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:ems="10"
         android:hint="@string/usuario"
-        android:textColorHint="@color/gris"
         android:inputType="text"
         android:textColor="@color/black"
+        android:textColorHint="@color/gris"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -132,7 +157,7 @@
     </FrameLayout>
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/txt_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -144,15 +169,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textCodigo" /><![CDATA[
+        app:layout_constraintTop_toBottomOf="@+id/txt_usuario" />
 
-
-
-
-
-    />
-
-
-
-]]>
 </androidx.constraintlayout.widget.ConstraintLayout>
