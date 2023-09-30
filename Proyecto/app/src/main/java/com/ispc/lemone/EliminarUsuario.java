@@ -20,7 +20,7 @@ public class EliminarUsuario extends AppCompatActivity {
         botonEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EliminarUsuario.this, UserActivarDesactivar.class);
+                Intent intent = new Intent(EliminarUsuario.this, ConsultUser.class);
                 startActivity(intent);
             }
         });
@@ -32,6 +32,5 @@ public class EliminarUsuario extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }
