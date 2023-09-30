@@ -46,8 +46,8 @@
     <string name="tituloConsumidor">Consumidores finales</string>
     <string name="editNombre">Nombre</string>
     <string name="editApellido">Apellido</string>
-    <string name="editTipoDni">Tipo de documento</string>
-    <string name="editNumeroDni">Nro. de documento</string>
+    <string name="editDni">Tipo de documento</string>
+    <string name="editNumDni">Nro. de documento</string>
     <string name="editContacto">Datos de contacto</string>
     <string name="editPhone">Telefono</string>
     <string name="editMail">Email</string>
