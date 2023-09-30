@@ -17,6 +17,7 @@ public class Login extends AppCompatActivity {
     private EditText passwordIngresado;
     private TextView acercaDe;
     private TextView contacto;
+    private TextView olvideMiPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class Login extends AppCompatActivity {
 
         acercaDe = findViewById(R.id.txt_acerca_de);
         contacto = findViewById(R.id.txt_contacto);
+        olvideMiPassword = findViewById(R.id.txt_olvidemipassword);
 
         acercaDe.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +40,14 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Login.this, Contacto.class);
+                startActivity(intent);
+            }
+        });
+
+        olvideMiPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login.this, ResetPassword.class);
                 startActivity(intent);
             }
         });
