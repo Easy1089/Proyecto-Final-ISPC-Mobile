@@ -13,6 +13,7 @@ public class FindProduct extends AppCompatActivity {
 
     private FrameLayout btnVolver;
     private TextView editar;
+    private TextView activar;
     private Button agregarProducto;
 
     @Override
@@ -22,6 +23,7 @@ public class FindProduct extends AppCompatActivity {
 
         btnVolver = findViewById(R.id.btn_volverFP);
         editar = findViewById(R.id.editarFP);
+        activar = findViewById(R.id.activarFP);
         agregarProducto = findViewById(R.id.btn_agregarFP);
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +37,14 @@ public class FindProduct extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(FindProduct.this, EditProduct.class);
+                startActivity(intent);
+            }
+        });
+
+        activar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FindProduct.this, ProductActivarDesactivar.class);
                 startActivity(intent);
             }
         });
