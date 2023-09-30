@@ -10,7 +10,7 @@
     <!--   FLECHA VOLVER ATRAS -->
 
     <FrameLayout
-        android:id="@+id/buttonAtras"
+        android:id="@+id/btn_volverEP"
         android:layout_width="49dp"
         android:layout_height="42dp"
         android:background="@drawable/elemento_esquina_redondeada"
