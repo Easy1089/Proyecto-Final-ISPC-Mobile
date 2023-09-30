@@ -62,7 +62,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_eliminar"
+        android:id="@+id/btn_addCons"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
@@ -114,7 +114,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
-        android:id="@+id/frameLayoutAtras"
+        android:id="@+id/frameLayoutAtrasC"
         android:layout_width="49dp"
         android:layout_height="42dp"
         android:layout_marginTop="28dp"
