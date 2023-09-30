@@ -37,6 +37,17 @@
     <string name="btnAgregarProd">+ Agregar producto</string>
     <!--        -->
 
+    <!--   add providers & add consumers    -->
+    <string name="tituloProveedores">Proveedores</string>
+    <string name="tituloConsumidor">Consumidores finales</string>
+    <string name="editNombre">Nombre</string>
+    <string name="editApellido">Apellido</string>
+    <string name="editTipoDni">Tipo de documento</string>
+    <string name="editNumeroDni">Nro. de documento</string>
+    <string name="editContacto">Datos de contacto</string>
+    <string name="editPhone">Telefono</string>
+    <string name="editMail">Email</string>
+
     <!--   Acerca De    -->
     <string name="msj_btn_regresar">Menu Principal</string>
     <string name="msj_titulo">Lemone</string>
@@ -57,4 +68,5 @@
     <string name="msj_textohelp">HelpDesk</string>
     <string name="msj_help">http://lemonehelpdesk.com</string>
     <!-- -->
+  
 </resources>
