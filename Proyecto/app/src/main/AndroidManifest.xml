@@ -47,10 +47,10 @@
         </activity>
         <activity
             android:name=".AddConsumer"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".AddProvider"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ConsultUser"
             android:exported="false"/>

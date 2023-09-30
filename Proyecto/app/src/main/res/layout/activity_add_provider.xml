@@ -10,17 +10,18 @@
 
     <!--    BOTON ATRAS-->
 
-
+    <!--   LOGO   -->
 
     <FrameLayout
-        android:id="@+id/buttonAtras"
+        android:id="@+id/backAPVD"
         android:layout_width="37dp"
         android:layout_height="36dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/elemento_esquina_redondeada"
         android:elevation="2dp"
         app:circularflow_radiusInDP="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -35,8 +36,6 @@
             app:tint="#FFFFFF" />
 
     </FrameLayout>
-
-    <!--   LOGO   -->
 
     <ImageView
         android:id="@+id/imageView2"
@@ -113,8 +112,84 @@
 
     <!--    SURNAME-->
 
+    <FrameLayout
+        android:layout_width="62dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="224dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="47dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/elemento_esquina_redondeada" />
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/profilewhite" />
+
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="210dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:hint="@string/editNombre"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gris"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.321" />
+
+    <FrameLayout
+        android:layout_width="61dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="276dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="47dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/elemento_esquina_redondeada" />
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/profilewhite" />
+    </FrameLayout>
 
     <!--    MAIL-->
+    <EditText
+        android:id="@+id/editSur"
+        android:layout_width="210dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:hint="@string/editApellido"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gris"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.391" />
+
     <FrameLayout
         android:layout_width="61dp"
         android:layout_height="41dp"
@@ -194,11 +269,7 @@
         app:layout_constraintVertical_bias="0.483" />
 
 
-
-
     <!--    CONTACT-->
-
-
 
     <FrameLayout
         android:layout_width="61dp"
@@ -241,6 +312,7 @@
 
 
     <!--    PHONE    -->
+
     <FrameLayout
         android:layout_width="61dp"
         android:layout_height="41dp"
@@ -280,10 +352,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.717" />
-
-
-
-
 
     <!--    DNI NUMBER-->
 
@@ -331,8 +399,6 @@
 
     <!--    SAVE BTN-->
 
-
-
     <Button
         android:id="@+id/buttonGuardarConsumidor"
         android:layout_width="343dp"
@@ -351,57 +417,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <FrameLayout
-        android:layout_width="59dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="228dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.357"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imageView13"
-            android:layout_width="47dp"
-            android:layout_height="match_parent"
-            app:srcCompat="@drawable/elemento_esquina_redondeada" />
-
-        <ImageView
-            android:id="@+id/imageView15"
-            android:layout_width="48dp"
-            android:layout_height="match_parent"
-            app:srcCompat="@drawable/profilewhite" />
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="59dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="276dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.357"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imageView14"
-            android:layout_width="47dp"
-            android:layout_height="match_parent"
-            app:srcCompat="@drawable/elemento_esquina_redondeada" />
-
-        <ImageView
-            android:id="@+id/imageView16"
-            android:layout_width="45dp"
-            android:layout_height="match_parent"
-            app:srcCompat="@drawable/profilewhite" />
-    </FrameLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="224dp"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="186dp"
-        tools:layout_editor_absoluteY="235dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
