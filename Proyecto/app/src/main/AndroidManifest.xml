@@ -13,6 +13,27 @@
         android:theme="@style/Theme.Lemone"
         tools:targetApi="31">
         <activity
+            android:name=".Contacto"
+            android:exported="false" />
+        <activity
+            android:name=".AcercaDe"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPassword"
+            android:exported="false"/>
+        <activity
+            android:name=".Consumidores_finales"
+            android:exported="true"/>
+        <activity
+            android:name=".Proveed"
+            android:exported="true"/>
+        <activity
+            android:name=".AddUser"
+            android:exported="false" />
+        <activity
+            android:name=".MainMenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".Login"
             android:exported="false" />
         <activity
@@ -24,6 +45,41 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AddConsumer"
+            android:exported="true" />
+        <activity
+            android:name=".AddProvider"
+            android:exported="true" />
+        <activity
+            android:name=".ConsultUser"
+            android:exported="false"/>
+        <activity
+            android:name=".AddProduct"
+            android:exported="false"/>
+        <activity
+            android:name="EdidUser"
+            android:exported="false"/>
+        <activity
+            android:name=".EditProduct"
+            android:exported="false"/>
+        <activity
+            android:name=".EliminarUsuario"
+            android:exported="false"/>
+        <activity
+            android:name=".FindProduct"
+            android:exported="false"/>
+        <activity
+            android:name=".RestClave"
+            android:exported="false"/>
+        <activity
+            android:name=".UserActivarDesactivar"
+            android:exported="false"/>
+        <activity
+            android:name=".VistaProducto"
+            android:exported="false">
+        </activity>
+
     </application>
 
 </manifest>
