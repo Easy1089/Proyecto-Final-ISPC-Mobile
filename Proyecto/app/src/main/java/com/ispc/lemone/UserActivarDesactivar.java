@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class UserActivarDesactivar extends AppCompatActivity {
 
-    Button btn_user;
+    Button btn_act_usuario;
     Button btn_cancel_user;
 
     @Override
@@ -26,13 +26,15 @@ public class UserActivarDesactivar extends AppCompatActivity {
             }
         });
 
-        btn_user = findViewById(R.id.act_desact_usuario);
-        btn_user.setOnClickListener(new View.OnClickListener() {
+        btn_act_usuario = findViewById(R.id.act_desact_usuario);
+        btn_act_usuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(UserActivarDesactivar.this, AddUser.class);
                 startActivity(intent);
             }
+
+
         });
     }
 }
