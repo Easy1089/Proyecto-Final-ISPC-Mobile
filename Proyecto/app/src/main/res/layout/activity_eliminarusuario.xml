@@ -8,7 +8,7 @@
     tools:context=".EliminarUsuario">
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/btn_cancelar"
         android:layout_width="345dp"
         android:layout_height="42dp"
         android:backgroundTint="#8C1C13"
@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.934" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_eliminar"
         android:layout_width="345dp"
         android:layout_height="42dp"
         android:backgroundTint="#8C1C13"
