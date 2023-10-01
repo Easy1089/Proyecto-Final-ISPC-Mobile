@@ -19,7 +19,7 @@ public class AddUser extends AppCompatActivity {
         botonAddUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddUser.this, Login.class);
+                Intent intent = new Intent(AddUser.this, ConsultUser.class);
                 startActivity(intent);
             }
         });

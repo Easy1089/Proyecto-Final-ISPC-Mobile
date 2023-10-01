@@ -72,7 +72,7 @@
                     android:layout_height="match_parent"
                     android:backgroundTint="@color/bordo"
                     android:text="Activar"
-                    android:textSize="10dp"/>
+                    android:textSize="10dp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -100,7 +100,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonGuardar2"
+        android:id="@+id/buttonAgregarUsuario"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
