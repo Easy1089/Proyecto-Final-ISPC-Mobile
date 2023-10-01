@@ -10,20 +10,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AddProvider extends AppCompatActivity {
 
+    private Button buttonGuardarConsumidor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_provider);
 
-         Button Save = findViewById(R.id.buttonGuardarConsumidor);
+        buttonGuardarConsumidor = findViewById(R.id.buttonGuardarConsumidor);
+
          FrameLayout onBack = findViewById(R.id.backAPVD);
-          Save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AddProvider.this, Proveed.class);
-                startActivity(intent);
-            }
-        });
+          buttonGuardarConsumidor.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+                  Intent intent = new Intent(AddProvider.this, Proveed.class);
+                  startActivity(intent);
+              }
+          });
+
           onBack.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
