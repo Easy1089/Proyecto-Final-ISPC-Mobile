@@ -24,4 +24,9 @@ public class AddUser extends AppCompatActivity {
             }
         });
     }
+
+    public void volver(View view) {
+        Intent intent = new Intent(this, MainMenuActivity.class);
+        startActivity(intent);
+    }
 }
