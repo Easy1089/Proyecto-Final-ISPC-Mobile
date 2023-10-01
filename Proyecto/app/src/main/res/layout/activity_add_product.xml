@@ -13,8 +13,8 @@
     <!--    LOGO-->
 
     <FrameLayout
-        android:id="@+id/buttonAtras"
-        android:layout_width="49dp"
+        android:id="@+id/btn_volverFP"
+        android:layout_width="48dp"
         android:layout_height="42dp"
         android:background="@drawable/elemento_esquina_redondeada"
         android:elevation="2dp"
@@ -65,21 +65,22 @@
 
     <!--    Agregar producto-->
 
+    <!--    campo CÓDIGO-->
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
-        android:text="@string/tituloAgregarProducto"
+        android:text="Edición de Productos"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintHorizontal_bias="0.411"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!--    campo CÓDIGO-->
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.296" />
 
     <EditText
         android:id="@+id/textCodigo"
@@ -103,11 +104,11 @@
         android:id="@+id/frameLayoutCodigo"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="232dp"
+        android:layout_marginTop="244dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
         app:layout_constraintEnd_toStartOf="@+id/textCodigo"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -140,11 +141,11 @@
         android:id="@+id/frameLayoutNombre"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
         app:layout_constraintEnd_toStartOf="@+id/textNombre"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayoutCodigo">
 
@@ -177,11 +178,11 @@
         android:id="@+id/frameDescripcion"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
         app:layout_constraintEnd_toStartOf="@+id/textDescripcion"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayoutNombre">
 
@@ -215,11 +216,11 @@
         android:id="@+id/frameInventario"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
         app:layout_constraintEnd_toStartOf="@+id/textInventario"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameDescripcion">
 
@@ -254,11 +255,11 @@
         android:id="@+id/framePrecioCosto"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
         app:layout_constraintEnd_toStartOf="@+id/textPrecioCosto"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameInventario">
 
@@ -289,11 +290,11 @@
         android:id="@+id/framePrecioVenta"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
         app:layout_constraintEnd_toStartOf="@+id/textPrecioVenta"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/framePrecioCosto">
 
@@ -323,11 +324,11 @@
         android:id="@+id/frameCategoria"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
         app:layout_constraintEnd_toStartOf="@+id/textCategoria"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/framePrecioVenta">
 
