@@ -72,7 +72,7 @@
                     android:layout_height="match_parent"
                     android:backgroundTint="@color/bordo"
                     android:text="Activar"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"/>
             </LinearLayout>
         </LinearLayout>
 
