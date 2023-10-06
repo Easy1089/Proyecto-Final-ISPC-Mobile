@@ -54,7 +54,7 @@
 
     <!--   Acerca De    -->
     <string name="msj_btn_regresar">Menu Principal</string>
-    <string name="msj_titulo">Lemone</string>
+    <string name="titulo">Lemone</string>
     <string name="msj_textoacercade">Sistema de Gestion de Stock para Vinotecas, permite al usuario realizar control de Stock de sus mercaderias ahora en version movil</string>
     <!--  -->
 
@@ -75,6 +75,7 @@
 
     <!--   Activar/Desactivar Producto    -->
     <string name="act_desact_prod">¿Está seguro de que desea desactivar / activar el producto?</string>
+    <string name="editar_usuario">Editar usuario</string>
 
 
 </resources>

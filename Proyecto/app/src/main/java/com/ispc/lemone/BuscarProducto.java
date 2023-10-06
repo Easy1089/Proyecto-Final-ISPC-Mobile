@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-public class FindProduct extends AppCompatActivity {
+public class BuscarProducto extends AppCompatActivity {
 
     private FrameLayout btnVolver;
     private TextView editar;
@@ -19,7 +19,7 @@ public class FindProduct extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_find_product);
+        setContentView(R.layout.activity_buscar_producto);
 
         btnVolver = findViewById(R.id.btn_volverFP);
         editar = findViewById(R.id.editarFP);
@@ -28,7 +28,7 @@ public class FindProduct extends AppCompatActivity {
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FindProduct.this, MainMenuActivity.class);
+                Intent intent = new Intent(BuscarProducto.this, MenuPrincipal.class);
                 startActivity(intent);
             }
         });
@@ -36,7 +36,7 @@ public class FindProduct extends AppCompatActivity {
         editar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FindProduct.this, EditProduct.class);
+                Intent intent = new Intent(BuscarProducto.this, EditarProducto.class);
                 startActivity(intent);
             }
         });
@@ -44,7 +44,7 @@ public class FindProduct extends AppCompatActivity {
         activar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FindProduct.this, ProductActivarDesactivar.class);
+                Intent intent = new Intent(BuscarProducto.this, ActivarDesactivarProducto.class);
                 startActivity(intent);
             }
         });
@@ -52,7 +52,7 @@ public class FindProduct extends AppCompatActivity {
         agregarProducto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FindProduct.this, AddProduct.class);
+                Intent intent = new Intent(BuscarProducto.this, AgregarProducto.class);
                 startActivity(intent);
             }
         });

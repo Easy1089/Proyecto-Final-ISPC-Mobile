@@ -5,50 +5,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/crema"
-    tools:context=".AddConsumer">
-
-
-    <!--    BOTON ATRAS-->
+    tools:context=".AgregarProveedor">
 
     <FrameLayout
-        android:id="@+id/backACNS"
-        android:layout_width="37dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="16dp"
+        android:id="@+id/btnAtras"
+        android:layout_width="49dp"
+        android:layout_height="42dp"
         android:background="@drawable/elemento_esquina_redondeada"
         android:elevation="2dp"
         app:circularflow_radiusInDP="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023">
 
         <ImageView
-            android:id="@+id/imageViewAtras"
+            android:id="@+id/ivAtras"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
+            android:onClick="volver"
             android:src="@drawable/back_arrow_white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="#FFFFFF" />
-
+            app:tint="#FFFFFF" />/>
     </FrameLayout>
-
-    <!--   LOGO   -->
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="104dp"
-        android:layout_height="145dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon_lemone" />
 
 
     <!--    H1   -->
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="104dp"
+        android:layout_height="145dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.273"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_lemone" />
 
     <TextView
         android:id="@+id/textView2"
@@ -60,7 +56,7 @@
         android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.595"
+        app:layout_constraintHorizontal_bias="0.679"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -82,20 +78,20 @@
 
     <!--    H3-->
 
-    <!--    GIRL PICTURE-->
     <TextView
         android:id="@+id/titleProviders"
-        android:layout_width="260dp"
+        android:layout_width="145dp"
         android:layout_height="44dp"
-        android:layout_marginTop="168dp"
-        android:text="@string/tituloConsumidor"
+        android:layout_marginTop="164dp"
+        android:text="@string/tituloProveedores"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.635"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--    GIRL PICTURE-->
     <ImageView
         android:id="@+id/imageGirl"
         android:layout_width="98dp"
@@ -200,13 +196,13 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/imageView28"
+            android:id="@+id/imageView36"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/elemento_esquina_redondeada" />
 
         <ImageView
-            android:id="@+id/imageView39"
+            android:id="@+id/imageView32"
             android:layout_width="56dp"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/profilewhite" />
@@ -281,7 +277,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/imageView26"
+            android:id="@+id/imageView29"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/elemento_esquina_redondeada" />
@@ -323,7 +319,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/imageView26"
+            android:id="@+id/imageView31"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/elemento_esquina_redondeada" />
@@ -365,7 +361,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/imageView26"
+            android:id="@+id/imageView28"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/elemento_esquina_redondeada" />

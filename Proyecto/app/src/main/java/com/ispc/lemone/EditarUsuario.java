@@ -6,32 +6,32 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
 
-public class EdidUser extends AppCompatActivity {
+public class EditarUsuario extends AppCompatActivity {
 
     private Button buttonGuardar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edid_user);
+        setContentView(R.layout.activity_editar_usuario);
 
-    buttonGuardar = findViewById(R.id.buttonGuardar);
+    buttonGuardar = findViewById(R.id.btnGuardar);
 
     buttonGuardar.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(EdidUser.this, ConsultUser.class);
+            Intent intent = new Intent(EditarUsuario.this, BuscarUsuario.class);
             startActivity(intent);
         }
     });
 
 
+
     }
 
     public void volver(View view) {
-        Intent intent = new Intent(this, ConsultUser.class);
+        Intent intent = new Intent(this, BuscarUsuario.class);
         startActivity(intent);
     }
 }

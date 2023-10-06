@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProductActivarDesactivar">
+    android:background="@color/crema"
+    tools:context=".ActivarDesactivarProducto">
 
     <ImageView
         android:id="@+id/imageView"
@@ -47,7 +48,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/act_desact_usuario"
         android:layout_width="345dp"
         android:layout_height="48dp"
         android:layout_marginTop="508dp"
@@ -72,6 +73,6 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/act_desact_usuario" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
