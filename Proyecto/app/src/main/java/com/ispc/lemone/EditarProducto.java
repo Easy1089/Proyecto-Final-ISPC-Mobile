@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-public class EditProduct extends AppCompatActivity {
+public class EditarProducto extends AppCompatActivity {
 
     private FrameLayout btnVolver;
     private Button buttonGuardarEP;
@@ -16,13 +16,13 @@ public class EditProduct extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_product);
+        setContentView(R.layout.activity_editar_producto);
 
         btnVolver = findViewById(R.id.btn_volverEP);
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EditProduct.this, FindProduct.class);
+                Intent intent = new Intent(EditarProducto.this, BuscarProducto.class);
                 startActivity(intent);
             }
         });
@@ -31,7 +31,7 @@ public class EditProduct extends AppCompatActivity {
         buttonGuardarEP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent inten = new Intent(EditProduct.this, FindProduct.class);
+                Intent inten = new Intent(EditarProducto.this, BuscarProducto.class);
             }
         });
     }

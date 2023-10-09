@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-public class Proveed extends AppCompatActivity {
+public class Proveedor extends AppCompatActivity {
 
     Button btnModificarA;
     Button btnEliminarA;
@@ -30,7 +30,7 @@ public class Proveed extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_proveed);
+        setContentView(R.layout.activity_proveedor);
 
 //primer modulo
 
@@ -38,7 +38,7 @@ public class Proveed extends AppCompatActivity {
         btnModificarA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Proveed.this, AddProvider.class);
+                Intent intent = new Intent(Proveedor.this, AgregarProveedor.class);
                 startActivity(intent);
             }
         });
@@ -47,7 +47,7 @@ public class Proveed extends AppCompatActivity {
         btnEliminarA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Proveed.this, EliminarUsuario.class);
+                Intent intent = new Intent (Proveedor.this, EliminarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -56,7 +56,7 @@ public class Proveed extends AppCompatActivity {
         btnActivarA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Proveed.this, UserActivarDesactivar.class);
+                Intent intent = new Intent (Proveedor.this, ActivarDesactivarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -67,7 +67,7 @@ public class Proveed extends AppCompatActivity {
         btnModificarB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Proveed.this, AddProvider.class);
+                Intent intent = new Intent(Proveedor.this, AgregarProveedor.class);
                 startActivity(intent);
             }
         });
@@ -76,7 +76,7 @@ public class Proveed extends AppCompatActivity {
         btnEliminarB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Proveed.this, EliminarUsuario.class);
+                Intent intent = new Intent (Proveedor.this, EliminarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -85,7 +85,7 @@ public class Proveed extends AppCompatActivity {
         btnActivarB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Proveed.this, UserActivarDesactivar.class);
+                Intent intent = new Intent (Proveedor.this, ActivarDesactivarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -96,7 +96,7 @@ public class Proveed extends AppCompatActivity {
         btnModificarC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Proveed.this, AddProvider.class);
+                Intent intent = new Intent(Proveedor.this, AgregarProveedor.class);
                 startActivity(intent);
             }
         });
@@ -105,7 +105,7 @@ public class Proveed extends AppCompatActivity {
         btnEliminarC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Proveed.this, EliminarUsuario.class);
+                Intent intent = new Intent (Proveedor.this, EliminarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -114,7 +114,7 @@ public class Proveed extends AppCompatActivity {
         btnActivarC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Proveed.this, UserActivarDesactivar.class);
+                Intent intent = new Intent (Proveedor.this, ActivarDesactivarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -124,7 +124,7 @@ public class Proveed extends AppCompatActivity {
         btnModificarD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Proveed.this, AddProvider.class);
+                Intent intent = new Intent(Proveedor.this, AgregarProveedor.class);
                 startActivity(intent);
             }
         });
@@ -133,7 +133,7 @@ public class Proveed extends AppCompatActivity {
         btnEliminarD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Proveed.this, EliminarUsuario.class);
+                Intent intent = new Intent (Proveedor.this, EliminarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -142,7 +142,7 @@ public class Proveed extends AppCompatActivity {
         btnActivarD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Proveed.this, UserActivarDesactivar.class);
+                Intent intent = new Intent (Proveedor.this, ActivarDesactivarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -153,7 +153,7 @@ public class Proveed extends AppCompatActivity {
         btnBuscarP.setOnClickListener(new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Proveed.this, AddProvider.class);
+                Intent intent = new Intent (Proveedor.this, AgregarProveedor.class);
                 startActivity(intent);
             }
         });
@@ -163,7 +163,7 @@ public class Proveed extends AppCompatActivity {
         btnAtrasP.setOnClickListener(new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Proveed.this, MainMenuActivity.class);
+                Intent intent = new Intent (Proveedor.this, MenuPrincipal.class);
                 startActivity(intent);
             }
         });

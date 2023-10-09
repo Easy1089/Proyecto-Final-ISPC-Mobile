@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/crema"
-    tools:context=".EdidUser">
+    tools:context=".EditarUsuario">
 
     <FrameLayout
-        android:id="@+id/buttonAtras"
+        android:id="@+id/btnAtras"
         android:layout_width="49dp"
         android:layout_height="42dp"
         android:background="@drawable/elemento_esquina_redondeada"
@@ -22,22 +22,22 @@
         app:layout_constraintVertical_bias="0.023">
 
         <ImageView
-            android:id="@+id/imageViewAtras"
+            android:id="@+id/ivAtras"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
+            android:onClick="volver"
             android:src="@drawable/back_arrow_white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="#FFFFFF"
-            android:onClick="volver"/>/>
+            app:tint="#FFFFFF" />/>
     </FrameLayout>
 
     <Button
-        android:id="@+id/buttonGuardar"
+        android:id="@+id/btnGuardar"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="4dp"
         android:backgroundTint="@color/bordo"
         android:insetTop="10dp"
         android:insetBottom="10dp"
@@ -49,11 +49,30 @@
         app:iconPadding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.59"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <FrameLayout
+        android:id="@+id/frameLayoutPassActual"
+        android:layout_width="49dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="236dp"
+        android:background="@drawable/elemento_esquina_redondeada"
+        app:circularflow_radiusInDP="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivPass"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/profile" />
+    </FrameLayout>
+
     <EditText
-        android:id="@+id/textNroDocumento"
+        android:id="@+id/etNroDocumento"
         android:layout_width="304dp"
         android:layout_height="43dp"
         android:ems="10"
@@ -63,14 +82,25 @@
         android:textColorHint="@color/gris"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.691"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.668"
+        app:layout_constraintHorizontal_bias="0.264"
+        app:layout_constraintStart_toEndOf="@+id/frameLayoutNroDocumento"
+        app:layout_constraintTop_toBottomOf="@+id/etApellido"
+        app:layout_constraintVertical_bias="0.074"
         tools:ignore="MissingConstraints" />
 
+    <ImageView
+        android:id="@+id/ivImagenUsuario"
+        android:layout_width="78dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="148dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user" />
+
     <EditText
-        android:id="@+id/textTelefono"
+        android:id="@+id/etTelefono"
         android:layout_width="298dp"
         android:layout_height="43dp"
         android:ems="10"
@@ -80,45 +110,25 @@
         android:textColorHint="@color/gris"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.654"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.825"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/textDatosContacto"
-        android:layout_width="298dp"
-        android:layout_height="43dp"
-        android:ems="10"
-        android:hint="Datos de contacto"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gris"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.654"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75"
+        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintStart_toEndOf="@+id/frameLayoutTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/etDatosContacto"
+        app:layout_constraintVertical_bias="0.16"
         tools:ignore="MissingConstraints" />
 
     <FrameLayout
-        android:id="@+id/frameLayoutDatosContacto"
+        android:id="@+id/frameLayoutNroDocumento"
         android:layout_width="49dp"
         android:layout_height="42dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textDatosContacto"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.748">
+        app:layout_constraintTop_toBottomOf="@+id/frameLayoutApellido">
 
         <ImageView
-            android:id="@+id/imageDatosContacto"
+            android:id="@+id/ivNroDocumento"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
@@ -132,78 +142,13 @@
         android:layout_marginStart="24dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textTelefono"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBottom_toTopOf="@+id/btnGuardar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.824">
+        app:layout_constraintTop_toBottomOf="@+id/frameLayoutDatosContacto"
+        app:layout_constraintVertical_bias="0.29">
 
         <ImageView
-            android:id="@+id/imageTelefono"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_gravity="center"
-            android:src="@drawable/profile" />
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/frameLayoutNroDocumento"
-        android:layout_width="49dp"
-        android:layout_height="42dp"
-        android:background="@drawable/elemento_esquina_redondeada"
-        app:circularflow_radiusInDP="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textNroDocumento"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.669">
-
-        <ImageView
-            android:id="@+id/imageNroDocumento"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_gravity="center"
-            android:src="@drawable/profile" />
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/frameLayoutApellido"
-        android:layout_width="49dp"
-        android:layout_height="42dp"
-        android:background="@drawable/elemento_esquina_redondeada"
-        app:circularflow_radiusInDP="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textApellido"
-        app:layout_constraintHorizontal_bias="0.991"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.576">
-
-        <ImageView
-            android:id="@+id/imageApellido"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_gravity="center"
-            android:src="@drawable/profile" />
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/frameLayoutNombre"
-        android:layout_width="49dp"
-        android:layout_height="42dp"
-        android:background="@drawable/elemento_esquina_redondeada"
-        app:circularflow_radiusInDP="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textNombre"
-        app:layout_constraintHorizontal_bias="0.982"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.492">
-
-        <ImageView
-            android:id="@+id/imageNombre"
+            android:id="@+id/ivTelefono"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
@@ -211,24 +156,39 @@
     </FrameLayout>
 
     <EditText
-        android:id="@+id/textNombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/etPassActual"
+        android:layout_width="298dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="236dp"
         android:ems="10"
-        android:hint="Nombre"
+        android:hint="Clave actual"
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/gris"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.81"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintStart_toEndOf="@+id/frameLayoutPassActual"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.494"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/textApellido"
+        android:id="@+id/etConfirmarPass"
+        android:layout_width="298dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Confirmar clave"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gris"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintStart_toEndOf="@+id/frameLayoutConfirmarPass"
+        app:layout_constraintTop_toBottomOf="@+id/etPassActual"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/etApellido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -238,82 +198,119 @@
         android:textColorHint="@color/gris"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.805"
+        app:layout_constraintHorizontal_bias="0.407"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.578"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/textConfirmarPass"
-        android:layout_width="298dp"
-        android:layout_height="43dp"
-        android:ems="10"
-        android:hint="Confirmar clave"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gris"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.663"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.43"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/textPassActual"
-        android:layout_width="298dp"
-        android:layout_height="43dp"
-        android:ems="10"
-        android:hint="Clave actual"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gris"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.663"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354"
+        app:layout_constraintTop_toBottomOf="@+id/etNombre"
+        app:layout_constraintVertical_bias="0.059"
         tools:ignore="MissingConstraints" />
 
     <FrameLayout
-        android:id="@+id/frameLayoutConfirmarPass"
+        android:id="@+id/frameLayoutNombre"
         android:layout_width="49dp"
         android:layout_height="42dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textConfirmarPass"
-        app:layout_constraintHorizontal_bias="0.961"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.429">
+        app:layout_constraintTop_toBottomOf="@+id/frameLayoutConfirmarPass">
 
         <ImageView
-            android:id="@+id/imageConfirmarPass"
-            android:layout_width="20dp"
+            android:id="@+id/ivNombre"
+            android:layout_width="34dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
             android:src="@drawable/profile" />
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/frameLayoutPassActual"
+        android:id="@+id/frameLayoutApellido"
         android:layout_width="49dp"
         android:layout_height="42dp"
+        android:layout_marginStart="24dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textPassActual"
-        app:layout_constraintHorizontal_bias="0.961"
+        app:layout_constraintEnd_toStartOf="@+id/etApellido"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354">
+        app:layout_constraintTop_toBottomOf="@+id/frameLayoutNombre"
+        app:layout_constraintVertical_bias="0.075">
 
         <ImageView
-            android:id="@+id/imagePass"
+            android:id="@+id/ivApellido"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/profile" />
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gris"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toEndOf="@+id/frameLayoutNombre"
+        app:layout_constraintTop_toBottomOf="@+id/etConfirmarPass"
+        tools:ignore="MissingConstraints" />
+
+    <FrameLayout
+        android:id="@+id/frameLayoutConfirmarPass"
+        android:layout_width="49dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/elemento_esquina_redondeada"
+        app:circularflow_radiusInDP="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayoutPassActual">
+
+        <ImageView
+            android:id="@+id/ivConfirmarPass"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/profile" />
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/etDatosContacto"
+        android:layout_width="298dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Datos de contacto"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gris"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNroDocumento"
+        tools:ignore="MissingConstraints" />
+
+    <FrameLayout
+        android:id="@+id/frameLayoutDatosContacto"
+        android:layout_width="49dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/elemento_esquina_redondeada"
+        app:circularflow_radiusInDP="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/etDatosContacto"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayoutNroDocumento">
+
+        <ImageView
+            android:id="@+id/ivNroDocumento2"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
@@ -321,7 +318,7 @@
     </FrameLayout>
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/tvTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -335,7 +332,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/ivLogo"
         android:layout_width="109dp"
         android:layout_height="160dp"
         android:layout_marginTop="48dp"
@@ -346,11 +343,11 @@
         app:srcCompat="@drawable/icon_lemone" />
 
     <TextView
-        android:id="@+id/textTitulo"
+        android:id="@+id/tvTituloEditar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="184dp"
-        android:text="Editar usuario"
+        android:text="@string/editar_usuario"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -359,15 +356,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="87dp"
-        android:layout_height="98dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548"
-        app:srcCompat="@drawable/user" />
 </androidx.constraintlayout.widget.ConstraintLayout>

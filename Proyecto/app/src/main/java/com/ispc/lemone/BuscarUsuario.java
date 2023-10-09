@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class ConsultUser extends AppCompatActivity {
+public class BuscarUsuario extends AppCompatActivity {
 
     private Button buttonModificar;
     private Button buttonEliminar3;
@@ -19,7 +19,7 @@ public class ConsultUser extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_consult_user);
+        setContentView(R.layout.activity_buscar_usuario);
 
         buttonModificar = findViewById(R.id.buttonModificar3);
         buttonEliminar3 = findViewById(R.id.buttonEliminar3);
@@ -30,7 +30,7 @@ public class ConsultUser extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d("Botón Modificar usuario", "Clic en el botón modificar usuario");
-                Intent intent = new Intent(ConsultUser.this, EdidUser.class);
+                Intent intent = new Intent(BuscarUsuario.this, EditarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -39,7 +39,7 @@ public class ConsultUser extends AppCompatActivity {
         buttonEliminar3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ConsultUser.this, EliminarUsuario.class);
+                Intent intent = new Intent(BuscarUsuario.this, EliminarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -47,7 +47,7 @@ public class ConsultUser extends AppCompatActivity {
         buttonActivar3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ConsultUser.this, UserActivarDesactivar.class);
+                Intent intent = new Intent(BuscarUsuario.this, ActivarDesactivarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -55,7 +55,7 @@ public class ConsultUser extends AppCompatActivity {
         buttonAgregarUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ConsultUser.this, AddUser.class);
+                Intent intent = new Intent(BuscarUsuario.this, AgregarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -63,7 +63,7 @@ public class ConsultUser extends AppCompatActivity {
     }
 
     public void volver(View view) {
-        Intent intent = new Intent(this, MainMenuActivity.class);
+        Intent intent = new Intent(this, MenuPrincipal.class);
         startActivity(intent);
     }
 

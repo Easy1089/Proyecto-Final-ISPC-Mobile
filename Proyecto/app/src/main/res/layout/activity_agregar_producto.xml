@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/crema"
-    tools:context=".AddProduct">
+    tools:context=".AgregarProducto">
 
     <!--    ATRAS-->
 
@@ -65,11 +65,13 @@
 
     <!--    Agregar producto-->
 
+    <!--    campo CÓDIGO-->
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="184dp"
         android:text="@string/tituloAgregarProducto"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -78,8 +80,6 @@
         app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <!--    campo CÓDIGO-->
 
     <EditText
         android:id="@+id/textCodigo"
@@ -103,7 +103,7 @@
         android:id="@+id/frameLayoutCodigo"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="232dp"
+        android:layout_marginTop="216dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
         app:layout_constraintEnd_toStartOf="@+id/textCodigo"
@@ -314,10 +314,12 @@
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/gris"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonGuardarAddProduct"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPrecioVenta" />
+        app:layout_constraintTop_toBottomOf="@+id/textPrecioVenta"
+        app:layout_constraintVertical_bias="0.0" />
 
     <FrameLayout
         android:id="@+id/frameCategoria"
@@ -342,7 +344,7 @@
         android:id="@+id/buttonGuardarAddProduct"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="4dp"
         android:backgroundTint="@color/bordo"
         android:insetTop="10dp"
         android:insetBottom="10dp"

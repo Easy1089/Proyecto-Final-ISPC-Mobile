@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class UserActivarDesactivar extends AppCompatActivity {
+public class ActivarDesactivarUsuario extends AppCompatActivity {
 
     Button btn_act_usuario;
     Button btn_cancel_user;
@@ -15,14 +15,15 @@ public class UserActivarDesactivar extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_estadousuario);
+        setContentView(R.layout.activity_activar_desactivar_usuario);
 
         btn_cancel_user=findViewById(R.id.btn_cancelar_user);
 
         btn_cancel_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(UserActivarDesactivar.this, ConsultUser.class);
+                Intent intent = new Intent(ActivarDesactivarUsuario.this, BuscarUsuario.class);
+                startActivity(intent);
             }
         });
 
@@ -30,7 +31,7 @@ public class UserActivarDesactivar extends AppCompatActivity {
         btn_act_usuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(UserActivarDesactivar.this, AddUser.class);
+                Intent intent = new Intent(ActivarDesactivarUsuario.this, AgregarUsuario.class);
                 startActivity(intent);
             }
 

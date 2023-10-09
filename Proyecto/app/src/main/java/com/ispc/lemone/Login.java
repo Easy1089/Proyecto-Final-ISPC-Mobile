@@ -47,7 +47,7 @@ public class Login extends AppCompatActivity {
         olvideMiPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Login.this, ResetPassword.class);
+                Intent intent = new Intent(Login.this, RecuperarContrasenia.class);
                 startActivity(intent);
             }
         });
@@ -70,10 +70,10 @@ public class Login extends AppCompatActivity {
         String password = passwordIngresado.getText().toString();
 
         if (usuario.equals("usuario") && password.equals("123")){
-            Intent intent = new Intent(Login.this, MainMenuActivity.class);
+            Intent intent = new Intent(Login.this, MenuPrincipal.class);
             startActivity(intent);
         } else if(usuario.equals("admin") && password.equals("123")){
-            Intent intent = new Intent(Login.this, MainMenuActivity.class);
+            Intent intent = new Intent(Login.this, MenuPrincipal.class);
             startActivity(intent);
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
