@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainMenuActivity extends AppCompatActivity {
+public class MenuPrincipal extends AppCompatActivity {
 
     private Button buttonUsuarios;
     private Button buttonProveedores;
@@ -21,7 +21,7 @@ public class MainMenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_menu);
+        setContentView(R.layout.activity_menu_principal);
 
         buttonUsuarios = findViewById(R.id.buttonUsuarios);
         buttonProveedores = findViewById(R.id.buttonProveedores);;
@@ -35,7 +35,7 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d("Botón Usuarios", "Clic en el botón Usuarios");
-                Intent intent = new Intent(MainMenuActivity.this, ConsultUser.class);
+                Intent intent = new Intent(MenuPrincipal.this, BuscarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -44,7 +44,7 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d("Botón Proovedores", "Clic en el botón Proveedores");
-                Intent intent = new Intent(MainMenuActivity.this, AddProvider.class);
+                Intent intent = new Intent(MenuPrincipal.this, AgregarProveedor.class);
                 startActivity(intent);
             }
         });
@@ -53,7 +53,7 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d("Botón Consumidores", "Clic en el botón Consumidores");
-                Intent intent = new Intent(MainMenuActivity.this, Consumidores_finales.class);
+                Intent intent = new Intent(MenuPrincipal.this, ConsumidoresFinales.class);
                 startActivity(intent);
             }
         });
@@ -62,7 +62,7 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d("Botón Productos", "Clic en el botón Productos");
-                Intent intent = new Intent(MainMenuActivity.this, FindProduct.class);
+                Intent intent = new Intent(MenuPrincipal.this, BuscarProducto.class);
                 startActivity(intent);
             }
         });
@@ -72,7 +72,7 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d("Botón Salir", "Clic en el botón Salir");
-                Intent intent = new Intent(MainMenuActivity.this, Login.class);
+                Intent intent = new Intent(MenuPrincipal.this, Login.class);
                 startActivity(intent);
             }
         });

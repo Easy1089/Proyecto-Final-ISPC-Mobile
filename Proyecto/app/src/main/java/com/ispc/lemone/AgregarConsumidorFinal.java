@@ -4,30 +4,29 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class AddConsumer extends AppCompatActivity {
+public class AgregarConsumidorFinal extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_final_consumer);
+        setContentView(R.layout.activity_agregar_consumidor_final);
 
         Button Save = findViewById(R.id.buttonGuardarConsumidor);
         FrameLayout onBack = findViewById(R.id.backACNS);
         Save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddConsumer.this, Consumidores_finales.class);
+                Intent intent = new Intent(AgregarConsumidorFinal.this, ConsumidoresFinales.class);
                 startActivity(intent);
             }
         });
         onBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddConsumer.this, Consumidores_finales.class);
+                Intent intent = new Intent(AgregarConsumidorFinal.this, ConsumidoresFinales.class);
                 startActivity(intent);
             }
         });

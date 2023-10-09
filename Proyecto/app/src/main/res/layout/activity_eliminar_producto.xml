@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="#D8C99B"
     android:layout_height="match_parent"
-    tools:context=".VistaProducto">
+    tools:context=".EliminarProducto">
 
 
     <Button

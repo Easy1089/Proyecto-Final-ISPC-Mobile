@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Lemone"
         tools:targetApi="31">
         <activity
-            android:name=".ProductActivarDesactivar"
+            android:name=".ActivarDesactivarProducto"
             android:exported="false" />
         <activity
             android:name=".Contacto"
@@ -22,19 +22,19 @@
             android:name=".AcercaDe"
             android:exported="false" />
         <activity
-            android:name=".ResetPassword"
+            android:name=".RecuperarContrasenia"
             android:exported="false" />
         <activity
-            android:name=".Consumidores_finales"
+            android:name=".ConsumidoresFinales"
             android:exported="true" />
         <activity
-            android:name=".Proveed"
+            android:name=".Proveedor"
             android:exported="true" />
         <activity
-            android:name=".AddUser"
+            android:name=".AgregarUsuario"
             android:exported="false" />
         <activity
-            android:name=".MainMenuActivity"
+            android:name=".MenuPrincipal"
             android:exported="false" />
         <activity
             android:name=".Login"
@@ -49,37 +49,37 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddConsumer"
+            android:name=".AgregarConsumidorFinal"
             android:exported="true" />
         <activity
-            android:name=".AddProvider"
+            android:name=".AgregarProveedor"
             android:exported="true" />
         <activity
-            android:name=".ConsultUser"
+            android:name=".BuscarUsuario"
             android:exported="false" />
         <activity
-            android:name=".AddProduct"
+            android:name=".AgregarProducto"
             android:exported="false" />
         <activity
-            android:name=".EdidUser"
+            android:name=".EditarUsuario"
             android:exported="false" />
         <activity
-            android:name=".EditProduct"
+            android:name=".EditarProducto"
             android:exported="false" />
         <activity
             android:name=".EliminarUsuario"
             android:exported="false" />
         <activity
-            android:name=".FindProduct"
+            android:name=".BuscarProducto"
             android:exported="false" />
         <activity
-            android:name=".RestClave"
+            android:name=".RestablecerClave"
             android:exported="false" />
         <activity
-            android:name=".UserActivarDesactivar"
+            android:name=".ActivarDesactivarUsuario"
             android:exported="false" />
         <activity
-            android:name=".VistaProducto"
+            android:name=".EliminarProducto"
             android:exported="false"></activity>
     </application>
 

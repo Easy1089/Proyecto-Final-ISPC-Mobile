@@ -12,7 +12,7 @@ public class EliminarUsuario extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eliminarusuario);
+        setContentView(R.layout.activity_eliminar_usuario);
 
         Button botonEliminar = findViewById(R.id.btn_eliminar);
         Button botonCancelar = findViewById(R.id.btn_cancelar);
@@ -20,7 +20,7 @@ public class EliminarUsuario extends AppCompatActivity {
         botonEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EliminarUsuario.this, ConsultUser.class);
+                Intent intent = new Intent(EliminarUsuario.this, BuscarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -28,7 +28,7 @@ public class EliminarUsuario extends AppCompatActivity {
         botonCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EliminarUsuario.this, ConsultUser.class);
+                Intent intent = new Intent(EliminarUsuario.this, BuscarUsuario.class);
                 startActivity(intent);
             }
         });

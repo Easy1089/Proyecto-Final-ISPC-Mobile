@@ -7,20 +7,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class RestClave extends AppCompatActivity {
+public class RestablecerClave extends AppCompatActivity {
 
     Button btn_menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_restablecerclave);
+        setContentView(R.layout.activity_restablecer_contrasenia);
 
         btn_menu = findViewById(R.id.menuprincipal);
         btn_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(RestClave.this, MainMenuActivity.class);
+                Intent intent = new Intent(RestablecerClave.this, MenuPrincipal.class);
                 startActivity(intent);
             }
         });

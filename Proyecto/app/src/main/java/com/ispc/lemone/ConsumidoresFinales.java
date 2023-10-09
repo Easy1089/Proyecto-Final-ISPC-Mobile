@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-public class Consumidores_finales extends AppCompatActivity {
+public class ConsumidoresFinales extends AppCompatActivity {
 
     Button btnModificarA;
     Button btnEliminarA;
@@ -37,7 +37,7 @@ public class Consumidores_finales extends AppCompatActivity {
         btnModificarA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Consumidores_finales.this, EdidUser.class);
+                Intent intent = new Intent(ConsumidoresFinales.this, EditarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -46,7 +46,7 @@ public class Consumidores_finales extends AppCompatActivity {
         btnEliminarA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Consumidores_finales.this, EliminarUsuario.class);
+                Intent intent = new Intent (ConsumidoresFinales.this, EliminarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -55,7 +55,7 @@ public class Consumidores_finales extends AppCompatActivity {
         btnActivarA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Consumidores_finales.this, UserActivarDesactivar.class);
+                Intent intent = new Intent (ConsumidoresFinales.this, ActivarDesactivarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -66,7 +66,7 @@ public class Consumidores_finales extends AppCompatActivity {
         btnModificarB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Consumidores_finales.this, EdidUser.class);
+                Intent intent = new Intent(ConsumidoresFinales.this, EditarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -75,7 +75,7 @@ public class Consumidores_finales extends AppCompatActivity {
         btnEliminarB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Consumidores_finales.this, EliminarUsuario.class);
+                Intent intent = new Intent (ConsumidoresFinales.this, EliminarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -84,7 +84,7 @@ public class Consumidores_finales extends AppCompatActivity {
         btnActivarB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Consumidores_finales.this, UserActivarDesactivar.class);
+                Intent intent = new Intent (ConsumidoresFinales.this, ActivarDesactivarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -95,7 +95,7 @@ public class Consumidores_finales extends AppCompatActivity {
         btnModificarC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Consumidores_finales.this, EdidUser.class);
+                Intent intent = new Intent(ConsumidoresFinales.this, EditarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -104,7 +104,7 @@ public class Consumidores_finales extends AppCompatActivity {
         btnEliminarC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Consumidores_finales.this, EliminarUsuario.class);
+                Intent intent = new Intent (ConsumidoresFinales.this, EliminarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -113,7 +113,7 @@ public class Consumidores_finales extends AppCompatActivity {
         btnActivarC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Consumidores_finales.this, UserActivarDesactivar.class);
+                Intent intent = new Intent (ConsumidoresFinales.this, ActivarDesactivarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -123,7 +123,7 @@ public class Consumidores_finales extends AppCompatActivity {
         btnModificarD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Consumidores_finales.this, EdidUser.class);
+                Intent intent = new Intent(ConsumidoresFinales.this, EditarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -132,7 +132,7 @@ public class Consumidores_finales extends AppCompatActivity {
         btnEliminarD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Consumidores_finales.this, EliminarUsuario.class);
+                Intent intent = new Intent (ConsumidoresFinales.this, EliminarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -141,7 +141,7 @@ public class Consumidores_finales extends AppCompatActivity {
         btnActivarD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Consumidores_finales.this, UserActivarDesactivar.class);
+                Intent intent = new Intent (ConsumidoresFinales.this, ActivarDesactivarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -152,7 +152,7 @@ public class Consumidores_finales extends AppCompatActivity {
         btnBuscarC.setOnClickListener(new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Consumidores_finales.this, AddConsumer.class);
+                Intent intent = new Intent (ConsumidoresFinales.this, AgregarConsumidorFinal.class);
                 startActivity(intent);
             }
         });
@@ -162,7 +162,7 @@ public class Consumidores_finales extends AppCompatActivity {
         btnAtrasC.setOnClickListener(new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (Consumidores_finales.this, MainMenuActivity.class);
+                Intent intent = new Intent (ConsumidoresFinales.this, MenuPrincipal.class);
                 startActivity(intent);
             }
         });

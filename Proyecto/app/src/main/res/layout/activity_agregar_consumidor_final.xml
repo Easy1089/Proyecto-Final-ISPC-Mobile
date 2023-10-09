@@ -5,15 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/crema"
-    tools:context=".AddProvider">
+    tools:context=".AgregarConsumidorFinal">
 
 
     <!--    BOTON ATRAS-->
 
-    <!--   LOGO   -->
-
     <FrameLayout
-        android:id="@+id/backAPVD"
+        android:id="@+id/backACNS"
         android:layout_width="37dp"
         android:layout_height="36dp"
         android:layout_marginTop="16dp"
@@ -36,6 +34,8 @@
             app:tint="#FFFFFF" />
 
     </FrameLayout>
+
+    <!--   LOGO   -->
 
     <ImageView
         android:id="@+id/imageView2"
@@ -82,20 +82,20 @@
 
     <!--    H3-->
 
+    <!--    GIRL PICTURE-->
     <TextView
         android:id="@+id/titleProviders"
-        android:layout_width="145dp"
+        android:layout_width="260dp"
         android:layout_height="44dp"
-        android:layout_marginTop="164dp"
-        android:text="@string/tituloProveedores"
+        android:layout_marginTop="168dp"
+        android:text="@string/tituloConsumidor"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.635"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--    GIRL PICTURE-->
     <ImageView
         android:id="@+id/imageGirl"
         android:layout_width="98dp"
@@ -200,13 +200,13 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/imageView26"
+            android:id="@+id/imageView28"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/elemento_esquina_redondeada" />
 
         <ImageView
-            android:id="@+id/imageView32"
+            android:id="@+id/imageView39"
             android:layout_width="56dp"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/profilewhite" />

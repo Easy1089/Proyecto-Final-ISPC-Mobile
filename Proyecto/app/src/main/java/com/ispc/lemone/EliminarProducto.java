@@ -7,12 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class VistaProducto extends AppCompatActivity {
+public class EliminarProducto extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vistaproducto);
+        setContentView(R.layout.activity_eliminar_producto);
 
         Button botonEliminar = findViewById(R.id.btn_eliminar);
         Button botonCancelar = findViewById(R.id.btn_cancelar);
@@ -20,7 +20,7 @@ public class VistaProducto extends AppCompatActivity {
         botonEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(VistaProducto.this, FindProduct.class);
+                Intent intent = new Intent(EliminarProducto.this, BuscarProducto.class);
                 startActivity(intent);
             }
         });
@@ -28,7 +28,7 @@ public class VistaProducto extends AppCompatActivity {
         botonCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(VistaProducto.this, FindProduct.class);
+                Intent intent = new Intent(EliminarProducto.this, BuscarProducto.class);
                 startActivity(intent);
             }
         });
