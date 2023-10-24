@@ -1,4 +1,4 @@
-package com.ispc.lemone;
+package com.ispc.lemone.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import com.ispc.lemone.R;
 
 
 public class BuscarUsuario extends AppCompatActivity {

@@ -13,34 +13,34 @@
         android:theme="@style/Theme.Lemone"
         tools:targetApi="31">
         <activity
-            android:name=".ActivarDesactivarProducto"
+            android:name=".activities.ActivarDesactivarProducto"
             android:exported="false" />
         <activity
-            android:name=".Contacto"
+            android:name=".activities.Contacto"
             android:exported="false" />
         <activity
-            android:name=".AcercaDe"
+            android:name=".activities.AcercaDe"
             android:exported="false" />
         <activity
-            android:name=".RecuperarContrasenia"
+            android:name=".activities.RecuperarContrasenia"
             android:exported="false" />
         <activity
-            android:name=".ConsumidoresFinales"
+            android:name=".activities.ConsumidoresFinales"
             android:exported="true" />
         <activity
-            android:name=".Proveedor"
+            android:name=".activities.Proveedor"
             android:exported="true" />
         <activity
-            android:name=".AgregarUsuario"
+            android:name=".activities.AgregarUsuario"
             android:exported="false" />
         <activity
-            android:name=".MenuPrincipal"
+            android:name=".activities.MenuPrincipal"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".activities.Login"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,37 +49,37 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AgregarConsumidorFinal"
+            android:name=".activities.AgregarConsumidorFinal"
             android:exported="true" />
         <activity
-            android:name=".AgregarProveedor"
+            android:name=".activities.AgregarProveedor"
             android:exported="true" />
         <activity
-            android:name=".BuscarUsuario"
+            android:name=".activities.BuscarUsuario"
             android:exported="false" />
         <activity
-            android:name=".AgregarProducto"
+            android:name=".activities.AgregarProducto"
             android:exported="false" />
         <activity
-            android:name=".EditarUsuario"
+            android:name=".activities.EditarUsuario"
             android:exported="false" />
         <activity
-            android:name=".EditarProducto"
+            android:name=".activities.EditarProducto"
             android:exported="false" />
         <activity
-            android:name=".EliminarUsuario"
+            android:name=".activities.EliminarUsuario"
             android:exported="false" />
         <activity
-            android:name=".BuscarProducto"
+            android:name=".activities.BuscarProducto"
             android:exported="false" />
         <activity
-            android:name=".RestablecerClave"
+            android:name=".activities.RestablecerClave"
             android:exported="false" />
         <activity
-            android:name=".ActivarDesactivarUsuario"
+            android:name=".activities.ActivarDesactivarUsuario"
             android:exported="false" />
         <activity
-            android:name=".EliminarProducto"
+            android:name=".activities.EliminarProducto"
             android:exported="false"></activity>
     </application>
 
