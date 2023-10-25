@@ -1,4 +1,4 @@
-package com.ispc.lemone;
+package com.ispc.lemone.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.ispc.lemone.R;
 
 public class AgregarProducto extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.ispc.lemone;
+package com.ispc.lemone.activities;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import com.google.firebase.auth.FirebaseAuth;
+
+import com.ispc.lemone.R;
 
 public class AgregarUsuario extends AppCompatActivity {
 

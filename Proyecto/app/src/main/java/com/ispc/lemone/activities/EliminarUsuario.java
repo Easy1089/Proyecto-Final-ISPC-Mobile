@@ -1,4 +1,4 @@
-package com.ispc.lemone;
+package com.ispc.lemone.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class EliminarProducto extends AppCompatActivity {
+import com.ispc.lemone.R;
+
+public class EliminarUsuario extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eliminar_producto);
+        setContentView(R.layout.activity_eliminar_usuario);
 
         Button botonEliminar = findViewById(R.id.btn_eliminar);
         Button botonCancelar = findViewById(R.id.btn_cancelar);
@@ -20,7 +22,7 @@ public class EliminarProducto extends AppCompatActivity {
         botonEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EliminarProducto.this, BuscarProducto.class);
+                Intent intent = new Intent(EliminarUsuario.this, BuscarUsuario.class);
                 startActivity(intent);
             }
         });
@@ -28,7 +30,7 @@ public class EliminarProducto extends AppCompatActivity {
         botonCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EliminarProducto.this, BuscarProducto.class);
+                Intent intent = new Intent(EliminarUsuario.this, BuscarUsuario.class);
                 startActivity(intent);
             }
         });

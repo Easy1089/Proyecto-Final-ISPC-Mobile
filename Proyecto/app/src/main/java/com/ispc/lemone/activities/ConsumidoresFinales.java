@@ -1,4 +1,4 @@
-package com.ispc.lemone;
+package com.ispc.lemone.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+
+import com.ispc.lemone.R;
 
 public class ConsumidoresFinales extends AppCompatActivity {
 
