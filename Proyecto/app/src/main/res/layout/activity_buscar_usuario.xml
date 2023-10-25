@@ -43,7 +43,7 @@
                 android:id="@+id/emailTextView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="usuario@usuario.com" />
+                android:text="user@gmail.com" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
