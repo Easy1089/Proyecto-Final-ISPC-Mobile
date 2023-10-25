@@ -1,10 +1,16 @@
 package com.ispc.lemone;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import com.ispc.lemone.clases.Persona;
+import com.ispc.lemone.clases.TipoPersona;
+import com.ispc.lemone.clases.TipoUsuario;
+import com.ispc.lemone.clases.Usuario;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
 
@@ -112,4 +118,79 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
+
+    public Usuario buscarUsuarioPorEmail(String email){
+        Usuario usuario = new Usuario();
+        String query = "SELECT * FROM Usuarios WHERE email = '" + email + "'";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            int id = cursor.getInt(0);
+            int idTipoUsuario = cursor.getInt(1);
+            int idPersona = cursor.getInt(2);
+            String password = cursor.getString(4);
+            boolean activoActualmente = cursor.getInt(5) == 1;
+            usuario.setId(id);
+            usuario.setTipoUsuario(buscarTipoUsuarioPorId(idTipoUsuario));
+            usuario.setPersona(buscarPersonaPorId(idPersona));
+            usuario.setEmail(email);
+            usuario.setPassword(password);
+            usuario.setActivoActualmente(activoActualmente);
+        }
+        cursor.close();
+        db.close();
+        return usuario;
+    }
+
+    public Persona buscarPersonaPorId(int id) {
+        String query = "SELECT * FROM Personas WHERE id = " + id;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        Persona persona = new Persona();
+        if (cursor.moveToFirst()) {
+            String apellido = cursor.getString(1);
+            String nombre = cursor.getString(2);
+            double telefono = cursor.getDouble(3);
+            int idTipoPersona = cursor.getInt(4);
+            String domicilio = cursor.getString(5);
+            persona.setId(id);
+            persona.setApellido(apellido);
+            persona.setNombre(nombre);
+            persona.setTelefono(telefono);
+            persona.setTipoPersona(buscarTipoPersonaPorId(idTipoPersona));
+            persona.setDomicilio(domicilio);
+        }
+        cursor.close();
+        db.close();
+        return persona;
+    }
+
+    public TipoPersona buscarTipoPersonaPorId (int id){
+        String query = "SELECT * FROM TiposDePersonas WHERE id = " + id;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        TipoPersona tipoPersona = null;
+        if (cursor.moveToFirst()) {
+            String nombre = cursor.getString(1);
+            tipoPersona = new TipoPersona(id, nombre);
+        }
+        cursor.close();
+        db.close();
+        return tipoPersona;
+    }
+
+    public TipoUsuario buscarTipoUsuarioPorId(int id) {
+        String query = "SELECT * FROM TiposDeUsuarios WHERE id = " + id;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        TipoUsuario tipoUsuario = null;
+        if (cursor.moveToFirst()) {
+            String nombre = cursor.getString(1);
+            tipoUsuario = new TipoUsuario(id, nombre);
+        }
+        cursor.close();
+        db.close();
+        return tipoUsuario;
+    }
+
 }

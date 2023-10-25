@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.ispc.lemone.R;
+import com.ispc.lemone.clases.Usuario;
 
 public class EliminarUsuario extends AppCompatActivity {
 
@@ -18,6 +19,14 @@ public class EliminarUsuario extends AppCompatActivity {
 
         Button botonEliminar = findViewById(R.id.btn_eliminar);
         Button botonCancelar = findViewById(R.id.btn_cancelar);
+
+        // traigo los valores del Intent de la vista anterior
+        Bundle datosRecibidos = getIntent().getExtras();
+
+        // asigno valor a la variable email
+        String email = datosRecibidos.getString("email");
+
+        Usuario usuario =
 
         botonEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
