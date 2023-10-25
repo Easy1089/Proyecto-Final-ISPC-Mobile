@@ -204,4 +204,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return tipoUsuario;
     }
 
+    public boolean borrarUsuario(Usuario usuario){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "DELETE FROM Usuarios WHERE id = " + usuario.getId();
+        Cursor cursor = db.rawQuery(query, null);
+        return cursor.moveToFirst();
+    }
+
 }
