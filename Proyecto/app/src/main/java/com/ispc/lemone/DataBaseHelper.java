@@ -1,10 +1,16 @@
 package com.ispc.lemone;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import com.ispc.lemone.clases.Persona;
+import com.ispc.lemone.clases.TipoPersona;
+import com.ispc.lemone.clases.TipoUsuario;
+import com.ispc.lemone.clases.Usuario;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
 
@@ -102,14 +108,107 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO TiposDeOperacion VALUES (1,'Ingreso de stock')");
         db.execSQL("INSERT INTO TiposDeOperacion VALUES (2,'Egreso de stock')");
 
-        db.execSQL("INSERT INTO Usuarios VALUES (1,1,NULL,'admin@admin.com','12345678',1)");
-        db.execSQL("INSERT INTO Usuarios VALUES (2,2,NULL,'melisaapaz@gmail.com','12345678',1)");
-        db.execSQL("INSERT INTO Usuarios VALUES (3,2,NULL,'juanperez@gmail.com','12345678',1)");
-        db.execSQL("INSERT INTO Usuarios VALUES (4,2,NULL,'martasanchez@gmail.com','12345678',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (1,1,1,'admin@admin.com','12345678',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (2,2,2,'melisaapaz@gmail.com','12345678',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (3,2,3,'juanperez@gmail.com','12345678',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (4,2,4,'martasanchez@gmail.com','12345678',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (5,2,1,'user@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (6,2,2,'user2@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (7,2,3,'user3@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (8,2,4,'user4@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (9,2,1,'user5@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (10,1,2,'admin@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (11,2,3,'admin2@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (12,1,4,'admin3@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (13,2,1,'admin4@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (14,1,2,'admin5@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (15,2,3,'admin6@gmail.com','123',1)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
+
+    public Usuario buscarUsuarioPorEmail(String email){
+        Usuario usuario = new Usuario();
+        String query = "SELECT * FROM Usuarios WHERE email = '" + email + "'";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            int id = cursor.getInt(0);
+            int idTipoUsuario = cursor.getInt(1);
+            int idPersona = cursor.getInt(2);
+            String password = cursor.getString(4);
+            boolean activoActualmente = cursor.getInt(5) == 1;
+            usuario.setId(id);
+            usuario.setTipoUsuario(buscarTipoUsuarioPorId(idTipoUsuario));
+            usuario.setPersona(buscarPersonaPorId(idPersona));
+            usuario.setEmail(email);
+            usuario.setPassword(password);
+            usuario.setActivoActualmente(activoActualmente);
+        }
+        cursor.close();
+        db.close();
+        return usuario;
+    }
+
+    public Persona buscarPersonaPorId(int id) {
+        String query = "SELECT * FROM Personas WHERE id = " + id;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        Persona persona = new Persona();
+        if (cursor.moveToFirst()) {
+            String apellido = cursor.getString(1);
+            String nombre = cursor.getString(2);
+            double telefono = cursor.getDouble(3);
+            int idTipoPersona = cursor.getInt(4);
+            String domicilio = cursor.getString(5);
+            persona.setId(id);
+            persona.setApellido(apellido);
+            persona.setNombre(nombre);
+            persona.setTelefono(telefono);
+            persona.setTipoPersona(buscarTipoPersonaPorId(idTipoPersona));
+            persona.setDomicilio(domicilio);
+        }
+        cursor.close();
+        db.close();
+        return persona;
+    }
+
+    public TipoPersona buscarTipoPersonaPorId (int id){
+        String query = "SELECT * FROM TiposDePersonas WHERE id = " + id;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        TipoPersona tipoPersona = null;
+        if (cursor.moveToFirst()) {
+            String nombre = cursor.getString(1);
+            tipoPersona = new TipoPersona(id, nombre);
+        }
+        cursor.close();
+        db.close();
+        return tipoPersona;
+    }
+
+    public TipoUsuario buscarTipoUsuarioPorId(int id) {
+        String query = "SELECT * FROM TiposDeUsuarios WHERE id = " + id;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        TipoUsuario tipoUsuario = null;
+        if (cursor.moveToFirst()) {
+            String nombre = cursor.getString(1);
+            tipoUsuario = new TipoUsuario(id, nombre);
+        }
+        cursor.close();
+        db.close();
+        return tipoUsuario;
+    }
+
+    public boolean borrarUsuario(Usuario usuario){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "DELETE FROM Usuarios WHERE id = " + usuario.getId();
+        Cursor cursor = db.rawQuery(query, null);
+        return cursor.moveToFirst();
+    }
+
 }
