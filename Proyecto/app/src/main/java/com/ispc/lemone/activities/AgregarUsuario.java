@@ -10,7 +10,9 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import com.google.firebase.auth.FirebaseAuth;
 
+import com.ispc.lemone.DataBaseHelper;
 import com.ispc.lemone.R;
+import com.ispc.lemone.clases.Usuario;
 
 public class AgregarUsuario extends AppCompatActivity {
 
@@ -19,6 +21,7 @@ public class AgregarUsuario extends AppCompatActivity {
     private FrameLayout btnAtras;
     private EditText emailEditText;
     private EditText passwordEditText;
+    private DataBaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,7 @@ public class AgregarUsuario extends AppCompatActivity {
         setContentView(R.layout.activity_agregar_usuario);
 
         auth = FirebaseAuth.getInstance();
+        dbHelper = new DataBaseHelper(this);
 
         emailEditText = findViewById(R.id.textEmail);
         passwordEditText = findViewById(R.id.textContraseña);
@@ -41,11 +45,22 @@ public class AgregarUsuario extends AppCompatActivity {
                     auth.createUserWithEmailAndPassword(email, password)
                             .addOnCompleteListener(AgregarUsuario.this, task -> {
                                 if (task.isSuccessful()) {
-                                    // Usuario creado exitosamente
-                                    Intent intent = new Intent(AgregarUsuario.this, BuscarUsuario.class);
-                                    startActivity(intent);
+                                    // Usuario creado exitosamente en Firebase
+                                    // Guardar información en la base de datos SQLite
+                                    Usuario nuevoUsuario = new Usuario();
+                                    nuevoUsuario.setEmail(email);
+                                    nuevoUsuario.setPassword(password);
+                                    // Aquí puedes configurar otros campos del usuario
+
+                                    if (dbHelper.guardarUsuario(nuevoUsuario)) {
+                                        // Usuario guardado en la base de datos SQLite
+                                        Intent intent = new Intent(AgregarUsuario.this, BuscarUsuario.class);
+                                        startActivity(intent);
+                                    } else {
+                                        // Error al guardar el usuario en la base de datos local
+                                    }
                                 } else {
-                                    // Error en la creación del usuario, muestra un mensaje de error
+                                    // Error en la creación del usuario en Firebase
                                     AlertDialog.Builder builder = new AlertDialog.Builder(AgregarUsuario.this);
                                     builder.setMessage("Error al crear el usuario: " + task.getException().getMessage())
                                             .setTitle("Error de creación de usuario")

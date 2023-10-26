@@ -78,6 +78,18 @@
 
     </LinearLayout>
 
+    <ListView
+        android:id="@+id/listViewUsuarios"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAgregarUsuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFilter" />
+
     <Button
         android:id="@+id/buttonBuscar"
         android:layout_width="98dp"
@@ -98,6 +110,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.306"
         tools:ignore="MissingConstraints" />
+
+
 
     <Button
         android:id="@+id/buttonAgregarUsuario"

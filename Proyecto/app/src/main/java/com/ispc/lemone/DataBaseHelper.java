@@ -1,5 +1,7 @@
 package com.ispc.lemone;
 
+import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -11,6 +13,9 @@ import com.ispc.lemone.clases.Persona;
 import com.ispc.lemone.clases.TipoPersona;
 import com.ispc.lemone.clases.TipoUsuario;
 import com.ispc.lemone.clases.Usuario;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
 
@@ -130,6 +135,40 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public List<Usuario> listarUsuarios() {
+        List<Usuario> usuarios = new ArrayList<>();
+
+        String query = "SELECT * FROM Usuarios";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(0);
+                int idTipoUsuario = cursor.getInt(1);
+                int idPersona = cursor.getInt(2);
+                @SuppressLint("Range") String email = cursor.getString(cursor.getColumnIndex("Email"));
+                String password = cursor.getString(4);
+                boolean activoActualmente = cursor.getInt(5) == 1;
+
+                Usuario usuario = new Usuario();
+                usuario.setId(id);
+                usuario.setTipoUsuario(buscarTipoUsuarioPorId(idTipoUsuario));
+                usuario.setPersona(buscarPersonaPorId(idPersona));
+                usuario.setEmail(email);
+                usuario.setPassword(password);
+                usuario.setActivoActualmente(activoActualmente);
+
+                usuarios.add(usuario);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return usuarios;
+    }
+
     public Usuario buscarUsuarioPorEmail(String email){
         Usuario usuario = new Usuario();
         String query = "SELECT * FROM Usuarios WHERE email = '" + email + "'";
@@ -209,6 +248,21 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         String query = "DELETE FROM Usuarios WHERE id = " + usuario.getId();
         Cursor cursor = db.rawQuery(query, null);
         return cursor.moveToFirst();
+    }
+
+    public boolean guardarUsuario(Usuario usuario) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("IdTipoDeUsuario", usuario.getTipoUsuario().getId());
+        values.put("IdPersona", usuario.getPersona().getId());
+        values.put("Email", usuario.getEmail());
+        values.put("Password", usuario.getPassword());
+        values.put("ActivoActualmente", usuario.isActivoActualmente() ? 1 : 0);
+
+        long result = db.insert("Usuarios", null, values);
+        db.close();
+
+        return result != -1;
     }
 
 }
