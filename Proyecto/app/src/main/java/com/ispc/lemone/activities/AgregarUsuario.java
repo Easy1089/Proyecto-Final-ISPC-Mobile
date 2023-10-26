@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.Toast;
+
 import com.google.firebase.auth.FirebaseAuth;
 
 import com.ispc.lemone.DataBaseHelper;
@@ -54,6 +56,7 @@ public class AgregarUsuario extends AppCompatActivity {
 
                                     if (dbHelper.guardarUsuario(nuevoUsuario)) {
                                         // Usuario guardado en la base de datos SQLite
+                                        Toast.makeText(AgregarUsuario.this, "Usuario agregado", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(AgregarUsuario.this, BuscarUsuario.class);
                                         startActivity(intent);
                                     } else {
