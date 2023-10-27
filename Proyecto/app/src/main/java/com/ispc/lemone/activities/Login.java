@@ -10,10 +10,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 import com.ispc.lemone.R;
 
 public class Login extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
     private Button botonLogin;
     private EditText usuarioIngresado;
     private EditText passwordIngresado;
@@ -25,6 +31,8 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        mAuth = FirebaseAuth.getInstance(); // Inicializa Firebase Authentication
 
         acercaDe = findViewById(R.id.txt_acerca_de);
         contacto = findViewById(R.id.txt_contacto);
@@ -58,7 +66,6 @@ public class Login extends AppCompatActivity {
         usuarioIngresado = findViewById(R.id.txt_usuario);
         passwordIngresado = findViewById(R.id.txt_password);
 
-
         botonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,28 +73,33 @@ public class Login extends AppCompatActivity {
             }
         });
     }
-    public void iniciarSesion (){
 
+    public void iniciarSesion() {
         String usuario = usuarioIngresado.getText().toString();
         String password = passwordIngresado.getText().toString();
 
-        if (usuario.equals("usuario") && password.equals("123")){
-            Intent intent = new Intent(Login.this, MenuPrincipal.class);
-            startActivity(intent);
-        } else if(usuario.equals("admin") && password.equals("123")){
-            Intent intent = new Intent(Login.this, MenuPrincipal.class);
-            startActivity(intent);
-        } else {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("Credenciales incorrectas. Por favor, inténtalo de nuevo.")
-                    .setTitle("Error de inicio de sesión")
-                    .setPositiveButton("Aceptar", null);
-            AlertDialog dialog = builder.create();
-            dialog.show();
-        }
+        mAuth.signInWithEmailAndPassword(usuario, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Inicio de sesión exitoso, redirige al usuario a la actividad principal.
+                            Intent intent = new Intent(Login.this, MenuPrincipal.class);
+                            startActivity(intent);
+                        } else {
+                            // Error en el inicio de sesión, muestra un mensaje de error.
+                            AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
+                            builder.setMessage("Credenciales incorrectas. Por favor, inténtalo de nuevo.")
+                                    .setTitle("Error de inicio de sesión")
+                                    .setPositiveButton("Aceptar", null);
+                            AlertDialog dialog = builder.create();
+                            dialog.show();
+                        }
 
-        usuarioIngresado.setText("");
-        passwordIngresado.setText("");
+                        // Limpia los campos de entrada
+                        usuarioIngresado.setText("");
+                        passwordIngresado.setText("");
+                    }
+                });
     }
-
 }

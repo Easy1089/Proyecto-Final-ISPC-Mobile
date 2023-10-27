@@ -70,4 +70,11 @@ public class Usuario {
         this.activoActualmente = activoActualmente;
     }
 
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                email + '\'' +
+                '}';
+    }
+
 }
