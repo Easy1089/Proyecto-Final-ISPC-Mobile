@@ -1,16 +1,23 @@
 package com.ispc.lemone;
 
+import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.ispc.lemone.activities.AgregarUsuario;
 import com.ispc.lemone.clases.Persona;
 import com.ispc.lemone.clases.TipoPersona;
 import com.ispc.lemone.clases.TipoUsuario;
 import com.ispc.lemone.clases.Usuario;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
 
@@ -112,22 +119,56 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO Usuarios VALUES (2,2,2,'melisaapaz@gmail.com','12345678',1)");
         db.execSQL("INSERT INTO Usuarios VALUES (3,2,3,'juanperez@gmail.com','12345678',1)");
         db.execSQL("INSERT INTO Usuarios VALUES (4,2,4,'martasanchez@gmail.com','12345678',1)");
-        db.execSQL("INSERT INTO Usuarios VALUES (5,2,1,'user@gmail.com','123',1)");
-        db.execSQL("INSERT INTO Usuarios VALUES (6,2,2,'user2@gmail.com','123',1)");
-        db.execSQL("INSERT INTO Usuarios VALUES (7,2,3,'user3@gmail.com','123',1)");
-        db.execSQL("INSERT INTO Usuarios VALUES (8,2,4,'user4@gmail.com','123',1)");
-        db.execSQL("INSERT INTO Usuarios VALUES (9,2,1,'user5@gmail.com','123',1)");
-        db.execSQL("INSERT INTO Usuarios VALUES (10,1,2,'admin@gmail.com','123',1)");
-        db.execSQL("INSERT INTO Usuarios VALUES (11,2,3,'admin2@gmail.com','123',1)");
-        db.execSQL("INSERT INTO Usuarios VALUES (12,1,4,'admin3@gmail.com','123',1)");
-        db.execSQL("INSERT INTO Usuarios VALUES (13,2,1,'admin4@gmail.com','123',1)");
-        db.execSQL("INSERT INTO Usuarios VALUES (14,1,2,'admin5@gmail.com','123',1)");
-        db.execSQL("INSERT INTO Usuarios VALUES (15,2,3,'admin6@gmail.com','123',1)");
+//        db.execSQL("INSERT INTO Usuarios VALUES (5,2,1,'user@gmail.com','123',1)");
+//        db.execSQL("INSERT INTO Usuarios VALUES (6,2,2,'user2@gmail.com','123',1)");
+//        db.execSQL("INSERT INTO Usuarios VALUES (7,2,3,'user3@gmail.com','123',1)");
+//        db.execSQL("INSERT INTO Usuarios VALUES (8,2,4,'user4@gmail.com','123',1)");
+//        db.execSQL("INSERT INTO Usuarios VALUES (9,2,1,'user5@gmail.com','123',1)");
+//        db.execSQL("INSERT INTO Usuarios VALUES (10,1,2,'admin@gmail.com','123',1)");
+//        db.execSQL("INSERT INTO Usuarios VALUES (11,2,3,'admin2@gmail.com','123',1)");
+//        db.execSQL("INSERT INTO Usuarios VALUES (12,1,4,'admin3@gmail.com','123',1)");
+//        db.execSQL("INSERT INTO Usuarios VALUES (13,2,1,'admin4@gmail.com','123',1)");
+//        db.execSQL("INSERT INTO Usuarios VALUES (14,1,2,'admin5@gmail.com','123',1)");
+//        db.execSQL("INSERT INTO Usuarios VALUES (15,2,3,'admin6@gmail.com','123',1)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
+    }
+
+    public List<Usuario> listarUsuarios() {
+        List<Usuario> usuarios = new ArrayList<>();
+
+        String query = "SELECT * FROM Usuarios";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(0);
+                int idTipoUsuario = cursor.getInt(1);
+                int idPersona = cursor.getInt(2);
+                @SuppressLint("Range") String email = cursor.getString(cursor.getColumnIndex("Email"));
+                String password = cursor.getString(4);
+                boolean activoActualmente = cursor.getInt(5) == 1;
+
+                Usuario usuario = new Usuario();
+                usuario.setId(id);
+                usuario.setTipoUsuario(buscarTipoUsuarioPorId(idTipoUsuario));
+                usuario.setPersona(buscarPersonaPorId(idPersona));
+                usuario.setEmail(email);
+                usuario.setPassword(password);
+                usuario.setActivoActualmente(activoActualmente);
+
+                usuarios.add(usuario);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return usuarios;
     }
 
     public Usuario buscarUsuarioPorEmail(String email){
@@ -209,6 +250,25 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         String query = "DELETE FROM Usuarios WHERE id = " + usuario.getId();
         Cursor cursor = db.rawQuery(query, null);
         return cursor.moveToFirst();
+    }
+
+    public boolean guardarUsuario(Usuario usuario) {
+        long result = 0;
+        try{
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put("IdTipoDeUsuario", usuario.getTipoUsuario().getId());
+            values.put("IdPersona", usuario.getPersona().getId());
+            values.put("Email", usuario.getEmail());
+            values.put("Password", usuario.getPassword());
+            values.put("ActivoActualmente", usuario.isActivoActualmente() ? 1 : 0);
+
+            result = db.insert("Usuarios", null, values);
+            db.close();
+        }catch (Exception ex){
+            ex.toString();
+        }
+        return result != -1;
     }
 
 }
