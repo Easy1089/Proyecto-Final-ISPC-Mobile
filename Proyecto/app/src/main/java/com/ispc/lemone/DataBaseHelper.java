@@ -211,4 +211,77 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return cursor.moveToFirst();
     }
 
+    // consulta para listar los datos de un usuario en activity buscar uruario
+    public Persona buscarPersonaPorId(int id) {
+        String query = "SELECT * FROM Personas WHERE id = " + id;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        Persona persona = new Persona();
+        if (cursor.moveToFirst()) {
+            String nombre = cursor.getString(1);
+            String apellido = cursor.getString(2);
+            int dni = cursor.getInt(3);
+            String domicilio = cursor.getString(4);
+            double telefono = cursor.getDouble(5);
+            persona.setNombre(nombre);
+            persona.setApellido(apellido);
+            persona.setId(dni);
+            persona.setDomicilio(domicilio);
+            persona.setTelefono(telefono);
+
+        }
+        cursor.close();
+        db.close();
+        return persona;
+    }
+
+    // consulta para modificar los campos en modificar usuario
+
+    public boolean editarPersona(int idPersona, int id, String nombre, String apellido, int dni, String domicilio, double telefono, String nuevoPassword, String antiguoPassword) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.beginTransaction();
+
+        try {
+            ContentValues valuesPersona = new ContentValues();
+            valuesPersona.put("nombre", nombre);
+            valuesPersona.put("apellido", apellido);
+            valuesPersona.put("dni", dni);
+            valuesPersona.put("domicilio", domicilio);
+            valuesPersona.put("telefono", telefono);
+
+            // Se actualiza la tabla Personas
+            int filasActualizadasPersona = db.update("Personas", valuesPersona, "id = " + id, null);
+
+            // Se actualiza la otra tabla solo si antiguoPassword coincide con el valor existente
+            int filasActualizadasTablaUsuario = 0;
+            if (nuevoPassword != null && Password != null) {
+                // Se compara nuevoPassword con el valor existente en la base de datos
+                Cursor cursor = db.rawQuery("SELECT password FROM Usuario WHERE id = " + idPersona, null);
+                if (cursor.moveToFirst()) {
+                    String passwordExistente = cursor.getString(0);
+                    if (passwordExistente.equals(Password)) {
+                        ContentValues valuesTablaRelacionada = new ContentValues();
+                        valuesTablaRelacionada.put("password", nuevoPassword);
+                        filasActualizadasTablaUsuario = db.update("Usuario", valuesTablaRelacionada, "id = " + idPersona, null);
+                    }
+                }
+                cursor.close();
+            }
+
+            // Comprobamos que al menos una de las actualizaciones tuvo éxito
+            if (filasActualizadasPersona > 0 || filasActualizadasTablaRelacionada > 0) {
+                // Confirmación de la transacción
+                db.setTransactionSuccessful();
+                return true;
+            } else {
+                // Revertimos la transacción en caso de error
+                return false;
+            }
+        } finally {
+            // Finalizamos y cerramos bd
+            db.endTransaction();
+            db.close();
+        }
+    }
 }
