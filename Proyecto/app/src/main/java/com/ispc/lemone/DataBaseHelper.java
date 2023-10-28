@@ -347,4 +347,36 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         return productos;
     }
+
+    public List<Producto> buscarProductosPorCodigo(String codigo) {
+        List<Producto> productos = new ArrayList<>();
+        String query = "SELECT * FROM Productos WHERE Codigo = ?";
+        String[] selectionArgs = {codigo};
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, selectionArgs);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(0);
+                String codigoProducto = cursor.getString(1);
+                String nombre = cursor.getString(2);
+                String descripcion = cursor.getString(3);
+
+                Producto producto = new Producto();
+                producto.setId(id);
+                producto.setCodigo(codigoProducto);
+                producto.setNombre(nombre);
+                producto.setDescripcion(descripcion);
+
+                productos.add(producto);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return productos;
+    }
+
 }
