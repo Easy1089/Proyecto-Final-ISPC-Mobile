@@ -37,9 +37,11 @@ public class AgregarUsuario extends AppCompatActivity {
         passwordEditText = findViewById(R.id.textContraseña);
 
         botonAddUser = findViewById(R.id.buttonGuardarAddUser);
+        btnAtras = findViewById(R.id.btnAtras);
         botonAddUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Obtener los datos ingresados por el usuario
                 String email = emailEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
 
@@ -49,10 +51,11 @@ public class AgregarUsuario extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // Usuario creado exitosamente en Firebase
                                     // Guardar información en la base de datos SQLite
+
+                                    // Crear un objeto Usuario
                                     Usuario nuevoUsuario = new Usuario();
                                     nuevoUsuario.setEmail(email);
                                     nuevoUsuario.setPassword(password);
-                                    // Aquí puedes configurar otros campos del usuario
 
                                     if (dbHelper.guardarUsuario(nuevoUsuario)) {
                                         // Usuario guardado en la base de datos SQLite
@@ -85,7 +88,7 @@ public class AgregarUsuario extends AppCompatActivity {
             }
         });
 
-        btnAtras = findViewById(R.id.btnAtras);
+
         btnAtras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

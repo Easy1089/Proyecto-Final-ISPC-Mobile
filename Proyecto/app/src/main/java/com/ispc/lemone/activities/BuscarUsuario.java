@@ -46,6 +46,7 @@ public class BuscarUsuario extends AppCompatActivity {
         listViewUsuarios = findViewById(R.id.listViewUsuarios); // Asocia el ListView de tu layout
         btnBuscarUsuario = findViewById(R.id.buttonBuscar);
         editTextNombreDeUsuario = findViewById(R.id.editTextFilter);
+
         // Inicializa la lista de usuarios y el adaptador
         listaUsuarios = new ArrayList<>();
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaUsuarios);
