@@ -26,9 +26,6 @@ import java.util.List;
 public class BuscarProducto extends AppCompatActivity {
 
     private FrameLayout btnVolver;
-    private TextView editar;
-    private TextView eliminar;
-    private TextView activar;
     private Button agregarProducto;
     private ArrayAdapter<Producto> adapter;
     private ArrayList<Producto> listaProductos;
@@ -42,9 +39,6 @@ public class BuscarProducto extends AppCompatActivity {
 
         editTextCodigoProducto = findViewById(R.id.editTextText);
         btnVolver = findViewById(R.id.btn_volverFP);
-        editar = findViewById(R.id.editarFP);
-        activar = findViewById(R.id.activarFP);
-        eliminar = findViewById(R.id.eliminarFP);
         agregarProducto = findViewById(R.id.btn_agregarFP);
         listViewProductos = findViewById(R.id.listViewProductos); // Asocia el ListView de tu layout
         btnBuscarProducto = findViewById(R.id.buttonBuscarFP);
@@ -71,30 +65,6 @@ public class BuscarProducto extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(BuscarProducto.this, MenuPrincipal.class);
-                startActivity(intent);
-            }
-        });
-
-        editar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(BuscarProducto.this, EditarProducto.class);
-                startActivity(intent);
-            }
-        });
-
-        eliminar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(BuscarProducto.this, EliminarProducto.class);
-                startActivity(intent);
-            }
-        });
-
-        activar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(BuscarProducto.this, ActivarDesactivarProducto.class);
                 startActivity(intent);
             }
         });
