@@ -5,8 +5,33 @@
     android:layout_width="match_parent"
     android:background="#D8C99B"
     android:layout_height="match_parent"
-    tools:context=".EliminarProducto">
+    tools:context=".activities.EliminarProducto">
 
+
+    <FrameLayout
+        android:id="@+id/btn_volverFP"
+        android:layout_width="48dp"
+        android:layout_height="42dp"
+        android:background="@drawable/elemento_esquina_redondeada"
+        android:elevation="2dp"
+        app:circularflow_radiusInDP="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023">
+
+        <ImageView
+            android:id="@+id/imageViewAtras"
+            android:layout_width="16dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center"
+            android:src="@drawable/back_arrow_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#FFFFFF" />
+    </FrameLayout>
 
     <Button
         android:id="@+id/btn_cancelar"
