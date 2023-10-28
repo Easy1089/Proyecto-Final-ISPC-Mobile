@@ -25,7 +25,7 @@ public class EliminarProducto extends AppCompatActivity {
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(VistaProducto.this, FindProduct.class);
+                Intent intent = new Intent(EliminarProducto.this, BuscarProducto.class);
                 startActivity(intent);
             }
         });
