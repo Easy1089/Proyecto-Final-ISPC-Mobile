@@ -23,10 +23,53 @@
         app:iconPadding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintHorizontal_bias="0.948"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88"
+        app:layout_constraintTop_toBottomOf="@+id/listViewUsuarios"
+        app:layout_constraintVertical_bias="0.106"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonAgregarUsuario"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+
+        android:backgroundTint="@color/white"
+        android:insetTop="10dp"
+        android:insetBottom="10dp"
+        android:text="+ Agregar usuario"
+        android:textColor="@color/bordo"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:iconPadding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEliminarUsuario"
+        app:layout_constraintVertical_bias="0.368" />
+
+    <Button
+        android:id="@+id/btnModificarUsuario"
+        android:layout_width="98dp"
+        android:layout_height="52dp"
+        android:backgroundTint="@color/bordo"
+        android:insetTop="10dp"
+        android:insetBottom="10dp"
+        android:text="Editar"
+        android:textColor="@color/crema"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:iconPadding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.035"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listViewUsuarios"
+        app:layout_constraintVertical_bias="0.106"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -44,45 +87,24 @@
         app:iconPadding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/btnModificarUsuario"
-        android:layout_width="98dp"
-        android:layout_height="52dp"
-        android:backgroundTint="@color/bordo"
-        android:insetTop="10dp"
-        android:insetBottom="10dp"
-        android:text="Editar"
-        android:textColor="@color/crema"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        app:iconPadding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88"
+        app:layout_constraintTop_toBottomOf="@+id/listViewUsuarios"
+        app:layout_constraintVertical_bias="0.106"
         tools:ignore="MissingConstraints" />
 
     <ListView
         android:id="@+id/listViewUsuarios"
-        android:layout_width="384dp"
-        android:layout_height="325dp"
+        android:layout_width="399dp"
+        android:layout_height="338dp"
+        android:layout_marginTop="8dp"
         android:divider="@null"
         android:dividerHeight="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.64" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextFilter"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonBuscar"
@@ -105,28 +127,6 @@
         app:layout_constraintVertical_bias="0.306"
         tools:ignore="MissingConstraints" />
 
-
-
-    <Button
-        android:id="@+id/buttonAgregarUsuario"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-
-        android:insetTop="10dp"
-        android:insetBottom="10dp"
-        android:text="+ Agregar usuario"
-        android:textColor="@color/bordo"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        app:iconPadding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.962" />
 
     <FrameLayout
         android:id="@+id/btn_volverEP"
@@ -183,16 +183,17 @@
         android:id="@+id/textTitulo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="184dp"
         android:backgroundTint="@color/white"
         android:text="Consulta de usuarios"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintHorizontal_bias="0.736"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.223" />
 
     <EditText
         android:id="@+id/editTextFilter"
@@ -200,7 +201,7 @@
         android:layout_height="38dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Filtro de búsqueda"
+        android:hint="Filtro de búsqueda"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.123"

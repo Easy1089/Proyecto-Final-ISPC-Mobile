@@ -27,6 +27,7 @@ public class BuscarProducto extends AppCompatActivity {
 
     private FrameLayout btnVolver;
     private TextView editar;
+    private TextView eliminar;
     private TextView activar;
     private Button agregarProducto;
     private ArrayAdapter<Producto> adapter;
@@ -43,6 +44,7 @@ public class BuscarProducto extends AppCompatActivity {
         btnVolver = findViewById(R.id.btn_volverFP);
         editar = findViewById(R.id.editarFP);
         activar = findViewById(R.id.activarFP);
+        eliminar = findViewById(R.id.eliminarFP);
         agregarProducto = findViewById(R.id.btn_agregarFP);
         listViewProductos = findViewById(R.id.listViewProductos); // Asocia el ListView de tu layout
         btnBuscarProducto = findViewById(R.id.buttonBuscarFP);
@@ -51,6 +53,19 @@ public class BuscarProducto extends AppCompatActivity {
         // utilizo un adaptador
         adapter = new ProductoAdapter(this, listaProductos);
         listViewProductos.setAdapter(adapter);
+
+        listViewProductos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Obtengo el elemento en la posición 'position'
+                Producto productoSeleccionado = listaProductos.get(position);
+
+                // Enviar el seleccionado al modificar producto
+                Intent intent = new Intent(BuscarProducto.this, EditarProducto.class);
+                intent.putExtra("producto", productoSeleccionado);
+                startActivity(intent);
+            }
+        });
 
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +79,14 @@ public class BuscarProducto extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(BuscarProducto.this, EditarProducto.class);
+                startActivity(intent);
+            }
+        });
+
+        eliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BuscarProducto.this, EliminarProducto.class);
                 startActivity(intent);
             }
         });
