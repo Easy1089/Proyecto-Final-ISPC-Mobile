@@ -177,7 +177,7 @@
         android:layout_height="43dp"
         android:layout_marginTop="24dp"
         android:ems="10"
-        android:hint="Confirmar clave"
+        android:hint="Nueva clave"
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/gris"
