@@ -25,7 +25,7 @@ import java.util.List;
 public class BuscarUsuario extends AppCompatActivity {
 
     private Button buttonModificar;
-    private Button buttonEliminar3;
+    private Button btnEliminarUsuario;
     private Button buttonActivar3;
     private Button buttonAgregarUsuario;
     private ListView listViewUsuarios; // ListView para mostrar la lista de usuarios
@@ -40,7 +40,7 @@ public class BuscarUsuario extends AppCompatActivity {
         setContentView(R.layout.activity_buscar_usuario);
 
         buttonModificar = findViewById(R.id.btnModificarUsuario);
-        buttonEliminar3 = findViewById(R.id.btnEliminarUsuario);
+        btnEliminarUsuario = findViewById(R.id.btnEliminarUsuario);
         buttonActivar3 = findViewById(R.id.btnActivarDesactivarUsuario);
         buttonAgregarUsuario = findViewById(R.id.buttonAgregarUsuario);
         listViewUsuarios = findViewById(R.id.listViewUsuarios); // Asocia el ListView de tu layout
@@ -52,7 +52,7 @@ public class BuscarUsuario extends AppCompatActivity {
         listViewUsuarios.setAdapter(adapter);
 
         // text view del correo
-        //emailTextView3 = findViewById(R.id.emailTextView3);
+        emailTextView3 = findViewById(R.id.editTextFilter);
 
         buttonModificar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,14 +64,12 @@ public class BuscarUsuario extends AppCompatActivity {
         });
 
 
-        buttonEliminar3.setOnClickListener(new View.OnClickListener() {
+        btnEliminarUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(BuscarUsuario.this, EliminarUsuario.class);
-
                 // envio el valor del correo que se encuentra en emailTextView3
                 intent.putExtra("email", emailTextView3.getText().toString());
-
                 startActivity(intent);
             }
         });

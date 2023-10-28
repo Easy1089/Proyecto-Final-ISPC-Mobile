@@ -16,11 +16,14 @@
         android:text="Editar"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/txtEliminar"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintEnd_toStartOf="@+id/eliminarFP"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toEndOf="@+id/activarFP"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875" />
+        app:layout_constraintTop_toBottomOf="@+id/listViewProductos"
+        app:layout_constraintVertical_bias="0.175" />
+
+
+    <!--    LEMONE -->
 
     <FrameLayout
         android:id="@+id/btn_volverFP"
@@ -46,9 +49,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:tint="#FFFFFF" />
     </FrameLayout>
-
-
-    <!--    LEMONE -->
 
     <TextView
         android:id="@+id/textView2"
@@ -152,31 +152,32 @@
         android:id="@+id/activarFP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
         android:text="@string/activar"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875" />
+        app:layout_constraintTop_toBottomOf="@+id/listViewProductos"
+        app:layout_constraintVertical_bias="0.175" />
 
     <TextView
-        android:id="@+id/txtEliminar"
+        android:id="@+id/eliminarFP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="28dp"
         android:text="@string/eliminar"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875" />
+        app:layout_constraintTop_toBottomOf="@+id/listViewProductos"
+        app:layout_constraintVertical_bias="0.175" />
 
     <Button
         android:id="@+id/btn_agregarFP"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="24dp"
         android:backgroundTint="@color/white"
         android:text="@string/btnAgregarProd"
         android:textColor="@color/bordo"
@@ -186,19 +187,21 @@
         app:iconPadding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.557"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editarFP"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ListView
         android:id="@+id/listViewProductos"
-        android:layout_width="375dp"
-        android:layout_height="320dp"
+        android:layout_width="385dp"
+        android:layout_height="313dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.69" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextText"
+        app:layout_constraintVertical_bias="0.054" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
