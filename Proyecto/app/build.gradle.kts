@@ -31,6 +31,10 @@ android {
     buildToolsVersion = "30.0.3"
 }
 
+tasks.register<Wrapper>("wrapper") {
+    gradleVersion = "5.6.4"
+}
+tasks.register("prepareKotlinBuildScriptModel"){}
 dependencies {
 
     implementation("androidx.appcompat:appcompat:1.6.1")
