@@ -379,4 +379,39 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return productos;
     }
 
+    public List<Usuario> buscarUsuariosPorNombre(String nombre) {
+        List<Usuario> usuarios = new ArrayList<>();
+        String query = "SELECT * FROM Usuarios WHERE Email LIKE ?";
+        String[] selectionArgs = {"%" + nombre + "%"};
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, selectionArgs);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(0);
+                int idTipoUsuario = cursor.getInt(1);
+                int idPersona = cursor.getInt(2);
+                @SuppressLint("Range") String email = cursor.getString(cursor.getColumnIndex("Email"));
+                String password = cursor.getString(4);
+                boolean activoActualmente = cursor.getInt(5) == 1;
+
+                Usuario usuario = new Usuario();
+                usuario.setId(id);
+                usuario.setTipoUsuario(buscarTipoUsuarioPorId(idTipoUsuario));
+                usuario.setPersona(buscarPersonaPorId(idPersona));
+                usuario.setEmail(email);
+                usuario.setPassword(password);
+                usuario.setActivoActualmente(activoActualmente);
+
+                usuarios.add(usuario);
+            } while (cursor.moveToNext());
+
+            cursor.close();
+            db.close();
+
+            return usuarios;
+        }
+        return usuarios;
+    }
 }
