@@ -61,6 +61,7 @@ public class AgregarUsuario extends AppCompatActivity {
                                         startActivity(intent);
                                     } else {
                                         // Error al guardar el usuario en la base de datos local
+                                        Toast.makeText(AgregarUsuario.this, "Error al crear usuario", Toast.LENGTH_SHORT).show();
                                     }
                                 } else {
                                     // Error en la creación del usuario en Firebase
