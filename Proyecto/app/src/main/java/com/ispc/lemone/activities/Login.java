@@ -16,8 +16,20 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import com.ispc.lemone.R;
+import com.ispc.lemone.clases.Usuario;
 
 public class Login extends AppCompatActivity {
+
+    private Usuario usuario;
+
+    public Login(){
+
+    }
+
+    public Login(Usuario usuario){
+
+        this.usuario = usuario;
+    }
 
     private FirebaseAuth mAuth;
     private Button botonLogin;
@@ -69,6 +81,18 @@ public class Login extends AppCompatActivity {
         botonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if(usuario.getTipoUsuario().getId() == 1) {
+                    Intent intent = new Intent(Login.this, MenuPrincipal.class);
+                    iniciarSesion();
+                    startActivity(intent);
+                }else{
+                    Intent intent = new Intent(Login.this, MenuPrincipalUsuarioComun.class);
+                    iniciarSesion();
+                    startActivity(intent);
+                }
+
+
                 iniciarSesion();
             }
         });

@@ -339,11 +339,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         try{
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues values = new ContentValues();
-            values.put("IdTipoDeUsuario", usuario.getTipoUsuario().getId());
-            values.put("IdPersona", usuario.getPersona().getId());
+            values.put("IdTipoDeUsuario", 2);
+            //values.put("IdPersona", 1);
             values.put("Email", usuario.getEmail());
             values.put("Password", usuario.getPassword());
-            values.put("ActivoActualmente", usuario.isActivoActualmente() ? 1 : 0);
+            values.put("ActivoActualmente", 1);
 
             result = db.insert("Usuarios", null, values);
             db.close();
