@@ -26,8 +26,8 @@ public class MenuPrincipal extends AppCompatActivity {
         setContentView(R.layout.activity_menu_principal);
 
         buttonUsuarios = findViewById(R.id.buttonUsuarios);
-        buttonProveedores = findViewById(R.id.buttonProveedores);;
-        buttonConsumidores = findViewById(R.id.buttonConsumidores);
+        //buttonProveedores = findViewById(R.id.buttonProveedores);;
+        //buttonConsumidores = findViewById(R.id.buttonConsumidores);
         buttonProductos = findViewById(R.id.buttonProductos);
         buttonInforme = findViewById(R.id.buttonInforme);
         buttonInformeStock = findViewById(R.id.buttonInformeStock);
@@ -42,23 +42,23 @@ public class MenuPrincipal extends AppCompatActivity {
             }
         });
 
-        buttonProveedores.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("Botón Proovedores", "Clic en el botón Proveedores");
-                Intent intent = new Intent(MenuPrincipal.this, AgregarProveedor.class);
-                startActivity(intent);
-            }
-        });
+        //buttonProveedores.setOnClickListener(new View.OnClickListener() {
+           // @Override
+            //public void onClick(View view) {
+               // Log.d("Botón Proovedores", "Clic en el botón Proveedores");
+               // Intent intent = new Intent(MenuPrincipal.this, AgregarProveedor.class);
+               // startActivity(intent);
+            //}
+        //});
 
-        buttonConsumidores.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("Botón Consumidores", "Clic en el botón Consumidores");
-                Intent intent = new Intent(MenuPrincipal.this, ConsumidoresFinales.class);
-                startActivity(intent);
-            }
-        });
+        //buttonConsumidores.setOnClickListener(new View.OnClickListener() {
+            //@Override
+            //public void onClick(View view) {
+                //Log.d("Botón Consumidores", "Clic en el botón Consumidores");
+                //Intent intent = new Intent(MenuPrincipal.this, ConsumidoresFinales.class);
+                //startActivity(intent);
+            //}
+        //});
 
         buttonProductos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +68,6 @@ public class MenuPrincipal extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
         buttonSalir.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -11,7 +11,9 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 import com.ispc.lemone.activities.AgregarUsuario;
+import com.ispc.lemone.clases.CategoriaProducto;
 import com.ispc.lemone.clases.Persona;
+import com.ispc.lemone.clases.Producto;
 import com.ispc.lemone.clases.TipoPersona;
 import com.ispc.lemone.clases.TipoUsuario;
 import com.ispc.lemone.clases.Usuario;
@@ -252,6 +254,86 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return cursor.moveToFirst();
     }
 
+
+    // consulta para listar los datos de un usuario en activity buscar uruario
+    //public  buscarPersonaPorId(int id) {
+      //  String query = "SELECT * FROM Personas WHERE id = " + id;
+        //SQLiteDatabase db = this.getReadableDatabase();
+        //Cursor cursor = db.rawQuery(query, null);
+        //Persona persona = new Persona();
+        //if (cursor.moveToFirst()) {
+          //  String nombre = cursor.getString(1);
+            //String apellido = cursor.getString(2);
+            //int dni = cursor.getInt(3);
+            //String domicilio = cursor.getString(4);
+            //double telefono = cursor.getDouble(5);
+            //persona.setNombre(nombre);
+            //persona.setApellido(apellido);
+            //persona.setId(dni);
+            //persona.setDomicilio(domicilio);
+            //persona.setTelefono(telefono);
+
+        //}
+        //cursor.close();
+        //db.close();
+        //return persona;
+    //}
+
+    // consulta para modificar los campos en modificar usuario
+
+    public boolean editarUsuario (Usuario usuario, String etPassActual, String etConfirmarPass, String etNombre,String etApellido,String etDatosContacto,double etTelefono) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int idPersona = usuario.getPersona().getId();
+        int idUsuario = usuario.getId();
+        int filasActualizadasPersona = 0;
+        int filasActualizadasTablaUsuario = 0;
+
+        db.beginTransaction();
+
+        try {
+
+
+            // Se actualiza la otra tabla solo si antiguoPassword coincide con el valor existente
+             filasActualizadasTablaUsuario = 0;
+            if (etConfirmarPass != null && etPassActual != null) {
+                // Se compara nuevoPassword con el valor existente en la base de datos
+                Cursor cursor = db.rawQuery("SELECT password FROM Usuario WHERE id = " + idUsuario, null);
+                if (cursor.moveToFirst()) {
+                    String passwordExistente = cursor.getString(0);
+                    if (passwordExistente.equals(etPassActual)) {
+                        ContentValues valuesTablaRelacionada = new ContentValues();
+                        valuesTablaRelacionada.put("password", etConfirmarPass);
+                        filasActualizadasTablaUsuario = db.update("Usuario", valuesTablaRelacionada, "id = " + idUsuario, null);
+
+                        ContentValues valuesPersona = new ContentValues();
+                        valuesPersona.put("nombre", etNombre);
+                        valuesPersona.put("apellido", etApellido);
+                        valuesPersona.put("domicilio", etDatosContacto);
+                        valuesPersona.put("telefono", etTelefono);
+
+                        // Se actualiza la tabla Personas
+                         filasActualizadasPersona = db.update("Personas", valuesPersona, "id = " + idPersona, null);
+                    }
+                }
+                cursor.close();
+            }
+
+            // Comprobamos que al menos una de las actualizaciones tuvo éxito
+            if (filasActualizadasPersona > 0 || filasActualizadasTablaUsuario > 0) {
+                // Confirmación de la transacción
+                db.setTransactionSuccessful();
+                return true;
+            } else {
+                // Revertimos la transacción en caso de error
+                return false;
+            }
+        } finally {
+            // Finalizamos y cerramos bd
+            db.endTransaction();
+            db.close();
+        }
+    }
+
     public boolean guardarUsuario(Usuario usuario) {
         long result = 0;
         try{
@@ -271,4 +353,148 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return result != -1;
     }
 
+
+
+
+    public boolean agregarProducto(Producto producto) {
+        long result = 0;
+        try{
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put("Codigo", producto.getCodigo());
+            values.put("Nombre", producto.getNombre());
+            values.put("Descripcion", producto.getDescripcion());
+            values.put("InventarioMinimo", producto.getInventarioMinimo());
+            values.put("PrecioDeCosto", producto.getPrecioDeCosto());
+            values.put("PrecioDeVenta", producto.getPrecioDeVenta());
+            values.put("ActivoActualmente", producto.isActivoActualmente() ? 1 : 0);
+
+            result = db.insert("Productos", null, values);
+            db.close();
+        }catch (Exception ex){
+            ex.toString();
+        }
+        return result != -1;
+    }
+
+    public CategoriaProducto buscarCategoriaPorId (int id){
+        String query = "SELECT * FROM Categorias WHERE id = " + id;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        CategoriaProducto categoriaProducto = null;
+        if (cursor.moveToFirst()) {
+            String nombre = cursor.getString(1);
+            categoriaProducto = new CategoriaProducto(id, nombre);
+        }
+        cursor.close();
+        db.close();
+        return categoriaProducto;
+    }
+
+    public List<Producto> listaDeProductos() {
+        List<Producto> productos = new ArrayList<>();
+
+        String query = "SELECT * FROM Productos";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(0);
+                String codigo = cursor.getString(1);
+                String nombre = cursor.getString(2);
+                String descripcion = cursor.getString(3);
+                int inventariominimo = cursor.getInt(4);
+                Double preciodecosto = cursor.getDouble(5);
+                Double preciodeventa = cursor.getDouble(6);
+                int idcategoria = cursor.getInt(7);
+                boolean activoActualmente = cursor.getInt(8) == 1;
+
+                Producto producto = new Producto();
+                producto.setId(id);
+                producto.setCodigo(codigo);
+                producto.setNombre(nombre);
+                producto.setDescripcion(descripcion);
+                producto.setInventarioMinimo(inventariominimo);
+                producto.setPrecioDeCosto(preciodecosto);
+                producto.setPrecioDeVenta(preciodeventa);
+                producto.setCategoriaProducto(buscarCategoriaPorId(idcategoria));
+                producto.setActivoActualmente(activoActualmente);
+
+                productos.add(producto);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return productos;
+    }
+
+    public List<Producto> buscarProductosPorCodigo(String codigo) {
+        List<Producto> productos = new ArrayList<>();
+        String query = "SELECT * FROM Productos WHERE Codigo = ?";
+        String[] selectionArgs = {codigo};
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, selectionArgs);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(0);
+                String codigoProducto = cursor.getString(1);
+                String nombre = cursor.getString(2);
+                String descripcion = cursor.getString(3);
+
+                Producto producto = new Producto();
+                producto.setId(id);
+                producto.setCodigo(codigoProducto);
+                producto.setNombre(nombre);
+                producto.setDescripcion(descripcion);
+
+                productos.add(producto);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return productos;
+    }
+
+    public List<Usuario> buscarUsuariosPorNombre(String nombre) {
+        List<Usuario> usuarios = new ArrayList<>();
+        String query = "SELECT * FROM Usuarios WHERE Email LIKE ?";
+        String[] selectionArgs = {"%" + nombre + "%"};
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, selectionArgs);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(0);
+                int idTipoUsuario = cursor.getInt(1);
+                int idPersona = cursor.getInt(2);
+                @SuppressLint("Range") String email = cursor.getString(cursor.getColumnIndex("Email"));
+                String password = cursor.getString(4);
+                boolean activoActualmente = cursor.getInt(5) == 1;
+
+                Usuario usuario = new Usuario();
+                usuario.setId(id);
+                usuario.setTipoUsuario(buscarTipoUsuarioPorId(idTipoUsuario));
+                usuario.setPersona(buscarPersonaPorId(idPersona));
+                usuario.setEmail(email);
+                usuario.setPassword(password);
+                usuario.setActivoActualmente(activoActualmente);
+
+                usuarios.add(usuario);
+            } while (cursor.moveToNext());
+
+            cursor.close();
+            db.close();
+
+            return usuarios;
+        }
+        return usuarios;
+    }
 }

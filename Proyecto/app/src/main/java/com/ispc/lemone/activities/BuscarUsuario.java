@@ -8,11 +8,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ispc.lemone.DataBaseHelper;
 import com.ispc.lemone.R;
+import com.ispc.lemone.clases.Producto;
 import com.ispc.lemone.clases.Usuario;
 
 import java.util.ArrayList;
@@ -22,32 +25,34 @@ import java.util.List;
 public class BuscarUsuario extends AppCompatActivity {
 
     private Button buttonModificar;
-    private Button buttonEliminar3;
+    private Button btnEliminarUsuario;
     private Button buttonActivar3;
     private Button buttonAgregarUsuario;
     private ListView listViewUsuarios; // ListView para mostrar la lista de usuarios
     private ArrayAdapter<Usuario> adapter;
     private ArrayList<Usuario> listaUsuarios;
     private TextView emailTextView3; // declaro el text view donde se encontraria el email
-
+    private EditText editTextNombreDeUsuario;
+    private Button btnBuscarUsuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buscar_usuario);
 
-        buttonModificar = findViewById(R.id.buttonModificar3);
-        buttonEliminar3 = findViewById(R.id.buttonEliminar3);
-        buttonActivar3 = findViewById(R.id.buttonActivar3);
+        buttonModificar = findViewById(R.id.btnModificarUsuario);
+        btnEliminarUsuario = findViewById(R.id.btnEliminarUsuario);
+        buttonActivar3 = findViewById(R.id.btnActivarDesactivarUsuario);
         buttonAgregarUsuario = findViewById(R.id.buttonAgregarUsuario);
         listViewUsuarios = findViewById(R.id.listViewUsuarios); // Asocia el ListView de tu layout
-
+        btnBuscarUsuario = findViewById(R.id.buttonBuscar);
+        editTextNombreDeUsuario = findViewById(R.id.editTextFilter);
         // Inicializa la lista de usuarios y el adaptador
         listaUsuarios = new ArrayList<>();
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaUsuarios);
         listViewUsuarios.setAdapter(adapter);
 
         // text view del correo
-        emailTextView3 = findViewById(R.id.emailTextView3);
+        emailTextView3 = findViewById(R.id.editTextFilter);
 
         buttonModificar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,14 +64,12 @@ public class BuscarUsuario extends AppCompatActivity {
         });
 
 
-        buttonEliminar3.setOnClickListener(new View.OnClickListener() {
+        btnEliminarUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(BuscarUsuario.this, EliminarUsuario.class);
-
                 // envio el valor del correo que se encuentra en emailTextView3
                 intent.putExtra("email", emailTextView3.getText().toString());
-
                 startActivity(intent);
             }
         });
@@ -86,6 +89,14 @@ public class BuscarUsuario extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnBuscarUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buscarUsuariosPorNombre();
+            }
+        });
+
         // Cargar la lista de usuarios cuando se inicia la actividad
         cargarUsuarios();
     }
@@ -112,4 +123,24 @@ public class BuscarUsuario extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // Método para buscar usuarios por nombre
+    private void buscarUsuariosPorNombre() {
+        String nombre = editTextNombreDeUsuario.getText().toString().trim();
+
+        if (!nombre.isEmpty()) {
+            DataBaseHelper dbHelper = new DataBaseHelper(this);
+            List<Usuario> usuariosencontrados = dbHelper.buscarUsuariosPorNombre(nombre);
+            listaUsuarios.clear();
+
+            if (usuariosencontrados != null && !usuariosencontrados.isEmpty()) {
+                listaUsuarios.addAll(usuariosencontrados);
+            } else {
+                Toast.makeText(this, "Usuario no encontrado", Toast.LENGTH_SHORT).show();
+            }
+            // Notificar al adaptador
+            adapter.notifyDataSetChanged();
+        } else {
+            Toast.makeText(this, "Ingrese un nombre", Toast.LENGTH_SHORT).show();
+        }
+    }
 }
