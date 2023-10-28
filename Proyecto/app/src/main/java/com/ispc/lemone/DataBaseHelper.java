@@ -11,7 +11,9 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 import com.ispc.lemone.activities.AgregarUsuario;
+import com.ispc.lemone.clases.CategoriaProducto;
 import com.ispc.lemone.clases.Persona;
+import com.ispc.lemone.clases.Producto;
 import com.ispc.lemone.clases.TipoPersona;
 import com.ispc.lemone.clases.TipoUsuario;
 import com.ispc.lemone.clases.Usuario;
@@ -271,4 +273,78 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return result != -1;
     }
 
+    public boolean agregarProducto(Producto producto) {
+        long result = 0;
+        try{
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put("Codigo", producto.getCodigo());
+            values.put("Nombre", producto.getNombre());
+            values.put("Descripcion", producto.getDescripcion());
+            values.put("InventarioMinimo", producto.getInventarioMinimo());
+            values.put("PrecioDeCosto", producto.getPrecioDeCosto());
+            values.put("PrecioDeVenta", producto.getPrecioDeVenta());
+            values.put("ActivoActualmente", producto.isActivoActualmente() ? 1 : 0);
+
+            result = db.insert("Productos", null, values);
+            db.close();
+        }catch (Exception ex){
+            ex.toString();
+        }
+        return result != -1;
+    }
+
+    public CategoriaProducto buscarCategoriaPorId (int id){
+        String query = "SELECT * FROM Categorias WHERE id = " + id;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        CategoriaProducto categoriaProducto = null;
+        if (cursor.moveToFirst()) {
+            String nombre = cursor.getString(1);
+            categoriaProducto = new CategoriaProducto(id, nombre);
+        }
+        cursor.close();
+        db.close();
+        return categoriaProducto;
+    }
+
+    public List<Producto> listaDeProductos() {
+        List<Producto> productos = new ArrayList<>();
+
+        String query = "SELECT * FROM Productos";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(0);
+                String codigo = cursor.getString(1);
+                String nombre = cursor.getString(2);
+                String descripcion = cursor.getString(3);
+                int inventariominimo = cursor.getInt(4);
+                Double preciodecosto = cursor.getDouble(5);
+                Double preciodeventa = cursor.getDouble(6);
+                int idcategoria = cursor.getInt(7);
+                boolean activoActualmente = cursor.getInt(8) == 1;
+
+                Producto producto = new Producto();
+                producto.setId(id);
+                producto.setCodigo(codigo);
+                producto.setNombre(nombre);
+                producto.setDescripcion(descripcion);
+                producto.setInventarioMinimo(inventariominimo);
+                producto.setPrecioDeCosto(preciodecosto);
+                producto.setPrecioDeVenta(preciodeventa);
+                producto.setCategoriaProducto(buscarCategoriaPorId(idcategoria));
+                producto.setActivoActualmente(activoActualmente);
+
+                productos.add(producto);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return productos;
+    }
 }
