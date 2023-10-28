@@ -256,65 +256,70 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
     // consulta para listar los datos de un usuario en activity buscar uruario
-    public  buscarPersonaPorId(int id) {
-        String query = "SELECT * FROM Personas WHERE id = " + id;
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(query, null);
-        Persona persona = new Persona();
-        if (cursor.moveToFirst()) {
-            String nombre = cursor.getString(1);
-            String apellido = cursor.getString(2);
-            int dni = cursor.getInt(3);
-            String domicilio = cursor.getString(4);
-            double telefono = cursor.getDouble(5);
-            persona.setNombre(nombre);
-            persona.setApellido(apellido);
-            persona.setId(dni);
-            persona.setDomicilio(domicilio);
-            persona.setTelefono(telefono);
+    //public  buscarPersonaPorId(int id) {
+      //  String query = "SELECT * FROM Personas WHERE id = " + id;
+        //SQLiteDatabase db = this.getReadableDatabase();
+        //Cursor cursor = db.rawQuery(query, null);
+        //Persona persona = new Persona();
+        //if (cursor.moveToFirst()) {
+          //  String nombre = cursor.getString(1);
+            //String apellido = cursor.getString(2);
+            //int dni = cursor.getInt(3);
+            //String domicilio = cursor.getString(4);
+            //double telefono = cursor.getDouble(5);
+            //persona.setNombre(nombre);
+            //persona.setApellido(apellido);
+            //persona.setId(dni);
+            //persona.setDomicilio(domicilio);
+            //persona.setTelefono(telefono);
 
-        }
-        cursor.close();
-        db.close();
-        return persona;
-    }
+        //}
+        //cursor.close();
+        //db.close();
+        //return persona;
+    //}
 
     // consulta para modificar los campos en modificar usuario
 
-    public boolean editarPersona(int idPersona, int id, String nombre, String apellido, int dni, String domicilio, double telefono, String nuevoPassword, String antiguoPassword) {
+    public boolean editarUsuario (Usuario usuario, String etPassActual, String etConfirmarPass, String etNombre,String etApellido,String etDatosContacto,double etTelefono) {
         SQLiteDatabase db = this.getWritableDatabase();
+        int idPersona = usuario.getPersona().getId();
+        int idUsuario = usuario.getId();
+        int filasActualizadasPersona = 0;
+        int filasActualizadasTablaUsuario = 0;
 
         db.beginTransaction();
 
         try {
-            ContentValues valuesPersona = new ContentValues();
-            valuesPersona.put("nombre", nombre);
-            valuesPersona.put("apellido", apellido);
-            valuesPersona.put("dni", dni);
-            valuesPersona.put("domicilio", domicilio);
-            valuesPersona.put("telefono", telefono);
 
-            // Se actualiza la tabla Personas
-            int filasActualizadasPersona = db.update("Personas", valuesPersona, "id = " + id, null);
 
             // Se actualiza la otra tabla solo si antiguoPassword coincide con el valor existente
-            int filasActualizadasTablaUsuario = 0;
-            if (nuevoPassword != null && Password != null) {
+             filasActualizadasTablaUsuario = 0;
+            if (etConfirmarPass != null && etPassActual != null) {
                 // Se compara nuevoPassword con el valor existente en la base de datos
-                Cursor cursor = db.rawQuery("SELECT password FROM Usuario WHERE id = " + idPersona, null);
+                Cursor cursor = db.rawQuery("SELECT password FROM Usuario WHERE id = " + idUsuario, null);
                 if (cursor.moveToFirst()) {
                     String passwordExistente = cursor.getString(0);
-                    if (passwordExistente.equals(Password)) {
+                    if (passwordExistente.equals(etPassActual)) {
                         ContentValues valuesTablaRelacionada = new ContentValues();
-                        valuesTablaRelacionada.put("password", nuevoPassword);
-                        filasActualizadasTablaUsuario = db.update("Usuario", valuesTablaRelacionada, "id = " + idPersona, null);
+                        valuesTablaRelacionada.put("password", etConfirmarPass);
+                        filasActualizadasTablaUsuario = db.update("Usuario", valuesTablaRelacionada, "id = " + idUsuario, null);
+
+                        ContentValues valuesPersona = new ContentValues();
+                        valuesPersona.put("nombre", etNombre);
+                        valuesPersona.put("apellido", etApellido);
+                        valuesPersona.put("domicilio", etDatosContacto);
+                        valuesPersona.put("telefono", etTelefono);
+
+                        // Se actualiza la tabla Personas
+                         filasActualizadasPersona = db.update("Personas", valuesPersona, "id = " + idPersona, null);
                     }
                 }
                 cursor.close();
             }
 
             // Comprobamos que al menos una de las actualizaciones tuvo éxito
-            if (filasActualizadasPersona > 0 || filasActualizadasTablaRelacionada > 0) {
+            if (filasActualizadasPersona > 0 || filasActualizadasTablaUsuario > 0) {
                 // Confirmación de la transacción
                 db.setTransactionSuccessful();
                 return true;
