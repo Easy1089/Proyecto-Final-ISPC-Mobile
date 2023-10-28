@@ -69,7 +69,6 @@ public class MenuPrincipal extends AppCompatActivity {
             }
         });
 
-
         buttonSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
