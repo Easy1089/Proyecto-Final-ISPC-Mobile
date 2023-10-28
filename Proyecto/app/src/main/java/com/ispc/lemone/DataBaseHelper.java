@@ -6,11 +6,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.ispc.lemone.activities.AgregarUsuario;
 import com.ispc.lemone.clases.CategoriaProducto;
 import com.ispc.lemone.clases.Persona;
 import com.ispc.lemone.clases.Producto;
@@ -497,4 +495,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
         return usuarios;
     }
+
+    public boolean eliminarProductoPorId(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "DELETE FROM Productos WHERE Id = " + id;
+        Cursor cursor = db.rawQuery(query, null);
+        db.close();
+        return cursor.moveToFirst();
+
+    }
 }
+

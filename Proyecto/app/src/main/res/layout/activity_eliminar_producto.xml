@@ -105,8 +105,8 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Catalogo"
-        android:textSize="60px"
+        android:text="¿Confirma eliminar el siguiente Producto?"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
@@ -137,7 +137,7 @@
         app:srcCompat="@drawable/fondoproductos" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/productName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
@@ -145,13 +145,13 @@
         android:textColor="@color/black"
         android:textSize="18dp"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintBottom_toTopOf="@+id/productPrice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.772"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/productCat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="188dp"
@@ -165,7 +165,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/productPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="84dp"
@@ -180,16 +180,16 @@
         app:layout_constraintStart_toEndOf="@+id/imageView3" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/productCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="436dp"
+        android:layout_marginTop="376dp"
         android:text="Codigo"
         android:textColor="@color/black"
         android:textSize="18dp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.862"
+        app:layout_constraintHorizontal_bias="0.719"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
