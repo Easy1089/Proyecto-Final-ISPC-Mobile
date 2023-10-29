@@ -4,13 +4,12 @@ import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.ispc.lemone.activities.AgregarUsuario;
 import com.ispc.lemone.clases.CategoriaProducto;
 import com.ispc.lemone.clases.Persona;
 import com.ispc.lemone.clases.Producto;
@@ -499,7 +498,20 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
         return usuarios;
     }
+    public boolean eliminarProductoPorId(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "DELETE FROM Productos WHERE Id = " + id;
 
+        try {
+            db.execSQL(query);
+            db.close();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            db.close();
+            return false;
+        }
+    }
     public boolean actualizarProducto(Producto productoSeleccionado) {
         long result = 0;
         try {
@@ -521,4 +533,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
         return result != 0;
     }
+
 }
+
