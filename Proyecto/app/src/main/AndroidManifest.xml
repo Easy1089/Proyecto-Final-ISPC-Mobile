@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Lemone"
         tools:targetApi="31">
         <activity
+            android:name=".activities.informe_inventario_minimo"
+            android:exported="false" />
+        <activity
             android:name=".activities.MenuPrincipalUsuarioComun"
             android:exported="false" />
         <activity
