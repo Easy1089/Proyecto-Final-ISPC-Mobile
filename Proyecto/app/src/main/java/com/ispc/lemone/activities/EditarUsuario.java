@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.ispc.lemone.DataBaseHelper;
 import com.ispc.lemone.R;
@@ -32,9 +33,6 @@ public class EditarUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_usuario);
 
-
-    // Ver si esta ok traer vista anterior cargar en vista anterior
-
     Bundle usuarioAModificar = getIntent().getExtras();
 
 // se asigna valor a la variable Id
@@ -46,15 +44,10 @@ public class EditarUsuario extends AppCompatActivity {
     //buscar persona instanciando la consulta
     usuario = dataBaseHelper.buscarUsuarioPorEmail(email);
 
-        //etNombre.setText(usuario.getpersona().getNombre());
-        //etApellido.setText(usuario.getpersona().getApellido());
-        //etDatosContacto.setText(usuario.getpersona().getDomicilio());
-        //etTelefono.setText(String.valueOf(usuario.getpersona().getTelefono()));
-
         String nombrePersona = etNombre.getText().toString();
         String apellidoPersona = etApellido.getText().toString();
         String datoContactoPersona = etDatosContacto.getText().toString();
-        //double telefonoPersona = etTelefono.getText().toString();
+        double telefonoPersona = Double.parseDouble(etTelefono.getText().toString());
         String passActual = etPassActual.getText().toString();
         String passNueva = etConfirmarPass.getText().toString();
 
@@ -63,15 +56,14 @@ public class EditarUsuario extends AppCompatActivity {
     buttonGuardar.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            //dataBaseHelper.editarUsuario(usuario,passActual, passNueva, nombrePersona,apellidoPersona,datoContactoPersona,telefonoPersona);
-            //Toast.makeText(EliminarUsuario.this, "Usuario Editado", Toast.LENGTH_SHORT).show();
+            dataBaseHelper.editarUsuario(usuario,passActual, passNueva, nombrePersona,apellidoPersona,datoContactoPersona, telefonoPersona);
+            Toast.makeText(EditarUsuario.this, "Usuario Editado", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(EditarUsuario.this, BuscarUsuario.class);
             startActivity(intent);
         }
     });
 
     }
-
     public void volver(View view) {
         Intent intent = new Intent(this, BuscarUsuario.class);
         startActivity(intent);
