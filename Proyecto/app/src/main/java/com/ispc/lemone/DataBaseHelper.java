@@ -29,73 +29,73 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-            String tablaCategorias = "CREATE TABLE IF NOT EXISTS Categorias (" +
-                    "Id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    "Nombre VARCHAR(50) NOT NULL)";
-            db.execSQL(tablaCategorias);
+        String tablaCategorias = "CREATE TABLE IF NOT EXISTS Categorias (" +
+                "Id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "Nombre VARCHAR(50) NOT NULL)";
+        db.execSQL(tablaCategorias);
 
-            String tablaProductos = "CREATE TABLE IF NOT EXISTS Productos (" +
-                    "Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    "Codigo VARCHAR(20) NOT NULL, " +
-                    "Nombre VARCHAR(50) NOT NULL, " +
-                    "Descripcion VARCHAR(250) NOT NULL, " +
-                    "InventarioMinimo INT, " +
-                    "PrecioDeCosto DECIMAL(17, 2), " +
-                    "PrecioDeVenta DECIMAL(17, 2), " +
-                    "IdCategoria INT, " +
-                    "ActivoActualmente BIT, " +
-                    "FOREIGN KEY(IdCategoria) REFERENCES Categorias(Id))";
-            db.execSQL(tablaProductos);
+        String tablaProductos = "CREATE TABLE IF NOT EXISTS Productos (" +
+                "Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "Codigo VARCHAR(20) NOT NULL, " +
+                "Nombre VARCHAR(50) NOT NULL, " +
+                "Descripcion VARCHAR(250) NOT NULL, " +
+                "InventarioMinimo INT, " +
+                "PrecioDeCosto DECIMAL(17, 2), " +
+                "PrecioDeVenta DECIMAL(17, 2), " +
+                "IdCategoria INT, " +
+                "ActivoActualmente BIT, " +
+                "FOREIGN KEY(IdCategoria) REFERENCES Categorias(Id))";
+        db.execSQL(tablaProductos);
 
-            String tablaTipoPersonas = "CREATE TABLE IF NOT EXISTS TiposDePersonas (" +
-                    "Id INTEGER NOT NULL, " +
-                    "Nombre VARCHAR(50) NOT NULL, " +
-                    "PRIMARY KEY(Id))";
-            db.execSQL(tablaTipoPersonas);
+        String tablaTipoPersonas = "CREATE TABLE IF NOT EXISTS TiposDePersonas (" +
+                "Id INTEGER NOT NULL, " +
+                "Nombre VARCHAR(50) NOT NULL, " +
+                "PRIMARY KEY(Id))";
+        db.execSQL(tablaTipoPersonas);
 
-            String tablaPersonas = "CREATE TABLE IF NOT EXISTS Personas (" +
-                    "Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    "Apellido VARCHAR(50) NOT NULL, " +
-                    "Nombre VARCHAR(50) NOT NULL, " +
-                    "Telefono NUMERIC, " +
-                    "IdTipoDePersona INT, " +
-                    "ActivoActualmente BIT NOT NULL DEFAULT 1, " +
-                    "Domicilio VARCHAR(200), " +
-                    "FOREIGN KEY(IdTipoDePersona) REFERENCES TiposDePersonas(Id))";
-            db.execSQL(tablaPersonas);
+        String tablaPersonas = "CREATE TABLE IF NOT EXISTS Personas (" +
+                "Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "Apellido VARCHAR(50) NOT NULL, " +
+                "Nombre VARCHAR(50) NOT NULL, " +
+                "Telefono NUMERIC, " +
+                "IdTipoDePersona INT, " +
+                "ActivoActualmente BIT NOT NULL DEFAULT 1, " +
+                "Domicilio VARCHAR(200), " +
+                "FOREIGN KEY(IdTipoDePersona) REFERENCES TiposDePersonas(Id))";
+        db.execSQL(tablaPersonas);
 
-            String tablaTiposUsuarios = "CREATE TABLE IF NOT EXISTS TiposDeUsuarios (" +
-                    "Id INT NOT NULL, " +
-                    "Nombre VARCHAR(50) NOT NULL, " +
-                    "PRIMARY KEY(Id))";
-            db.execSQL(tablaTiposUsuarios);
+        String tablaTiposUsuarios = "CREATE TABLE IF NOT EXISTS TiposDeUsuarios (" +
+                "Id INT NOT NULL, " +
+                "Nombre VARCHAR(50) NOT NULL, " +
+                "PRIMARY KEY(Id))";
+        db.execSQL(tablaTiposUsuarios);
 
-            String tablaTiposOperacion = "CREATE TABLE IF NOT EXISTS TiposDeOperacion (" +
-                    "Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    "Nombre VARCHAR(50))";
-            db.execSQL(tablaTiposOperacion);
+        String tablaTiposOperacion = "CREATE TABLE IF NOT EXISTS TiposDeOperacion (" +
+                "Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "Nombre VARCHAR(50))";
+        db.execSQL(tablaTiposOperacion);
 
-            String tablaUsuarios = "CREATE TABLE IF NOT EXISTS Usuarios (" +
-                    "Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    "IdTipoDeUsuario INT NOT NULL, " +
-                    "IdPersona INT, " +
-                    "Email VARCHAR(50), " +
-                    "Password VARCHAR(255) NOT NULL, " +
-                    "ActivoActualmente BIT NOT NULL DEFAULT 1, " +
-                    "FOREIGN KEY(IdPersona) REFERENCES Personas(Id), " +
-                    "FOREIGN KEY(IdTipoDeUsuario) REFERENCES TiposDeUsuarios(Id))";
-            db.execSQL(tablaUsuarios);
+        String tablaUsuarios = "CREATE TABLE IF NOT EXISTS Usuarios (" +
+                "Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "IdTipoDeUsuario INT NOT NULL, " +
+                "IdPersona INT, " +
+                "Email VARCHAR(50), " +
+                "Password VARCHAR(255) NOT NULL, " +
+                "ActivoActualmente BIT NOT NULL DEFAULT 1, " +
+                "FOREIGN KEY(IdPersona) REFERENCES Personas(Id), " +
+                "FOREIGN KEY(IdTipoDeUsuario) REFERENCES TiposDeUsuarios(Id))";
+        db.execSQL(tablaUsuarios);
 
-            String tablaOrdenes = "CREATE TABLE IF NOT EXISTS Ordenes (" +
-                    "Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    "Fecha DATE NOT NULL, " +
-                    "IdProducto INT NOT NULL, " +
-                    "IdPersona INT, " +
-                    "Cantidad INT NOT NULL, " +
-                    "IdTipoDeOperacion INT NOT NULL, " +
-                    "FOREIGN KEY(IdPersona) REFERENCES Personas(Id), " +
-                    "FOREIGN KEY(IdProducto) REFERENCES Productos(Id))";
-            db.execSQL(tablaOrdenes);
+        String tablaOrdenes = "CREATE TABLE IF NOT EXISTS Ordenes (" +
+                "Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "Fecha DATE NOT NULL, " +
+                "IdProducto INT NOT NULL, " +
+                "IdPersona INT, " +
+                "Cantidad INT NOT NULL, " +
+                "IdTipoDeOperacion INT NOT NULL, " +
+                "FOREIGN KEY(IdPersona) REFERENCES Personas(Id), " +
+                "FOREIGN KEY(IdProducto) REFERENCES Productos(Id))";
+        db.execSQL(tablaOrdenes);
 
         db.execSQL("INSERT INTO Categorias VALUES (1,'Categoría 1')");
         db.execSQL("INSERT INTO Categorias VALUES (2,'Categoría 2')");
@@ -121,17 +121,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO Usuarios VALUES (2,2,2,'melisaapaz@gmail.com','12345678',1)");
         db.execSQL("INSERT INTO Usuarios VALUES (3,2,3,'juanperez@gmail.com','12345678',1)");
         db.execSQL("INSERT INTO Usuarios VALUES (4,2,4,'martasanchez@gmail.com','12345678',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (5,2,1,'user@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (6,2,2,'user2@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (7,2,3,'user3@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (8,2,4,'user4@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (9,2,1,'user5@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (10,1,2,'admin@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (11,2,3,'admin2@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (12,1,4,'admin3@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (13,2,1,'admin4@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (14,1,2,'admin5@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (15,2,3,'admin6@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (5,2,1,'user@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (6,2,2,'user2@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (7,2,3,'user3@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (8,2,4,'user4@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (9,2,1,'user5@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (10,1,2,'admin@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (11,2,3,'admin2@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (12,1,4,'admin3@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (13,2,1,'admin4@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (14,1,2,'admin5@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (15,2,3,'admin6@gmail.com','123',1)");
     }
 
     @Override
@@ -257,26 +257,26 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     // consulta para listar los datos de un usuario en activity buscar uruario
     //public  buscarPersonaPorId(int id) {
-      //  String query = "SELECT * FROM Personas WHERE id = " + id;
-        //SQLiteDatabase db = this.getReadableDatabase();
-        //Cursor cursor = db.rawQuery(query, null);
-        //Persona persona = new Persona();
-        //if (cursor.moveToFirst()) {
-          //  String nombre = cursor.getString(1);
-            //String apellido = cursor.getString(2);
-            //int dni = cursor.getInt(3);
-            //String domicilio = cursor.getString(4);
-            //double telefono = cursor.getDouble(5);
-            //persona.setNombre(nombre);
-            //persona.setApellido(apellido);
-            //persona.setId(dni);
-            //persona.setDomicilio(domicilio);
-            //persona.setTelefono(telefono);
+    //  String query = "SELECT * FROM Personas WHERE id = " + id;
+    //SQLiteDatabase db = this.getReadableDatabase();
+    //Cursor cursor = db.rawQuery(query, null);
+    //Persona persona = new Persona();
+    //if (cursor.moveToFirst()) {
+    //  String nombre = cursor.getString(1);
+    //String apellido = cursor.getString(2);
+    //int dni = cursor.getInt(3);
+    //String domicilio = cursor.getString(4);
+    //double telefono = cursor.getDouble(5);
+    //persona.setNombre(nombre);
+    //persona.setApellido(apellido);
+    //persona.setId(dni);
+    //persona.setDomicilio(domicilio);
+    //persona.setTelefono(telefono);
 
-        //}
-        //cursor.close();
-        //db.close();
-        //return persona;
+    //}
+    //cursor.close();
+    //db.close();
+    //return persona;
     //}
 
     // consulta para modificar los campos en modificar usuario
@@ -294,7 +294,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
             // Se actualiza la otra tabla solo si antiguoPassword coincide con el valor existente
-             filasActualizadasTablaUsuario = 0;
+            filasActualizadasTablaUsuario = 0;
             if (etConfirmarPass != null && etPassActual != null) {
                 // Se compara nuevoPassword con el valor existente en la base de datos
                 Cursor cursor = db.rawQuery("SELECT password FROM Usuario WHERE id = " + idUsuario, null);
@@ -312,7 +312,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                         valuesPersona.put("telefono", etTelefono);
 
                         // Se actualiza la tabla Personas
-                         filasActualizadasPersona = db.update("Personas", valuesPersona, "id = " + idPersona, null);
+                        filasActualizadasPersona = db.update("Personas", valuesPersona, "id = " + idPersona, null);
                     }
                 }
                 cursor.close();
@@ -339,11 +339,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         try{
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues values = new ContentValues();
-            values.put("IdTipoDeUsuario", usuario.getTipoUsuario().getId());
-            values.put("IdPersona", usuario.getPersona().getId());
+            values.put("IdTipoDeUsuario", 2);
+            //values.put("IdPersona", 1);
             values.put("Email", usuario.getEmail());
             values.put("Password", usuario.getPassword());
-            values.put("ActivoActualmente", usuario.isActivoActualmente() ? 1 : 0);
+            values.put("ActivoActualmente", 1);
 
             result = db.insert("Usuarios", null, values);
             db.close();
@@ -367,6 +367,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             values.put("InventarioMinimo", producto.getInventarioMinimo());
             values.put("PrecioDeCosto", producto.getPrecioDeCosto());
             values.put("PrecioDeVenta", producto.getPrecioDeVenta());
+            values.put("IdCategoria", producto.getCategoriaProducto().getId());
             values.put("ActivoActualmente", producto.isActivoActualmente() ? 1 : 0);
 
             result = db.insert("Productos", null, values);
@@ -407,8 +408,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 int inventariominimo = cursor.getInt(4);
                 Double preciodecosto = cursor.getDouble(5);
                 Double preciodeventa = cursor.getDouble(6);
-                int idcategoria = cursor.getInt(7);
-                boolean activoActualmente = cursor.getInt(8) == 1;
+                int idcategoria = 1;//cursor.getInt(7);
+                int activoActualmenteInt = cursor.getInt(8);
+                boolean activoActualmente = (activoActualmenteInt == 1);
 
                 Producto producto = new Producto();
                 producto.setId(id);
@@ -418,7 +420,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 producto.setInventarioMinimo(inventariominimo);
                 producto.setPrecioDeCosto(preciodecosto);
                 producto.setPrecioDeVenta(preciodeventa);
-                producto.setCategoriaProducto(buscarCategoriaPorId(idcategoria));
+                //producto.setCategoriaProducto(buscarCategoriaPorId(idcategoria));
                 producto.setActivoActualmente(activoActualmente);
 
                 productos.add(producto);
@@ -431,4 +433,92 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return productos;
     }
 
+    public List<Producto> buscarProductosPorCodigo(String codigo) {
+        List<Producto> productos = new ArrayList<>();
+        String query = "SELECT * FROM Productos WHERE Codigo = ?";
+        String[] selectionArgs = {codigo};
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, selectionArgs);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(0);
+                String codigoProducto = cursor.getString(1);
+                String nombre = cursor.getString(2);
+                String descripcion = cursor.getString(3);
+
+                Producto producto = new Producto();
+                producto.setId(id);
+                producto.setCodigo(codigoProducto);
+                producto.setNombre(nombre);
+                producto.setDescripcion(descripcion);
+
+                productos.add(producto);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return productos;
+    }
+
+    public List<Usuario> buscarUsuariosPorNombre(String nombre) {
+        List<Usuario> usuarios = new ArrayList<>();
+        String query = "SELECT * FROM Usuarios WHERE Email LIKE ?";
+        String[] selectionArgs = {"%" + nombre + "%"};
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, selectionArgs);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(0);
+                int idTipoUsuario = cursor.getInt(1);
+                int idPersona = cursor.getInt(2);
+                @SuppressLint("Range") String email = cursor.getString(cursor.getColumnIndex("Email"));
+                String password = cursor.getString(4);
+                boolean activoActualmente = cursor.getInt(5) == 1;
+
+                Usuario usuario = new Usuario();
+                usuario.setId(id);
+                usuario.setTipoUsuario(buscarTipoUsuarioPorId(idTipoUsuario));
+                usuario.setPersona(buscarPersonaPorId(idPersona));
+                usuario.setEmail(email);
+                usuario.setPassword(password);
+                usuario.setActivoActualmente(activoActualmente);
+
+                usuarios.add(usuario);
+            } while (cursor.moveToNext());
+
+            cursor.close();
+            db.close();
+
+            return usuarios;
+        }
+        return usuarios;
+    }
+
+    public boolean actualizarProducto(Producto productoSeleccionado) {
+        long result = 0;
+        try {
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put("Codigo", productoSeleccionado.getCodigo());
+            values.put("Nombre", productoSeleccionado.getNombre());
+            values.put("Descripcion", productoSeleccionado.getDescripcion());
+            values.put("InventarioMinimo", productoSeleccionado.getInventarioMinimo());
+            values.put("PrecioDeCosto", productoSeleccionado.getPrecioDeCosto());
+            values.put("PrecioDeVenta", productoSeleccionado.getPrecioDeVenta());
+            values.put("IdCategoria", productoSeleccionado.getCategoriaProducto().getId());
+            values.put("ActivoActualmente", productoSeleccionado.isActivoActualmente() ? 1 : 0);
+
+            result = db.update("Productos", values, "ID=?", new String[]{String.valueOf(productoSeleccionado.getId())});
+            db.close();
+        } catch (Exception ex) {
+            ex.toString();
+        }
+        return result != 0;
+    }
 }

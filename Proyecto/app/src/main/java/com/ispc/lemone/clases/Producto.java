@@ -1,6 +1,6 @@
 package com.ispc.lemone.clases;
-
-public class Producto {
+import java.io.Serializable;
+public class Producto implements Serializable  {
     private int id;
     private String codigo;
     private String nombre;
@@ -96,5 +96,9 @@ public class Producto {
 
     public void setActivoActualmente(boolean activoActualmente) {
         this.activoActualmente = activoActualmente;
+    }
+
+    public boolean getActivoActualmente() {
+        return activoActualmente;
     }
 }

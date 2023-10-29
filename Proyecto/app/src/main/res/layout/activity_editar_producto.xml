@@ -9,6 +9,58 @@
 
     <!--   FLECHA VOLVER ATRAS -->
 
+    <Spinner
+        android:id="@+id/spinnerCategorias2"
+        android:layout_width="300dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/swActivo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toEndOf="@+id/frameCategoria"
+        app:layout_constraintTop_toBottomOf="@+id/textPrecioVenta"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnEliminar"
+        android:layout_width="177dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/bordo"
+        android:insetTop="5dp"
+        android:insetBottom="5dp"
+        android:text="@string/btnEliminar"
+        android:textColor="@color/crema"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:iconPadding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.963" />
+
+    <Button
+        android:id="@+id/buttonGuardarEP"
+        android:layout_width="177dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/bordo"
+        android:insetTop="5dp"
+        android:insetBottom="5dp"
+        android:text="@string/btnGuardar"
+        android:textColor="@color/crema"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:iconPadding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnEliminar"
+        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.961" />
+
     <FrameLayout
         android:id="@+id/btn_volverEP"
         android:layout_width="49dp"
@@ -62,6 +114,11 @@
         app:srcCompat="@drawable/icon_lemone" />
 
     <!--   SUBTITULO -->
+
+    <!--    TITULO EDITAR PRODUCTO-->
+
+    <!--    campo CÓDIGO-->
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -69,27 +126,23 @@
         android:layout_marginTop="32dp"
         android:text="@string/subtitulo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintHorizontal_bias="0.597"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <!--    TITULO EDITAR PRODUCTO-->
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="192dp"
         android:text="@string/tituloEditarProducto"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <!--    campo CÓDIGO-->
 
     <FrameLayout
         android:id="@+id/frameLayoutCodigo"
@@ -127,15 +180,18 @@
 
     <!--    Campo NOMBRE-->
 
+
+    <!--    Campo DESCRIPCION-->
+
     <FrameLayout
         android:id="@+id/frameLayoutNombre"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
         app:layout_constraintEnd_toStartOf="@+id/textNombre"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.451"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayoutCodigo">
 
@@ -150,7 +206,7 @@
         android:id="@+id/textNombre"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Nombre"
         android:inputType="text"
@@ -161,14 +217,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textCodigo" />
 
-
-    <!--    Campo DESCRIPCION-->
+    <!--    Campo INVENTARIO MINIMO-->
 
     <FrameLayout
         android:id="@+id/frameDescripcion"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
         app:layout_constraintEnd_toStartOf="@+id/textDescripcion"
@@ -187,7 +242,7 @@
         android:id="@+id/textDescripcion"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Descripción"
         android:inputType="text"
@@ -198,13 +253,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textNombre" />
 
-    <!--    Campo INVENTARIO MINIMO-->
-
     <FrameLayout
         android:id="@+id/frameInventario"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
         app:layout_constraintEnd_toStartOf="@+id/textInventario"
@@ -223,7 +276,7 @@
         android:id="@+id/textInventario"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
         android:hint="Inventario mínimo"
         android:inputType="number"
@@ -234,11 +287,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textDescripcion" />
 
+    <!--    Campo PRECIO DE COSTO-->
+
     <EditText
         android:id="@+id/textPrecioCosto"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Precio de costo"
         android:inputType="number"
@@ -249,17 +304,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInventario" />
 
-    <!--    Campo PRECIO DE COSTO-->
+    <!--    Campo PRECIO DE VENTA-->
 
     <FrameLayout
         android:id="@+id/framePrecioCosto"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
         app:layout_constraintEnd_toStartOf="@+id/textPrecioCosto"
-        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameInventario">
 
@@ -270,17 +325,17 @@
             android:src="@drawable/product_icon" />
     </FrameLayout>
 
-    <!--    Campo PRECIO DE VENTA-->
+    <!--    campo CATEGORIA-->
 
     <FrameLayout
         android:id="@+id/framePrecioVenta"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
         app:layout_constraintEnd_toStartOf="@+id/textPrecioVenta"
-        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/framePrecioCosto">
 
@@ -295,7 +350,7 @@
         android:id="@+id/textPrecioVenta"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Precio de venta"
         android:inputType="number"
@@ -306,17 +361,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textPrecioCosto" />
 
-    <!--    campo CATEGORIA-->
+    <!--    BOTON -->
 
     <FrameLayout
         android:id="@+id/frameCategoria"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
-        app:layout_constraintEnd_toStartOf="@+id/textCategoria"
-        app:layout_constraintHorizontal_bias="0.451"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/framePrecioVenta">
 
@@ -327,41 +381,18 @@
             android:src="@drawable/product_icon" />
     </FrameLayout>
 
-    <EditText
-        android:id="@+id/textCategoria"
-        android:layout_width="300dp"
+    <Switch
+        android:id="@+id/swActivo2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="Categoría"
-        android:inputType="text"
+        android:layout_marginBottom="112dp"
+        android:text="Activo"
         android:textColor="@color/black"
-        android:textColorHint="@color/gris"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.72"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPrecioVenta" />
-
-    <!--    BOTON -->
-
-    <Button
-        android:id="@+id/buttonGuardarEP"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/bordo"
-        android:insetTop="5dp"
-        android:insetBottom="5dp"
-        android:text="@string/btnGuardar"
-        android:textColor="@color/crema"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        app:iconPadding="10dp"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textCategoria" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
