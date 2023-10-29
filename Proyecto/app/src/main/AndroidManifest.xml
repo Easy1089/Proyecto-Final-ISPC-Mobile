@@ -18,6 +18,7 @@
         tools:targetApi="31">
         <activity
             android:name=".activities.OrdenesDetalles"
+            android:name=".activities.MenuPrincipalUsuarioComun"
             android:exported="false" />
         <activity
             android:name=".activities.ActivarDesactivarProducto"
