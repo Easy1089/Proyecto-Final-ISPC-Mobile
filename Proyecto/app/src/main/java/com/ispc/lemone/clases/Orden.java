@@ -1,28 +1,41 @@
 package com.ispc.lemone.clases;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Orden {
+public class Orden implements Serializable {
 
     private int id;
-    private Date fecha;
+    private String fecha;
     private Producto producto;
     private Persona persona;
     private int cantidad;
-    private TipoOperacion tipoOperacion;
-
+    private String tipoDeOperacion;
+    private String nombrePersona;
+    private String nombreProducto;
+    private  String codigoDeProducto;
     public Orden() {
     }
 
-    public Orden(int id, Date fecha, Producto producto, Persona persona, int cantidad, TipoOperacion tipoOperacion) {
+    public Orden(int cantidad,  String nombrePersona,
+                 String nombreProducto, String tipoDeOperacion,
+                 String codigoDeProducto, String fecha) {
         this.id = id;
-        this.fecha = fecha;
-        this.producto = producto;
-        this.persona = persona;
         this.cantidad = cantidad;
-        this.tipoOperacion = tipoOperacion;
+        this.nombrePersona = nombrePersona;
+        this.nombreProducto = nombreProducto;
+        this.tipoDeOperacion = tipoDeOperacion;
+        this.codigoDeProducto = codigoDeProducto;
+        this.fecha = fecha;
     }
 
+    public String getNombreProducto() {
+        return nombreProducto;
+    }
+
+    public String getCodigoProducto() {
+        return codigoDeProducto;
+    }
     public int getId() {
         return id;
     }
@@ -31,11 +44,11 @@ public class Orden {
         this.id = id;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
@@ -47,27 +60,37 @@ public class Orden {
         this.producto = producto;
     }
 
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
-    }
-
     public int getCantidad() {
         return cantidad;
+    }
+
+    public String getTipoDeOperacion() {
+        return tipoDeOperacion;
+    }
+
+    public String getPersona() {
+        return nombrePersona;
     }
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
 
-    public TipoOperacion getTipoOperacion() {
-        return tipoOperacion;
+    public void setTipoOperacion(String tipoOperacion) {
+        this.tipoDeOperacion = tipoOperacion;
     }
 
-    public void setTipoOperacion(TipoOperacion tipoOperacion) {
-        this.tipoOperacion = tipoOperacion;
+    public void setCodigoProducto(String codigoProducto) {
+        this.codigoDeProducto = codigoProducto;
     }
+
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
+    }
+
+    public void setNombrePersona(String nombrePersona) {
+        this.nombrePersona = nombrePersona;
+    }
+
+
 }
