@@ -124,21 +124,23 @@ public class BuscarProducto extends AppCompatActivity {
     private void buscarProductoPorCodigo() {
         String codigo = editTextCodigoProducto.getText().toString().trim();
 
-        if (!codigo.isEmpty()) {
-            DataBaseHelper dbHelper = new DataBaseHelper(this);
-            // Acceder a la base de datos y cargar los productos
-            List<Producto> productosEncontrados = dbHelper.buscarProductosPorCodigo(codigo);
-            listaProductos.clear();
+        DataBaseHelper dbHelper = new DataBaseHelper(this);
+        List<Producto> productosEncontrados;
 
-            if (productosEncontrados != null && !productosEncontrados.isEmpty()) {
-                listaProductos.addAll(productosEncontrados);
-            } else {
-                Toast.makeText(this, "Producto no encontrado", Toast.LENGTH_SHORT).show();
-            }
-            // Notificar al adaptador
-            adapter.notifyDataSetChanged();
+        if (!codigo.isEmpty()) {
+            productosEncontrados = dbHelper.buscarProductosPorCodigo(codigo);
         } else {
-            Toast.makeText(this, "Ingrese un código de producto", Toast.LENGTH_SHORT).show();
+            productosEncontrados = dbHelper.obtenerTodosLosProductos();
         }
+
+        listaProductos.clear();
+
+        if (productosEncontrados != null && !productosEncontrados.isEmpty()) {
+            listaProductos.addAll(productosEncontrados);
+        } else {
+            Toast.makeText(this, "Producto no encontrado", Toast.LENGTH_SHORT).show();
+        }
+        // Notificar al adaptador
+        adapter.notifyDataSetChanged();
     }
 }

@@ -21,19 +21,6 @@ public class ProductoAdapter extends ArrayAdapter<Producto> {
         this.context = context;
         this.productos = productos;
     }
-
-   // @Override
-   // public View getView(int position, View convertView, ViewGroup parent) {
-      //  if (convertView == null) {
-      //      convertView = LayoutInflater.from(context).inflate(R.layout.item_producto, parent, false);
-      //  }
-      //  Producto producto = productos.get(position);
-      //  TextView nombreProducto = convertView.findViewById(R.id.textViewNombreProducto);
-      //  nombreProducto.setText(producto.getNombre());
-
-     //   return convertView;
-    //}
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {

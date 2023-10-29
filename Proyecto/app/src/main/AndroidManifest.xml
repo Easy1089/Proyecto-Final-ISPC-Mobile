@@ -20,6 +20,9 @@
             android:name=".activities.MenuPrincipalUsuarioComun"
             android:exported="false" />
         <activity
+            android:name=".activities.OrdenesDetalles"
+            android:exported="false" />
+        <activity
             android:name=".activities.ActivarDesactivarProducto"
             android:exported="false" />
         <activity
