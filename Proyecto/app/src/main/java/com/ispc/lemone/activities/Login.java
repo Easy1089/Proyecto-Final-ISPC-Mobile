@@ -78,24 +78,45 @@ public class Login extends AppCompatActivity {
         usuarioIngresado = findViewById(R.id.txt_usuario);
         passwordIngresado = findViewById(R.id.txt_password);
 
+//        botonLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                if(usuario.getTipoUsuario().getId() == 1) {
+//                    Intent intent = new Intent(Login.this, MenuPrincipal.class);
+//                    iniciarSesion();
+//                    startActivity(intent);
+//                }else{
+//                    Intent intent = new Intent(Login.this, MenuPrincipalUsuarioComun.class);
+//                    iniciarSesion();
+//                    startActivity(intent);
+//                }
+//
+//
+//                iniciarSesion();
+//            }
+//        });
+
+
         botonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String email = usuarioIngresado.getText().toString();
+                String password = passwordIngresado.getText().toString();
 
-                if(usuario.getTipoUsuario().getId() == 1) {
+                if (email.equals("admin@gmail.com") && password.equals("admin123")) {
+                    // Usuario especial (admin) accede a una pantalla
                     Intent intent = new Intent(Login.this, MenuPrincipal.class);
-                    iniciarSesion();
                     startActivity(intent);
-                }else{
+                } else {
+                    // Todos los demás usuarios acceden a otra pantalla
                     Intent intent = new Intent(Login.this, MenuPrincipalUsuarioComun.class);
-                    iniciarSesion();
                     startActivity(intent);
                 }
-
-
-                iniciarSesion();
             }
         });
+
+
     }
 
     public void iniciarSesion() {

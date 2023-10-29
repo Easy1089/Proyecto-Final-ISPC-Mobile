@@ -22,6 +22,7 @@ public class MenuPrincipalUsuarioComun extends AppCompatActivity {
         setContentView(R.layout.activity_menu_principal_usuario_comun);
 
         buttonProductos = findViewById(R.id.buttonProductos);
+        buttonSalir = findViewById(R.id.buttonSalir);
 
 
         buttonProductos.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +42,7 @@ public class MenuPrincipalUsuarioComun extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
 
     }
