@@ -121,17 +121,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO Usuarios VALUES (2,2,2,'melisaapaz@gmail.com','12345678',1)");
         db.execSQL("INSERT INTO Usuarios VALUES (3,2,3,'juanperez@gmail.com','12345678',1)");
         db.execSQL("INSERT INTO Usuarios VALUES (4,2,4,'martasanchez@gmail.com','12345678',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (5,2,1,'user@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (6,2,2,'user2@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (7,2,3,'user3@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (8,2,4,'user4@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (9,2,1,'user5@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (10,1,2,'admin@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (11,2,3,'admin2@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (12,1,4,'admin3@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (13,2,1,'admin4@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (14,1,2,'admin5@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (15,2,3,'admin6@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (5,2,1,'user@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (6,2,2,'user2@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (7,2,3,'user3@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (8,2,4,'user4@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (9,2,1,'user5@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (10,1,2,'admin@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (11,2,3,'admin2@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (12,1,4,'admin3@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (13,2,1,'admin4@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (14,1,2,'admin5@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (15,2,3,'admin6@gmail.com','123',1)");
     }
 
     @Override
@@ -339,11 +339,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         try{
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues values = new ContentValues();
-            values.put("IdTipoDeUsuario", usuario.getTipoUsuario().getId());
-            values.put("IdPersona", usuario.getPersona().getId());
+            values.put("IdTipoDeUsuario", 2);
+            //values.put("IdPersona", 1);
             values.put("Email", usuario.getEmail());
             values.put("Password", usuario.getPassword());
-            values.put("ActivoActualmente", usuario.isActivoActualmente() ? 1 : 0);
+            values.put("ActivoActualmente", 1);
 
             result = db.insert("Usuarios", null, values);
             db.close();
