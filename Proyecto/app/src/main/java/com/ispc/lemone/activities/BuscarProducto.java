@@ -24,6 +24,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BuscarProducto extends AppCompatActivity {
+    private Usuario usuario;
+    public BuscarProducto(Usuario usuario) {
+        this.usuario = usuario;
+    }
+    public BuscarProducto() {
+    }
 
     private FrameLayout btnVolver;
     private Button agregarProducto;
@@ -61,11 +67,23 @@ public class BuscarProducto extends AppCompatActivity {
             }
         });
 
+//        btnVolver.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(BuscarProducto.this, MenuPrincipal.class);
+//                startActivity(intent);
+//            }
+//        });
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BuscarProducto.this, MenuPrincipal.class);
-                startActivity(intent);
+                if(usuario.getTipoUsuario().getId() == 1) {
+                    Intent intent = new Intent(BuscarProducto.this, MenuPrincipal.class);
+                    startActivity(intent);
+                }else{
+                    Intent intent = new Intent(BuscarProducto.this, MenuPrincipalUsuarioComun.class);
+                    startActivity(intent);
+                }
             }
         });
 
