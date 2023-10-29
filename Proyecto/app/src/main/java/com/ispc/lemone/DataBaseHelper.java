@@ -261,31 +261,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
 
-    // consulta para listar los datos de un usuario en activity buscar uruario
-    //public  buscarPersonaPorId(int id) {
-    //  String query = "SELECT * FROM Personas WHERE id = " + id;
-    //SQLiteDatabase db = this.getReadableDatabase();
-    //Cursor cursor = db.rawQuery(query, null);
-    //Persona persona = new Persona();
-    //if (cursor.moveToFirst()) {
-    //  String nombre = cursor.getString(1);
-    //String apellido = cursor.getString(2);
-    //int dni = cursor.getInt(3);
-    //String domicilio = cursor.getString(4);
-    //double telefono = cursor.getDouble(5);
-    //persona.setNombre(nombre);
-    //persona.setApellido(apellido);
-    //persona.setId(dni);
-    //persona.setDomicilio(domicilio);
-    //persona.setTelefono(telefono);
 
-    //}
-    //cursor.close();
-    //db.close();
-    //return persona;
-    //}
-
-    // consulta para modificar los campos en modificar usuario
 
     public boolean editarUsuario(Usuario usuario, String etPassActual, String etConfirmarPass, String etNombre, String etApellido, String etDatosContacto, double etTelefono) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -323,7 +299,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 }
                 cursor.close();
             }
-
             // Comprobamos que al menos una de las actualizaciones tuvo éxito
             if (filasActualizadasPersona > 0 || filasActualizadasTablaUsuario > 0) {
                 // Confirmación de la transacción
@@ -334,7 +309,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 return false;
             }
         } finally {
-            // Finalizamos y cerramos bd
             db.endTransaction();
             db.close();
         }
