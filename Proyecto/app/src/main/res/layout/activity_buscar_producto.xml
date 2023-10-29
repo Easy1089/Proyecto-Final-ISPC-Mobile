@@ -139,6 +139,7 @@
         android:id="@+id/btn_agregarFP"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="383dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/white"
         android:text="@string/btnAgregarProd"
@@ -150,7 +151,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/listViewProductos" />
 
     <ListView
         android:id="@+id/listViewProductos"

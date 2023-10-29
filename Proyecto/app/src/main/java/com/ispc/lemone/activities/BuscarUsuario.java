@@ -127,20 +127,26 @@ public class BuscarUsuario extends AppCompatActivity {
     private void buscarUsuariosPorNombre() {
         String nombre = editTextNombreDeUsuario.getText().toString().trim();
 
-        if (!nombre.isEmpty()) {
-            DataBaseHelper dbHelper = new DataBaseHelper(this);
-            List<Usuario> usuariosencontrados = dbHelper.buscarUsuariosPorNombre(nombre);
-            listaUsuarios.clear();
+        DataBaseHelper dbHelper = new DataBaseHelper(this);
+        List<Usuario> usuariosencontrados;
 
-            if (usuariosencontrados != null && !usuariosencontrados.isEmpty()) {
-                listaUsuarios.addAll(usuariosencontrados);
-            } else {
-                Toast.makeText(this, "Usuario no encontrado", Toast.LENGTH_SHORT).show();
-            }
-            // Notificar al adaptador
-            adapter.notifyDataSetChanged();
+        if (nombre.isEmpty()) {
+            // Si el campo de nombre está vacío, busca todos los usuarios
+            usuariosencontrados = dbHelper.listarUsuarios();
         } else {
-            Toast.makeText(this, "Ingrese un nombre", Toast.LENGTH_SHORT).show();
+            // Si se proporciona un nombre, realiza la búsqueda por nombre
+            usuariosencontrados = dbHelper.buscarUsuariosPorNombre(nombre);
         }
+
+        listaUsuarios.clear();
+
+        if (usuariosencontrados != null && !usuariosencontrados.isEmpty()) {
+            listaUsuarios.addAll(usuariosencontrados);
+        } else {
+            Toast.makeText(this, "Usuario no encontrado", Toast.LENGTH_SHORT).show();
+        }
+        // Notificar al adaptador
+        adapter.notifyDataSetChanged();
     }
+
 }

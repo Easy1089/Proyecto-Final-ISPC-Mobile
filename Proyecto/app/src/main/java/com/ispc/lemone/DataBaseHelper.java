@@ -470,8 +470,16 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     public List<Usuario> buscarUsuariosPorNombre(String nombre) {
         List<Usuario> usuarios = new ArrayList<>();
-        String query = "SELECT * FROM Usuarios WHERE Email LIKE ?";
-        String[] selectionArgs = {"%" + nombre + "%"};
+        String query;
+        String[] selectionArgs;
+
+        if (!nombre.isEmpty()) {
+            query = "SELECT * FROM Usuarios WHERE Email LIKE ?";
+            selectionArgs = new String[]{"%" + nombre + "%"};
+        } else {
+            query = "SELECT * FROM Usuarios";
+            selectionArgs = null;
+        }
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(query, selectionArgs);
@@ -503,6 +511,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
         return usuarios;
     }
+
 
     public boolean actualizarProducto(Producto productoSeleccionado) {
         long result = 0;
@@ -562,4 +571,34 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return ordenes;
     }
 
-}
+        public List<Producto> obtenerTodosLosProductos() {
+            List<Producto> productos = new ArrayList<>();
+            String query = "SELECT * FROM Productos";
+
+            SQLiteDatabase db = this.getReadableDatabase();
+            Cursor cursor = db.rawQuery(query, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    int id = cursor.getInt(0);
+                    String codigoProducto = cursor.getString(1);
+                    String nombre = cursor.getString(2);
+                    String descripcion = cursor.getString(3);
+
+                    Producto producto = new Producto();
+                    producto.setId(id);
+                    producto.setCodigo(codigoProducto);
+                    producto.setNombre(nombre);
+                    producto.setDescripcion(descripcion);
+
+                    productos.add(producto);
+                } while (cursor.moveToNext());
+            }
+
+            cursor.close();
+            db.close();
+
+            return productos;
+        }
+    }
+
