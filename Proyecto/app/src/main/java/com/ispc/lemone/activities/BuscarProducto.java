@@ -56,7 +56,7 @@ public class BuscarProducto extends AppCompatActivity {
 
         listaProductos = new ArrayList<>();
         // utilizo un adaptador
-        adapter = new ProductoAdapter(this, listaProductos);
+        adapter = new ProductoAdapter(this, listaProductos, false);
         listViewProductos.setAdapter(adapter);
 
         listViewProductos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
