@@ -7,17 +7,24 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.ispc.lemone.activities.AgregarUsuario;
 import com.ispc.lemone.clases.CategoriaProducto;
+import com.ispc.lemone.clases.InventarioMinimoPorProducto;
+import com.ispc.lemone.clases.Orden;
 import com.ispc.lemone.clases.Persona;
 import com.ispc.lemone.clases.Producto;
 import com.ispc.lemone.clases.TipoPersona;
 import com.ispc.lemone.clases.TipoUsuario;
 import com.ispc.lemone.clases.Usuario;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
@@ -172,7 +179,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return usuarios;
     }
 
-    public Usuario buscarUsuarioPorEmail(String email){
+    public Usuario buscarUsuarioPorEmail(String email) {
         Usuario usuario = new Usuario();
         String query = "SELECT * FROM Usuarios WHERE email = '" + email + "'";
         SQLiteDatabase db = this.getReadableDatabase();
@@ -218,7 +225,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return persona;
     }
 
-    public TipoPersona buscarTipoPersonaPorId (int id){
+    public TipoPersona buscarTipoPersonaPorId(int id) {
         String query = "SELECT * FROM TiposDePersonas WHERE id = " + id;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(query, null);
@@ -246,7 +253,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return tipoUsuario;
     }
 
-    public boolean borrarUsuario(Usuario usuario){
+    public boolean borrarUsuario(Usuario usuario) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "DELETE FROM Usuarios WHERE id = " + usuario.getId();
         Cursor cursor = db.rawQuery(query, null);
@@ -256,7 +263,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
 
-    public boolean editarUsuario (Usuario usuario, String etPassActual, String etConfirmarPass, String etNombre,String etApellido,String etDatosContacto,double etTelefono) {
+    public boolean editarUsuario(Usuario usuario, String etPassActual, String etConfirmarPass, String etNombre, String etApellido, String etDatosContacto, double etTelefono) {
         SQLiteDatabase db = this.getWritableDatabase();
         int idPersona = usuario.getPersona().getId();
         int idUsuario = usuario.getId();
@@ -309,7 +316,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     public boolean guardarUsuario(Usuario usuario) {
         long result = 0;
-        try{
+        try {
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues values = new ContentValues();
             values.put("IdTipoDeUsuario", 2);
@@ -320,18 +327,16 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
             result = db.insert("Usuarios", null, values);
             db.close();
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.toString();
         }
         return result != -1;
     }
 
 
-
-
     public boolean agregarProducto(Producto producto) {
         long result = 0;
-        try{
+        try {
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues values = new ContentValues();
             values.put("Codigo", producto.getCodigo());
@@ -345,13 +350,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
             result = db.insert("Productos", null, values);
             db.close();
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.toString();
         }
         return result != -1;
     }
 
-    public CategoriaProducto buscarCategoriaPorId (int id){
+    public CategoriaProducto buscarCategoriaPorId(int id) {
         String query = "SELECT * FROM Categorias WHERE id = " + id;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(query, null);
@@ -439,8 +444,16 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     public List<Usuario> buscarUsuariosPorNombre(String nombre) {
         List<Usuario> usuarios = new ArrayList<>();
-        String query = "SELECT * FROM Usuarios WHERE Email LIKE ?";
-        String[] selectionArgs = {"%" + nombre + "%"};
+        String query;
+        String[] selectionArgs;
+
+        if (!nombre.isEmpty()) {
+            query = "SELECT * FROM Usuarios WHERE Email LIKE ?";
+            selectionArgs = new String[]{"%" + nombre + "%"};
+        } else {
+            query = "SELECT * FROM Usuarios";
+            selectionArgs = null;
+        }
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(query, selectionArgs);
@@ -472,6 +485,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
         return usuarios;
     }
+
     public boolean eliminarProductoPorId(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "DELETE FROM Productos WHERE Id = " + id;
@@ -486,6 +500,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             return false;
         }
     }
+
     public boolean actualizarProducto(Producto productoSeleccionado) {
         long result = 0;
         try {
@@ -508,5 +523,106 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return result != 0;
     }
 
+    public List<Orden> getOrdenesConDetalles() {
+        List<Orden> ordenes = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String query = "SELECT o.Id, strftime('%d/%m/%Y', DATE(SUBSTR(o.Fecha, 7, 4) || '-' || SUBSTR(o.Fecha, 4, 2) || '-' || SUBSTR(o.Fecha, 1, 2))) as Fecha, pro.Codigo, pro.Nombre as Producto, o.Cantidad, t.Nombre as TipoDeOperacion, (p.Apellido || ', ' || p.Nombre) as Persona FROM Ordenes o inner join Personas p on p.Id = o.IdPersona inner join Productos pro on pro.Id = o.IdProducto inner join TiposDeOperacion t on t.Id = o.IdTipoDeOperacion";
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                @SuppressLint("Range") String fecha = cursor.getString(cursor.getColumnIndex("Fecha"));
+                @SuppressLint("Range") String codigoProducto = cursor.getString(cursor.getColumnIndex("Codigo"));
+                @SuppressLint("Range") String nombreProducto = cursor.getString(cursor.getColumnIndex("Producto"));
+                int cantidad = cursor.getInt(cursor.getInt(3));
+                @SuppressLint("Range") String tipoOperacion = cursor.getString(cursor.getColumnIndex("TipoDeOperacion"));
+                @SuppressLint("Range") String nombrePersona = cursor.getString(cursor.getColumnIndex("Persona"));
+
+                Orden orden = new Orden();
+                orden.setFecha(fecha);
+                orden.setCodigoProducto(codigoProducto);
+                orden.setNombreProducto(nombreProducto);
+                orden.setCantidad(cantidad);
+                orden.setTipoOperacion(tipoOperacion);
+                orden.setNombrePersona(nombrePersona);
+
+                ordenes.add(orden);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return ordenes;
+    }
+
+    public List<Producto> getInventario() {
+        List<Producto> inventarios = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String query = "SELECT p.Id, P.Codigo, P.Nombre As Producto, C.Nombre as Categoria, P.InventarioMinimo FROM Productos P INNER JOIN Categorias C ON C.Id = P.IdCategoria WHERE P.ActivoActualmente = 1 AND P.InventarioMinimo < 100";
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+
+                int id = cursor.getInt(cursor.getInt(0));
+                //@SuppressLint("Range") String codigoProducto = cursor.getString(cursor.getColumnIndex("Codigo"));
+                //@SuppressLint("Range") String nombreProducto = cursor.getString(cursor.getColumnIndex("Producto"));
+                //@SuppressLint("Range")  String categoria = cursor.getString(cursor.getColumnIndex("Categoria"));
+                //int inventarioInt = cursor.getInt(cursor.getInt(4));
+
+                Producto inventario = new Producto();
+
+                inventario.setId(id);
+                //inventario.setCodigo(codigoProducto);
+                //inventario.setNombre(nombreProducto);
+                //inventario.setCategoriaDeProducto(categoria);
+                //inventario.setInventarioMinimo(inventarioInt);
+
+                inventarios.add(inventario);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return inventarios;
+    }
+
+    public List<Producto> obtenerTodosLosProductos() {
+        List<Producto> productos = new ArrayList<>();
+        String query = "SELECT * FROM Productos";
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(0);
+                String codigoProducto = cursor.getString(1);
+                String nombre = cursor.getString(2);
+                String descripcion = cursor.getString(3);
+
+                Producto producto = new Producto();
+                producto.setId(id);
+                producto.setCodigo(codigoProducto);
+                producto.setNombre(nombre);
+                producto.setDescripcion(descripcion);
+
+                productos.add(producto);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return productos;
+    }
 }
 

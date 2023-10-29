@@ -78,6 +78,22 @@ public class MenuPrincipal extends AppCompatActivity {
             }
         });
 
+        buttonInforme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("Botón Informe", "Clic en el botón informe");
+                Intent intent = new Intent(MenuPrincipal.this, OrdenesDetalles.class);
+                startActivity(intent);
+            }
+        });
 
+        buttonInformeStock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("Botón informe stock mínimo", "Clic en el botón informe stock mínimo");
+                Intent intent = new Intent(MenuPrincipal.this, informe_inventario_minimo.class);
+                startActivity(intent);
+            }
+        });
     }
 }
