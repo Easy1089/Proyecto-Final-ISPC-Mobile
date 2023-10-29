@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ispc.lemone.R;
-import com.ispc.lemone.DataBaseHelper; // Importa la clase de tu DataBaseHelper
+import com.ispc.lemone.DataBaseHelper;
 import com.ispc.lemone.clases.Producto;
 
 public class EliminarProducto extends AppCompatActivity {
@@ -30,15 +30,14 @@ public class EliminarProducto extends AppCompatActivity {
         Button botonCancelar = findViewById(R.id.btn_cancelar);
         TextView productNameTextView = findViewById(R.id.productName);
         TextView productPriceTextView = findViewById(R.id.productPrice);
-        TextView productCatTextView = findViewById(R.id.productCat);
+        TextView productPriceCTextView = findViewById(R.id.productPriceC);
         TextView productCodeTextView = findViewById(R.id.productCode);
 
         Producto producto = (Producto) getIntent().getSerializableExtra("producto");
 
-        // Asigna los datos del producto a los TextView correspondientes
         productNameTextView.setText(producto.getNombre());
         productPriceTextView.setText(String.valueOf(producto.getPrecioDeVenta()));
-        productCatTextView.setText((CharSequence) producto.getCategoriaProducto());
+        productPriceCTextView.setText(String.valueOf(producto.getPrecioDeCosto()));
         productCodeTextView.setText(producto.getCodigo());
 
         btnVolver = findViewById(R.id.btn_volverFP);
@@ -53,17 +52,19 @@ public class EliminarProducto extends AppCompatActivity {
         botonEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Obtén el ID del producto desde el objeto Producto
                 int productoIdAEliminar = producto.getId();
-
                 boolean eliminado = dbHelper.eliminarProductoPorId(productoIdAEliminar);
 
                 if (eliminado) {
-                    Toast.makeText(EliminarProducto.this, "Producto eliminado exitosamente", Toast.LENGTH_SHORT).show();
-                    // Puedes redirigir o realizar otras acciones aquí
+
+                    Toast.makeText(EliminarProducto.this, "Producto eliminado exitosamente", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(EliminarProducto.this, BuscarProducto.class);
+                    startActivity(intent);
                 } else {
-                    Toast.makeText(EliminarProducto.this, "Error al eliminar el producto", Toast.LENGTH_SHORT).show();
-                    // Puedes mostrar un mensaje de error o realizar otra acción aquí
+
+                    Toast.makeText(EliminarProducto.this, "Error al eliminar el producto", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(EliminarProducto.this, BuscarProducto.class);
+                    startActivity(intent);
                 }
             }
         });

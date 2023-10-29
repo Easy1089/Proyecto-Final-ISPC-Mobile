@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -499,10 +500,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public boolean eliminarProductoPorId(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "DELETE FROM Productos WHERE Id = " + id;
-        Cursor cursor = db.rawQuery(query, null);
-        db.close();
-        return cursor.moveToFirst();
 
+        try {
+            db.execSQL(query);
+            db.close();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            db.close();
+            return false;
+        }
     }
+
 }
 
