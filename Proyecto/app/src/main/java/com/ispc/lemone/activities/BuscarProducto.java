@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ispc.lemone.DataBaseHelper;
@@ -24,6 +23,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BuscarProducto extends AppCompatActivity {
+    private Usuario usuario;
+
+    public BuscarProducto(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public BuscarProducto() {
+    }
+
 
     private FrameLayout btnVolver;
     private Button agregarProducto;
@@ -32,6 +40,9 @@ public class BuscarProducto extends AppCompatActivity {
     private ListView listViewProductos; // ListView para mostrar la lista de productos
     private EditText editTextCodigoProducto;
     private Button btnBuscarProducto;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,8 +75,13 @@ public class BuscarProducto extends AppCompatActivity {
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BuscarProducto.this, MenuPrincipal.class);
-                startActivity(intent);
+                if(usuario.getTipoUsuario().getId() == 1) {
+                    Intent intent = new Intent(BuscarProducto.this, MenuPrincipal.class);
+                    startActivity(intent);
+                }else{
+                    Intent intent = new Intent(BuscarProducto.this, MenuPrincipalUsuarioComun.class);
+                    startActivity(intent);
+                }
             }
         });
 

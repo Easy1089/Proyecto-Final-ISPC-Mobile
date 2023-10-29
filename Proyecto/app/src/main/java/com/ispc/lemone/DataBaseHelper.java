@@ -4,13 +4,12 @@ import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.ispc.lemone.activities.AgregarUsuario;
 import com.ispc.lemone.clases.CategoriaProducto;
 import com.ispc.lemone.clases.Orden;
 import com.ispc.lemone.clases.Persona;
@@ -125,17 +124,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO Usuarios VALUES (2,2,2,'melisaapaz@gmail.com','12345678',1)");
         db.execSQL("INSERT INTO Usuarios VALUES (3,2,3,'juanperez@gmail.com','12345678',1)");
         db.execSQL("INSERT INTO Usuarios VALUES (4,2,4,'martasanchez@gmail.com','12345678',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (5,2,1,'user@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (6,2,2,'user2@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (7,2,3,'user3@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (8,2,4,'user4@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (9,2,1,'user5@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (10,1,2,'admin@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (11,2,3,'admin2@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (12,1,4,'admin3@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (13,2,1,'admin4@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (14,1,2,'admin5@gmail.com','123',1)");
-//        db.execSQL("INSERT INTO Usuarios VALUES (15,2,3,'admin6@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (5,2,1,'user@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (6,2,2,'user2@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (7,2,3,'user3@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (8,2,4,'user4@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (9,2,1,'user5@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (10,1,2,'admin@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (11,2,3,'admin2@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (12,1,4,'admin3@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (13,2,1,'admin4@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (14,1,2,'admin5@gmail.com','123',1)");
+        db.execSQL("INSERT INTO Usuarios VALUES (15,2,3,'admin6@gmail.com','123',1)");
     }
 
     @Override
@@ -343,11 +342,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         try{
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues values = new ContentValues();
-            values.put("IdTipoDeUsuario", usuario.getTipoUsuario().getId());
-            values.put("IdPersona", usuario.getPersona().getId());
+            values.put("IdTipoDeUsuario", 2);
+            //values.put("IdPersona", 1);
             values.put("Email", usuario.getEmail());
             values.put("Password", usuario.getPassword());
-            values.put("ActivoActualmente", usuario.isActivoActualmente() ? 1 : 0);
+            values.put("ActivoActualmente", 1);
 
             result = db.insert("Usuarios", null, values);
             db.close();
@@ -503,7 +502,20 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
         return usuarios;
     }
+    public boolean eliminarProductoPorId(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "DELETE FROM Productos WHERE Id = " + id;
 
+        try {
+            db.execSQL(query);
+            db.close();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            db.close();
+            return false;
+        }
+    }
     public boolean actualizarProducto(Producto productoSeleccionado) {
         long result = 0;
         try {
@@ -561,5 +573,5 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         return ordenes;
     }
-
 }
+
