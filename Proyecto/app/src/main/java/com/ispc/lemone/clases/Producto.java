@@ -97,4 +97,8 @@ public class Producto implements Serializable  {
     public void setActivoActualmente(boolean activoActualmente) {
         this.activoActualmente = activoActualmente;
     }
+
+    public boolean getActivoActualmente() {
+        return activoActualmente;
+    }
 }

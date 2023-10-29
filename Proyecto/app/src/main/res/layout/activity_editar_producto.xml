@@ -9,12 +9,23 @@
 
     <!--   FLECHA VOLVER ATRAS -->
 
+    <Spinner
+        android:id="@+id/spinnerCategorias2"
+        android:layout_width="300dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/swActivo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toEndOf="@+id/frameCategoria"
+        app:layout_constraintTop_toBottomOf="@+id/textPrecioVenta"
+        app:layout_constraintVertical_bias="0.0" />
+
     <Button
         android:id="@+id/btnEliminar"
         android:layout_width="177dp"
         android:layout_height="50dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="44dp"
         android:backgroundTint="@color/bordo"
         android:insetTop="5dp"
         android:insetBottom="5dp"
@@ -26,15 +37,14 @@
         app:iconPadding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/swActivo"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.963" />
 
     <Button
         android:id="@+id/buttonGuardarEP"
         android:layout_width="177dp"
         android:layout_height="49dp"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="44dp"
         android:backgroundTint="@color/bordo"
         android:insetTop="5dp"
         android:insetBottom="5dp"
@@ -46,10 +56,10 @@
         app:iconPadding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnEliminar"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/swActivo"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.961" />
 
     <FrameLayout
         android:id="@+id/btn_volverEP"
@@ -357,11 +367,10 @@
         android:id="@+id/frameCategoria"
         android:layout_width="49dp"
         android:layout_height="42dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/elemento_esquina_redondeada"
         app:circularflow_radiusInDP="50dp"
-        app:layout_constraintEnd_toStartOf="@+id/textCategoria"
-        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/framePrecioVenta">
 
@@ -372,33 +381,18 @@
             android:src="@drawable/product_icon" />
     </FrameLayout>
 
-    <EditText
-        android:id="@+id/textCategoria"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:ems="10"
-        android:hint="Categoría"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gris"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.72"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPrecioVenta" />
-
     <Switch
-        android:id="@+id/swActivo"
+        android:id="@+id/swActivo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="112dp"
         android:text="Activo"
         android:textColor="@color/black"
         android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textCategoria" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

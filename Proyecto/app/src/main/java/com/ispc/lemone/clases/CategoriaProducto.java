@@ -11,7 +11,6 @@ public class CategoriaProducto {
         this.id = id;
         this.nombre = nombre;
     }
-
     public int getId() {
         return id;
     }
@@ -26,5 +25,10 @@ public class CategoriaProducto {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return nombre;
     }
 }
