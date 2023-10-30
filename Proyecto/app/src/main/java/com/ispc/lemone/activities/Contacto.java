@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
@@ -19,6 +17,7 @@ public class Contacto extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacto);
+        btnAtras = findViewById(R.id.btnAtras);
         btnAtras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,7 +30,7 @@ public class Contacto extends AppCompatActivity {
     public void mensaje (View view) {
        Toast.makeText(this,"Su mensaje ha sido enviado con exito",Toast.LENGTH_LONG).show();
     }
-        // mensaje que aparece en 3.5 seg dentro de la misma ventana - fbenitez }
-
 
 }
+
+
