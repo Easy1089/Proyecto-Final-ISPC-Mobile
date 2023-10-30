@@ -138,7 +138,16 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO Usuarios VALUES (13,2,1,'admin4@gmail.com','123',1)");
         db.execSQL("INSERT INTO Usuarios VALUES (14,1,2,'admin5@gmail.com','123',1)");
         db.execSQL("INSERT INTO Usuarios VALUES (15,2,3,'admin6@gmail.com','123',1)");
+
+
+        // Insertar órdenes utilizando consultas SQL
+        db.execSQL("INSERT INTO Ordenes (Fecha, IdProducto, IdPersona, IdTipoDeOperacion, Cantidad) VALUES ('23/10/2023', 1, 1, 1, 10)");
+        db.execSQL("INSERT INTO Ordenes (Fecha, IdProducto, IdPersona, IdTipoDeOperacion, Cantidad) VALUES ('24/10/2023', 1, 1, 2, 2)");
+        db.execSQL("INSERT INTO Ordenes (Fecha, IdProducto, IdPersona, IdTipoDeOperacion, Cantidad) VALUES ('25/10/2023', 1, 2, 1, 10)");
+        db.execSQL("INSERT INTO Ordenes (Fecha, IdProducto, IdPersona, IdTipoDeOperacion, Cantidad) VALUES ('26/10/2023', 1, 2, 2, 3)");
     }
+
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
