@@ -5,78 +5,92 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/crema"
-    tools:context=".BuscarUsuario">
+    tools:context=".activities.BuscarUsuario">
 
 
-    <LinearLayout
-        android:id="@+id/linearLayout7"
-        android:layout_width="375dp"
-        android:layout_height="69dp"
-        android:background="@color/white"
-        android:orientation="horizontal"
+    <Button
+        android:id="@+id/buttonAgregarUsuario"
+        android:layout_width="323dp"
+        android:layout_height="56dp"
+
+        android:backgroundTint="@color/white"
+        android:insetTop="10dp"
+        android:insetBottom="10dp"
+        android:text="+ Agregar usuario"
+        android:textColor="@color/bordo"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:iconPadding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toBottomOf="@+id/btnActivarDesactivarUsuario"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <ImageView
-            android:id="@+id/userImageView3"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:src="@drawable/user" />
+    <Button
+        android:id="@+id/btnActivarDesactivarUsuario"
+        android:layout_width="98dp"
+        android:layout_height="52dp"
+        android:backgroundTint="@color/bordo"
+        android:insetTop="10dp"
+        android:insetBottom="10dp"
+        android:text="Activar"
+        android:textColor="@color/crema"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:iconPadding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listViewUsuarios"
+        app:layout_constraintVertical_bias="0.138"
+        tools:ignore="MissingConstraints" />
 
-        <LinearLayout
-            android:layout_width="310dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+    <Button
+        android:id="@+id/btnEliminarUsuario"
+        android:layout_width="124dp"
+        android:layout_height="52dp"
+        android:backgroundTint="@color/bordo"
+        android:insetTop="10dp"
+        android:insetBottom="10dp"
+        android:text="Eliminar"
+        android:textColor="@color/crema"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:iconPadding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listViewUsuarios"
+        app:layout_constraintVertical_bias="0.138"
+        tools:ignore="MissingConstraints" />
 
-            <TextView
-                android:id="@+id/usernameTextView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nombre de usuario" />
+    <Button
+        android:id="@+id/btnModificarUsuario"
+        android:layout_width="98dp"
+        android:layout_height="52dp"
+        android:backgroundTint="@color/bordo"
+        android:insetTop="10dp"
+        android:insetBottom="10dp"
+        android:text="Editar"
+        android:textColor="@color/crema"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:iconPadding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listViewUsuarios"
+        app:layout_constraintVertical_bias="0.138"
+        tools:ignore="MissingConstraints" />
 
-            <TextView
-                android:id="@+id/emailTextView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="usuario@usuario.com" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/buttonModificar3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/bordo"
-                    android:text="Modificar"
-                    android:textSize="10dp" />
-
-                <Button
-                    android:id="@+id/buttonEliminar3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/bordo"
-                    android:text="Eliminar"
-                    android:textSize="10dp" />
-
-                <Button
-                    android:id="@+id/buttonActivar3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:backgroundTint="@color/bordo"
-                    android:text="Activar"
-                    android:textSize="10dp" />
-            </LinearLayout>
-        </LinearLayout>
-
-    </LinearLayout>
 
     <Button
         android:id="@+id/buttonBuscar"
@@ -93,32 +107,24 @@
         app:iconPadding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.306"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintStart_toEndOf="@+id/editTextFilter"
+        app:layout_constraintTop_toBottomOf="@+id/textTitulo2"
+        app:layout_constraintVertical_bias="0.023"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/buttonAgregarUsuario"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-
-        android:insetTop="10dp"
-        android:insetBottom="10dp"
-        android:text="+ Agregar usuario"
-        android:textColor="@color/bordo"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        app:iconPadding="10dp"
+    <EditText
+        android:id="@+id/editTextFilter"
+        android:layout_width="259dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="28dp"
+        android:ems="10"
+        android:hint="Filtro de búsqueda"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.962" />
+        app:layout_constraintTop_toBottomOf="@+id/textTitulo2"
+        app:layout_constraintVertical_bias="0.041" />
 
     <FrameLayout
         android:id="@+id/btn_volverEP"
@@ -150,13 +156,13 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="76dp"
         android:text="@string/app_name"
         android:textColor="@color/bordo"
         android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintHorizontal_bias="0.788"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -164,9 +170,9 @@
         android:id="@+id/imageView11"
         android:layout_width="109dp"
         android:layout_height="160dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.175"
+        app:layout_constraintHorizontal_bias="0.215"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icon_lemone" />
@@ -175,30 +181,28 @@
         android:id="@+id/textTitulo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="140dp"
         android:backgroundTint="@color/white"
         android:text="Consulta de usuarios"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintHorizontal_bias="0.83"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextFilter"
-        android:layout_width="259dp"
-        android:layout_height="38dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Filtro de búsqueda"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ListView
+        android:id="@+id/listViewUsuarios"
+        android:layout_width="364dp"
+        android:layout_height="359dp"
+        android:layout_marginTop="4dp"
+        android:divider="@null"
+        android:dividerHeight="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.316" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextFilter" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

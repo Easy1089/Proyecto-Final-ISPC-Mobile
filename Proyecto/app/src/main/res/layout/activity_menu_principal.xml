@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/crema"
-    tools:context=".MenuPrincipal">
+    tools:context=".activities.MenuPrincipal">
 
     <TextView
         android:id="@+id/textView2"
@@ -69,49 +69,6 @@
         app:layout_constraintTop_toTopOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/buttonProveedores"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="320dp"
-        android:backgroundTint="@color/bordo"
-        android:insetTop="10dp"
-        android:insetBottom="10dp"
-        android:text="@string/btnGestionProv"
-        android:textColor="@color/crema"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        app:iconPadding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonUsuarios"
-        app:layout_constraintVertical_bias="0.0" />
-
-
-    <Button
-        android:id="@+id/buttonConsumidores"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="264dp"
-        android:backgroundTint="@color/bordo"
-        android:insetTop="10dp"
-        android:insetBottom="10dp"
-        android:text="@string/btnGestionConsumidor"
-        android:textColor="@color/crema"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:cornerRadius="10dp"
-        app:iconPadding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonProveedores"
-        app:layout_constraintVertical_bias="0.0" />
-
 
     <Button
         android:id="@+id/buttonProductos"
@@ -131,8 +88,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonConsumidores"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonUsuarios"
+        app:layout_constraintVertical_bias="0.044" />
 
     <Button
         android:id="@+id/buttonInforme"
@@ -195,7 +152,7 @@
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonInformeStock"
-        app:layout_constraintVertical_bias="0.791" />
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
