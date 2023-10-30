@@ -28,7 +28,9 @@ public class Contacto extends AppCompatActivity {
     }
 
     public void mensaje (View view) {
-        Toast.makeText(this,"Su mensaje ha sido enviado con exito",Toast.LENGTH_LONG).show();
+       Toast.makeText(this,"Su mensaje ha sido enviado con exito",Toast.LENGTH_LONG).show();
     }
 
 }
+
+
