@@ -1,6 +1,13 @@
 # Proyecto-Final-ISPC-Mobile
 
-Repositorio del Proyecto-Final-ISPC-Mobile LE MONE Sistema de Gestion para Vinotecas.
+Release - Apk Lemone
+
+https://github.com/Easy1089/Proyecto-Final-ISPC-Mobile/releases/tag/V.0.0.1
+
+# Link de la wiki del proyecto actual
+
+- Wiki : https://github.com/Easy1089/Proyecto-Final-ISPC-Mobile/wiki
+
 
 # Personal involucrado
 
@@ -14,19 +21,4 @@ Repositorio del Proyecto-Final-ISPC-Mobile LE MONE Sistema de Gestion para Vinot
 - Maximiliano Veron:Analista, diseñador y programador usuario Github: MaxiGithub11
 - Priscila Teruel:Analista, diseñador y programador usuario Github: Priscilat93
 - Emiliano Guazzetti:Analista, diseñador y programador usuario Github: edguazzetti
-
-
-# Links de repositorios anteriores del proyecto
-
-- Repositorio del Proyecto de Fullstack ISPC Grupo 9 - Sistema de Gestion de Vinoteca: https://github.com/Easy1089/Proyecto-Fullstack-ISPC-G1.git
-- Repositorio del Proyecto-Final-ISPC-G1-V2 LE MONE E-commerce de productos para Vinotecas: https://github.com/Easy1089/Proyecto-Final-ISPC-G1-V2.git
-
-# Landing page del proyecto inicial 2022
-
-- https://landingpagevinos.dfrweb.com/#
-
-
-# Link de la wiki del proyecto actual
-
-- Wiki : https://github.com/Easy1089/Proyecto-Final-ISPC-Mobile/wiki
 
