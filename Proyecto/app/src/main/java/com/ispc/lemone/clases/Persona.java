@@ -7,7 +7,7 @@ public class Persona implements Serializable {
     private int id;
     private String nombre;
     private String apellido;
-    private double telefono;
+    private String telefono;
     private TipoPersona tipoPersona;
     private boolean activoActualmente;
     private String domicilio;
@@ -15,7 +15,7 @@ public class Persona implements Serializable {
     public Persona() {
     }
 
-    public Persona(int id, String nombre, String apellido, double telefono, TipoPersona tipoPersona, boolean activoActualmente, String domicilio) {
+    public Persona(int id, String nombre, String apellido, String telefono, TipoPersona tipoPersona, boolean activoActualmente, String domicilio) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -49,11 +49,11 @@ public class Persona implements Serializable {
         this.apellido = apellido;
     }
 
-    public double getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(double telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 

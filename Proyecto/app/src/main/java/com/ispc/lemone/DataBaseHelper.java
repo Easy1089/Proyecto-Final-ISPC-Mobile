@@ -63,7 +63,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 "Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "Apellido VARCHAR(50) NOT NULL, " +
                 "Nombre VARCHAR(50) NOT NULL, " +
-                "Telefono NUMERIC, " +
+                "Telefono VARCHAR(50), " +
                 "IdTipoDePersona INT, " +
                 "ActivoActualmente BIT NOT NULL DEFAULT 1, " +
                 "Domicilio VARCHAR(200), " +
@@ -112,10 +112,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO TiposDePersonas VALUES (1,'Consumidor final')");
         db.execSQL("INSERT INTO TiposDePersonas VALUES (2,'Proveedor')");
 
-        db.execSQL("INSERT INTO Personas VALUES (1,'Apaz','Melisa',3512553895,1,1,'San Martin 123')");
-        db.execSQL("INSERT INTO Personas VALUES (2,'Perez','Juan',3512553896,2,1,'Belgrano 456')");
-        db.execSQL("INSERT INTO Personas VALUES (3,'Castro','Marta',3512553897,1,1,'Illia 789')");
-        db.execSQL("INSERT INTO Personas VALUES (4,'Castillo','Pedro',3512553898,2,1,'Sarmiento 654')");
+        db.execSQL("INSERT INTO Personas VALUES (1,'Apaz','Melisa',3512553895,1,1,'Domicilio 1')");
+        db.execSQL("INSERT INTO Personas VALUES (2,'Perez','Juan',3512553896,2,1,'Domicilio')");
+        db.execSQL("INSERT INTO Personas VALUES (3,'Castro','Marta',3512553897,1,1,'Domicilio')");
+        db.execSQL("INSERT INTO Personas VALUES (4,'Castillo','Pedro',3512553898,2,1,'Domicilio')");
 
         db.execSQL("INSERT INTO TiposDeUsuarios VALUES (1,'Administrador')");
         db.execSQL("INSERT INTO TiposDeUsuarios VALUES (2,'Usuario')");
@@ -219,15 +219,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             String apellido = cursor.getString(1);
             String nombre = cursor.getString(2);
-            double telefono = cursor.getDouble(3);
+            String telefono = cursor.getString(3);
             int idTipoPersona = cursor.getInt(4);
-            String domicilio = cursor.getString(5);
+            boolean activoActualmente = cursor.getInt(5) == 1;
+            String domicilio = cursor.getString(6);
             persona.setId(id);
             persona.setApellido(apellido);
             persona.setNombre(nombre);
             persona.setTelefono(telefono);
             persona.setTipoPersona(buscarTipoPersonaPorId(idTipoPersona));
             persona.setDomicilio(domicilio);
+            persona.setActivoActualmente(activoActualmente);
         }
         cursor.close();
         db.close();
@@ -272,7 +274,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
 
-    public boolean editarUsuario(Usuario usuario, String etPassActual, String etConfirmarPass, String etNombre, String etApellido, String etDatosContacto, double etTelefono) {
+    public boolean editarUsuario(Usuario usuario, String etPassActual, String etConfirmarPass, String etNombre, String etApellido, String etDatosContacto, String etTelefono) {
         SQLiteDatabase db = this.getWritableDatabase();
         int idPersona = usuario.getPersona().getId();
         int idUsuario = usuario.getId();

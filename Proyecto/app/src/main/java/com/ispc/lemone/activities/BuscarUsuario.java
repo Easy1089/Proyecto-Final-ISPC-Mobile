@@ -4,24 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ispc.lemone.DataBaseHelper;
 import com.ispc.lemone.R;
-import com.ispc.lemone.clases.Producto;
 import com.ispc.lemone.clases.Usuario;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class BuscarUsuario extends AppCompatActivity {
     private Button buttonAgregarUsuario;
@@ -68,25 +64,16 @@ public class BuscarUsuario extends AppCompatActivity {
                 buscarUsuariosPorNombre();
             }
         });
-
-        // Cargar la lista de usuarios cuando se inicia la actividad
         cargarUsuarios();
     }
 
-    // Método para cargar y mostrar los usuarios
     private void cargarUsuarios() {
-        // Limpiar la lista actual de usuarios
         listaUsuarios.clear();
-
-        // Acceder a la base de datos y cargar los usuarios
         DataBaseHelper dbHelper = new DataBaseHelper(this);
         List<Usuario> usuarios = dbHelper.listarUsuarios();
-
         if (usuarios != null) {
             listaUsuarios.addAll(usuarios);
         }
-
-        // Notificar al adaptador que los datos han cambiado
         adapter.notifyDataSetChanged();
     }
 
@@ -95,7 +82,6 @@ public class BuscarUsuario extends AppCompatActivity {
         startActivity(intent);
     }
 
-    // Método para buscar usuarios por nombre
     private void buscarUsuariosPorNombre() {
         String nombre = editTextNombreDeUsuario.getText().toString().trim();
 
@@ -103,10 +89,8 @@ public class BuscarUsuario extends AppCompatActivity {
         List<Usuario> usuariosencontrados;
 
         if (nombre.isEmpty()) {
-            // Si el campo de nombre está vacío, busca todos los usuarios
             usuariosencontrados = dbHelper.listarUsuarios();
         } else {
-            // Si se proporciona un nombre, realiza la búsqueda por nombre
             usuariosencontrados = dbHelper.buscarUsuariosPorNombre(nombre);
         }
 
@@ -117,7 +101,6 @@ public class BuscarUsuario extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Usuario no encontrado", Toast.LENGTH_SHORT).show();
         }
-        // Notificar al adaptador
         adapter.notifyDataSetChanged();
     }
 

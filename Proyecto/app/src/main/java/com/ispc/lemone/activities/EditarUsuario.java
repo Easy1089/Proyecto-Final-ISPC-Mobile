@@ -27,7 +27,6 @@ public class EditarUsuario extends AppCompatActivity {
     DataBaseHelper dataBaseHelper;
     Usuario usuario;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,10 +54,7 @@ public class EditarUsuario extends AppCompatActivity {
         etNombre.setText(usuario.getPersona().getNombre());
         etApellido.setText(usuario.getPersona().getApellido());
         etDatosContacto.setText(usuario.getPersona().getDomicilio());
-        etTelefono.setText(String.valueOf(usuario.getPersona().getTelefono()));
-
-//        String valorTexto = editTextTelefono.getText().toString();
-//        double valorDouble = Double.parseDouble(valorTexto);
+        etTelefono.setText(usuario.getPersona().getTelefono());
 
     buttonGuardar.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -66,7 +62,7 @@ public class EditarUsuario extends AppCompatActivity {
             String nombrePersona = etNombre.getText().toString();
             String apellidoPersona = etApellido.getText().toString();
             String datoContactoPersona = etDatosContacto.getText().toString();
-            double telefonoPersona = Double.parseDouble(etTelefono.getText().toString());
+            String telefonoPersona = etTelefono.getText().toString();
             String passActual = etPassActual.getText().toString();
             String passNueva = etConfirmarPass.getText().toString();
 
