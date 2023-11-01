@@ -24,6 +24,7 @@ public class EditarUsuario extends AppCompatActivity {
     EditText etDatosContacto;
     EditText etTelefono;
     Button buttonGuardar;
+    Button buttonEliminar;
     DataBaseHelper dataBaseHelper;
     Usuario usuario;
 
@@ -39,6 +40,7 @@ public class EditarUsuario extends AppCompatActivity {
         etDatosContacto = findViewById(R.id.etDatosContacto);
         etTelefono = findViewById(R.id.etTelefono);
         buttonGuardar = findViewById(R.id.btnGuardar);
+        buttonEliminar = findViewById(R.id.btnEliminar);
 
         dataBaseHelper = new DataBaseHelper(EditarUsuario.this);
         usuario = new Usuario();
@@ -56,28 +58,37 @@ public class EditarUsuario extends AppCompatActivity {
         etDatosContacto.setText(usuario.getPersona().getDomicilio());
         etTelefono.setText(usuario.getPersona().getTelefono());
 
-    buttonGuardar.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            String nombrePersona = etNombre.getText().toString();
-            String apellidoPersona = etApellido.getText().toString();
-            String datoContactoPersona = etDatosContacto.getText().toString();
-            String telefonoPersona = etTelefono.getText().toString();
-            String passActual = etPassActual.getText().toString();
-            String passNueva = etConfirmarPass.getText().toString();
-
-            boolean exito = dataBaseHelper.editarUsuario(usuario,passActual, passNueva, nombrePersona,apellidoPersona,datoContactoPersona, telefonoPersona);
-
-            if (exito){
-                Toast.makeText(EditarUsuario.this, "Usuario Editado", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(EditarUsuario.this, BuscarUsuario.class);
+        buttonEliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EditarUsuario.this, EliminarUsuario.class);
+                intent.putExtra("usuario", usuario);
                 startActivity(intent);
-            } else {
-                Toast.makeText(EditarUsuario.this, "Error al intentar editar", Toast.LENGTH_SHORT).show();
             }
+        });
 
-        }
-    });
+        buttonGuardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String nombrePersona = etNombre.getText().toString();
+                String apellidoPersona = etApellido.getText().toString();
+                String datoContactoPersona = etDatosContacto.getText().toString();
+                String telefonoPersona = etTelefono.getText().toString();
+                String passActual = etPassActual.getText().toString();
+                String passNueva = etConfirmarPass.getText().toString();
+
+                boolean exito = dataBaseHelper.editarUsuario(usuario,passActual, passNueva, nombrePersona,apellidoPersona,datoContactoPersona, telefonoPersona);
+
+                if (exito){
+                    Toast.makeText(EditarUsuario.this, "Usuario Editado", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(EditarUsuario.this, BuscarUsuario.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(EditarUsuario.this, "Error al intentar editar", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
 
     }
     public void volver(View view) {

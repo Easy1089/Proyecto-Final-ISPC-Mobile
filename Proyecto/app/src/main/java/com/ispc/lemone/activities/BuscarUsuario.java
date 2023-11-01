@@ -1,15 +1,18 @@
 package com.ispc.lemone.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ispc.lemone.DataBaseHelper;
@@ -37,7 +40,15 @@ public class BuscarUsuario extends AppCompatActivity {
         editTextNombreDeUsuario = findViewById(R.id.editTextFilter);
 
         listaUsuarios = new ArrayList<>();
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaUsuarios);
+        adapter = new ArrayAdapter<Usuario>(this, android.R.layout.simple_list_item_1, listaUsuarios) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView textView = (TextView) view.findViewById(android.R.id.text1);
+                textView.setTextColor(ContextCompat.getColor(getContext(), R.color.black));
+                return view;
+            }
+        };
         listViewUsuarios.setAdapter(adapter);
 
         listViewUsuarios.setOnItemClickListener(new AdapterView.OnItemClickListener() {
