@@ -112,10 +112,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO TiposDePersonas VALUES (1,'Consumidor final')");
         db.execSQL("INSERT INTO TiposDePersonas VALUES (2,'Proveedor')");
 
-        db.execSQL("INSERT INTO Personas VALUES (1,'Apaz','Melisa',3512553895,1,1,'Domicilio 1')");
-        db.execSQL("INSERT INTO Personas VALUES (2,'Perez','Juan',3512553896,2,1,'Domicilio')");
-        db.execSQL("INSERT INTO Personas VALUES (3,'Castro','Marta',3512553897,1,1,'Domicilio')");
-        db.execSQL("INSERT INTO Personas VALUES (4,'Castillo','Pedro',3512553898,2,1,'Domicilio')");
+        db.execSQL("INSERT INTO Personas VALUES (1,'Apaz','Melisa',3512553895,1,1,'San Martin 123')");
+        db.execSQL("INSERT INTO Personas VALUES (2,'Perez','Juan',3512553896,2,1,'Belgrano 456')");
+        db.execSQL("INSERT INTO Personas VALUES (3,'Castro','Marta',3512553897,1,1,'Illia 789')");
+        db.execSQL("INSERT INTO Personas VALUES (4,'Castillo','Pedro',3512553898,2,1,'Sarmiento 654')");
 
         db.execSQL("INSERT INTO TiposDeUsuarios VALUES (1,'Administrador')");
         db.execSQL("INSERT INTO TiposDeUsuarios VALUES (2,'Usuario')");
@@ -282,39 +282,30 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.beginTransaction();
 
         try {
-
-
-            // Se actualiza la otra tabla solo si antiguoPassword coincide con el valor existente
             filasActualizadasTablaUsuario = 0;
             if (etConfirmarPass != null && etPassActual != null) {
-                // Se compara nuevoPassword con el valor existente en la base de datos
-                Cursor cursor = db.rawQuery("SELECT password FROM Usuario WHERE id = " + idUsuario, null);
+                Cursor cursor = db.rawQuery("SELECT password FROM Usuarios WHERE id = " + idUsuario, null);
                 if (cursor.moveToFirst()) {
                     String passwordExistente = cursor.getString(0);
                     if (passwordExistente.equals(etPassActual)) {
                         ContentValues valuesTablaRelacionada = new ContentValues();
                         valuesTablaRelacionada.put("password", etConfirmarPass);
-                        filasActualizadasTablaUsuario = db.update("Usuario", valuesTablaRelacionada, "id = " + idUsuario, null);
+                        filasActualizadasTablaUsuario = db.update("Usuarios", valuesTablaRelacionada, "id = " + idUsuario, null);
 
                         ContentValues valuesPersona = new ContentValues();
                         valuesPersona.put("nombre", etNombre);
                         valuesPersona.put("apellido", etApellido);
                         valuesPersona.put("domicilio", etDatosContacto);
                         valuesPersona.put("telefono", etTelefono);
-
-                        // Se actualiza la tabla Personas
                         filasActualizadasPersona = db.update("Personas", valuesPersona, "id = " + idPersona, null);
                     }
                 }
                 cursor.close();
             }
-            // Comprobamos que al menos una de las actualizaciones tuvo éxito
             if (filasActualizadasPersona > 0 || filasActualizadasTablaUsuario > 0) {
-                // Confirmación de la transacción
                 db.setTransactionSuccessful();
                 return true;
             } else {
-                // Revertimos la transacción en caso de error
                 return false;
             }
         } finally {

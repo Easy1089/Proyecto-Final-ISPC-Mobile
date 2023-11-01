@@ -1,6 +1,8 @@
 package com.ispc.lemone.clases;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario implements Serializable {
 
     private int id;
     private TipoUsuario tipoUsuario;

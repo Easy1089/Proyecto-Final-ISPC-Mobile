@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,15 +24,10 @@ import java.util.List;
 
 
 public class BuscarUsuario extends AppCompatActivity {
-
-    private Button buttonModificar;
-    private Button btnEliminarUsuario;
-    private Button buttonActivar3;
     private Button buttonAgregarUsuario;
-    private ListView listViewUsuarios; // ListView para mostrar la lista de usuarios
+    private ListView listViewUsuarios;
     private ArrayAdapter<Usuario> adapter;
     private ArrayList<Usuario> listaUsuarios;
-    private TextView emailTextView3; // declaro el text view donde se encontraria el email
     private EditText editTextNombreDeUsuario;
     private Button btnBuscarUsuario;
     @Override
@@ -39,45 +35,21 @@ public class BuscarUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buscar_usuario);
 
-        buttonModificar = findViewById(R.id.btnModificarUsuario);
-        btnEliminarUsuario = findViewById(R.id.btnEliminarUsuario);
-        buttonActivar3 = findViewById(R.id.btnActivarDesactivarUsuario);
         buttonAgregarUsuario = findViewById(R.id.buttonAgregarUsuario);
-        listViewUsuarios = findViewById(R.id.listViewUsuarios); // Asocia el ListView de tu layout
+        listViewUsuarios = findViewById(R.id.listViewUsuarios);
         btnBuscarUsuario = findViewById(R.id.buttonBuscar);
         editTextNombreDeUsuario = findViewById(R.id.editTextFilter);
-        // Inicializa la lista de usuarios y el adaptador
+
         listaUsuarios = new ArrayList<>();
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaUsuarios);
         listViewUsuarios.setAdapter(adapter);
 
-        // text view del correo
-        emailTextView3 = findViewById(R.id.editTextFilter);
-
-        buttonModificar.setOnClickListener(new View.OnClickListener() {
+        listViewUsuarios.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                Log.d("Botón Modificar usuario", "Click en el botón modificar usuario");
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Usuario usuarioSeleccionado = listaUsuarios.get(position);
                 Intent intent = new Intent(BuscarUsuario.this, EditarUsuario.class);
-                startActivity(intent);
-            }
-        });
-
-
-        btnEliminarUsuario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(BuscarUsuario.this, EliminarUsuario.class);
-                // envio el valor del correo que se encuentra en emailTextView3
-                intent.putExtra("email", emailTextView3.getText().toString());
-                startActivity(intent);
-            }
-        });
-
-        buttonActivar3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(BuscarUsuario.this, ActivarDesactivarUsuario.class);
+                intent.putExtra("usuario", usuarioSeleccionado);
                 startActivity(intent);
             }
         });
