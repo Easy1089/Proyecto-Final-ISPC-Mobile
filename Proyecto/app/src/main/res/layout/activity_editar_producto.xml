@@ -30,7 +30,7 @@
         android:insetTop="5dp"
         android:insetBottom="5dp"
         android:text="@string/btnEliminar"
-        android:textColor="@color/crema"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:cornerRadius="10dp"
@@ -49,7 +49,8 @@
         android:insetTop="5dp"
         android:insetBottom="5dp"
         android:text="@string/btnGuardar"
-        android:textColor="@color/crema"
+        android:textColor="@color/white"
+
         android:textSize="18sp"
         android:textStyle="bold"
         app:cornerRadius="10dp"
