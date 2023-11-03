@@ -40,7 +40,7 @@
         android:text="@string/act_desact_prod"
         android:textAlignment="center"
         android:textColor="#4A4646"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +56,7 @@
         android:backgroundTint="#8C1C13"
         android:text="Activar/Desactivar"
         android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,8 +70,9 @@
         android:backgroundTint="#8C1C13"
         android:text="Cancelar"
         android:textColor="#FFFFFF"
-        android:textSize="18dp"
+
         android:textStyle="bold"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/act_desact_usuario" />
