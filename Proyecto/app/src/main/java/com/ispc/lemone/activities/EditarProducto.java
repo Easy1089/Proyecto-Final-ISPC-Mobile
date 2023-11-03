@@ -11,10 +11,12 @@ import android.widget.FrameLayout;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
-
+import com.ispc.lemone.DataBaseHelper;
 import com.ispc.lemone.R;
 import com.ispc.lemone.clases.CategoriaProducto;
 import com.ispc.lemone.clases.Producto;
+import com.ispc.lemone.activities.MenuPrincipal;
+
 
 import org.w3c.dom.Text;
 
@@ -31,6 +33,7 @@ public class EditarProducto extends AppCompatActivity {
     private EditText etInventarioMinimo;
     private EditText etPrecioDeCosto;
     private EditText etPrecioDeVenta;
+    DataBaseHelper dataBaseHelper;
     private Switch etActivoActualmente;
     private Spinner spinnerCategorias;
     private ArrayAdapter<CategoriaProducto> categoriaAdapter;
@@ -59,10 +62,11 @@ public class EditarProducto extends AppCompatActivity {
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EditarProducto.this,  BuscarProducto.class);
+                Intent intent = new Intent(EditarProducto.this, MenuPrincipal.class);
                 startActivity(intent);
             }
         });
+
 
         Producto productoEnEdicion = new Producto();
 
@@ -74,6 +78,10 @@ public class EditarProducto extends AppCompatActivity {
             Toast.makeText(this, "Error al obtener el producto en edición", Toast.LENGTH_SHORT).show();
             finish();
         }
+
+        final Producto finalProductoEnEdicion = productoEnEdicion;
+        dataBaseHelper = new DataBaseHelper(this);
+
 
         // Vincular los elementos de la interfaz de productos con las propiedades del objeto Producto
         EditText etCodigo = findViewById(R.id.textCodigo);
@@ -97,9 +105,43 @@ public class EditarProducto extends AppCompatActivity {
         buttonGuardarEP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent inten = new Intent(EditarProducto.this, BuscarProducto.class);
+                // Obtén los valores de los campos de entrada
+                String codigo = etCodigo.getText().toString();
+                String nombre = etNombre.getText().toString();
+                String descripcion = etDescripcion.getText().toString();
+                String inventarioMinimoStr = etInventarioMinimo.getText().toString();
+                String precioDeCostoStr = etPrecioDeCosto.getText().toString();
+                String precioDeVentaStr = etPrecioDeVenta.getText().toString();
+                boolean estadoSwitch = etActivoActualmente.isChecked();
+                CategoriaProducto categoriaSeleccionada = (CategoriaProducto) spinnerCategorias.getSelectedItem();
+
+                // Convierte los valores de cadena a los tipos de datos necesarios
+                int inventarioMinimo = Integer.parseInt(inventarioMinimoStr);
+                double precioDeCosto = Double.parseDouble(precioDeCostoStr);
+                double precioDeVenta = Double.parseDouble(precioDeVentaStr);
+
+                // Obtén el ID del producto en edición
+                int productoId = finalProductoEnEdicion.getId();
+
+                // Crea un objeto Producto actualizado con los valores
+                Producto productoActualizado = new Producto(productoId, codigo, nombre, descripcion, inventarioMinimo, precioDeCosto, precioDeVenta, categoriaSeleccionada, estadoSwitch);
+
+                // Llama al método para editar el producto en la base de datos
+
+                boolean exito = dataBaseHelper.actualizarProducto(productoActualizado);
+
+                if (exito) {
+                    Toast.makeText(EditarProducto.this, "Producto Editado", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(EditarProducto.this, BuscarProducto.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(EditarProducto.this, "Error al intentar editar el producto", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+
+
+
 
         buttonEliminar.setOnClickListener(new View.OnClickListener() {
             @Override
