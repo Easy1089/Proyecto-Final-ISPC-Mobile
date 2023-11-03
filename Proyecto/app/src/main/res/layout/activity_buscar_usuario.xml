@@ -35,7 +35,7 @@
         android:insetTop="10dp"
         android:insetBottom="10dp"
         android:text="Buscar"
-        android:textColor="@color/crema"
+        android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="bold"
         app:cornerRadius="10dp"
@@ -45,7 +45,7 @@
         app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toEndOf="@+id/editTextFilter"
         app:layout_constraintTop_toBottomOf="@+id/textTitulo2"
-        app:layout_constraintVertical_bias="0.023"
+        app:layout_constraintVertical_bias="0.015"
         tools:ignore="MissingConstraints" />
 
     <EditText
