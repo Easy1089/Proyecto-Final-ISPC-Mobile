@@ -358,9 +358,10 @@
         android:insetTop="10dp"
         android:insetBottom="10dp"
         android:text="@string/btnGuardar"
-        android:textColor="@color/crema"
-        android:textSize="18sp"
+        android:textColor="#ffff"
         android:textStyle="bold"
+        android:textSize="20sp"
+
         app:cornerRadius="10dp"
         app:iconPadding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
