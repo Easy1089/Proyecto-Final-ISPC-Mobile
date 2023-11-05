@@ -63,7 +63,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 "Id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "Apellido VARCHAR(50) NOT NULL, " +
                 "Nombre VARCHAR(50) NOT NULL, " +
-                "Telefono NUMERIC, " +
+                "Telefono VARCHAR(50), " +
                 "IdTipoDePersona INT, " +
                 "ActivoActualmente BIT NOT NULL DEFAULT 1, " +
                 "Domicilio VARCHAR(200), " +
@@ -219,15 +219,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             String apellido = cursor.getString(1);
             String nombre = cursor.getString(2);
-            double telefono = cursor.getDouble(3);
+            String telefono = cursor.getString(3);
             int idTipoPersona = cursor.getInt(4);
-            String domicilio = cursor.getString(5);
+            boolean activoActualmente = cursor.getInt(5) == 1;
+            String domicilio = cursor.getString(6);
             persona.setId(id);
             persona.setApellido(apellido);
             persona.setNombre(nombre);
             persona.setTelefono(telefono);
             persona.setTipoPersona(buscarTipoPersonaPorId(idTipoPersona));
             persona.setDomicilio(domicilio);
+            persona.setActivoActualmente(activoActualmente);
         }
         cursor.close();
         db.close();
@@ -272,7 +274,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
 
-    public boolean editarUsuario(Usuario usuario, String etPassActual, String etConfirmarPass, String etNombre, String etApellido, String etDatosContacto, double etTelefono) {
+    public boolean editarUsuario(Usuario usuario, String etPassActual, String etConfirmarPass, String etNombre, String etApellido, String etDatosContacto, String etTelefono) {
         SQLiteDatabase db = this.getWritableDatabase();
         int idPersona = usuario.getPersona().getId();
         int idUsuario = usuario.getId();
@@ -282,39 +284,30 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.beginTransaction();
 
         try {
-
-
-            // Se actualiza la otra tabla solo si antiguoPassword coincide con el valor existente
             filasActualizadasTablaUsuario = 0;
             if (etConfirmarPass != null && etPassActual != null) {
-                // Se compara nuevoPassword con el valor existente en la base de datos
-                Cursor cursor = db.rawQuery("SELECT password FROM Usuario WHERE id = " + idUsuario, null);
+                Cursor cursor = db.rawQuery("SELECT password FROM Usuarios WHERE id = " + idUsuario, null);
                 if (cursor.moveToFirst()) {
                     String passwordExistente = cursor.getString(0);
                     if (passwordExistente.equals(etPassActual)) {
                         ContentValues valuesTablaRelacionada = new ContentValues();
                         valuesTablaRelacionada.put("password", etConfirmarPass);
-                        filasActualizadasTablaUsuario = db.update("Usuario", valuesTablaRelacionada, "id = " + idUsuario, null);
+                        filasActualizadasTablaUsuario = db.update("Usuarios", valuesTablaRelacionada, "id = " + idUsuario, null);
 
                         ContentValues valuesPersona = new ContentValues();
                         valuesPersona.put("nombre", etNombre);
                         valuesPersona.put("apellido", etApellido);
                         valuesPersona.put("domicilio", etDatosContacto);
                         valuesPersona.put("telefono", etTelefono);
-
-                        // Se actualiza la tabla Personas
                         filasActualizadasPersona = db.update("Personas", valuesPersona, "id = " + idPersona, null);
                     }
                 }
                 cursor.close();
             }
-            // Comprobamos que al menos una de las actualizaciones tuvo éxito
             if (filasActualizadasPersona > 0 || filasActualizadasTablaUsuario > 0) {
-                // Confirmación de la transacción
                 db.setTransactionSuccessful();
                 return true;
             } else {
-                // Revertimos la transacción en caso de error
                 return false;
             }
         } finally {

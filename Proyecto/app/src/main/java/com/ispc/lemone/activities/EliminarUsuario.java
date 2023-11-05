@@ -33,19 +33,10 @@ public class EliminarUsuario extends AppCompatActivity {
         tv_nombrePersona = findViewById(R.id.tv_nombrePersona);
         tv_apellidoPersona = findViewById(R.id.tv_apellidoPersona);
 
-        // traigo los valores del Intent de la vista anterior
-        Bundle datosRecibidos = getIntent().getExtras();
+        usuario = (Usuario) getIntent().getSerializableExtra("usuario");
 
-        // asigno valor a la variable email
-        String email = datosRecibidos.getString("email");
-
-        // instancio la clase DataBaseHelper
         dataBaseHelper = new DataBaseHelper(EliminarUsuario.this);
 
-        // traigo al usuario usando el metodo buscarUsuarioPorEmail
-        usuario = dataBaseHelper.buscarUsuarioPorEmail(email);
-
-        // muestro los textos con los valores del usuario
         tv_correoPersona.setText(usuario.getEmail());
         tv_nombrePersona.setText(usuario.getPersona().getNombre());
         tv_apellidoPersona.setText(usuario.getPersona().getApellido());

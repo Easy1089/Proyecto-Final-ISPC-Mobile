@@ -1,6 +1,8 @@
 package com.ispc.lemone.clases;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario implements Serializable {
 
     private int id;
     private TipoUsuario tipoUsuario;
@@ -72,9 +74,11 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" +
-                email + '\'' +
-                '}';
+        return  "Usuario: " + email + "\n" +
+                "Nombre: " + persona.getNombre() + "\n" +
+                "Apellido: " + persona.getApellido() + "\n" +
+                "Domicilio: " + persona.getDomicilio() + "\n" +
+                "Telefono: " + persona.getTelefono() + "\n";
     }
 
 }

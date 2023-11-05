@@ -21,6 +21,7 @@
     <string name="btnInformeStock">Generar informe de stock mínimo</string>
     <string name="btnSalir">Salir</string>
     <string name="btnGuardar">Guardar</string>
+    <string name="btnEditar">Editar</string>
     <string name="btnEliminar">Eliminar</string>
     <string name="tituloAgregarProducto">Agregar Producto</string>
     <string name="tituloAgregarUsuario">Crear cuenta de usuario</string>
