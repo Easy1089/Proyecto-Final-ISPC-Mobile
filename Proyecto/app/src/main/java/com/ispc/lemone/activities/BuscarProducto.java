@@ -75,15 +75,22 @@ public class BuscarProducto extends AppCompatActivity {
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(usuario.getTipoUsuario().getId() == 1) {
-                    Intent intent = new Intent(BuscarProducto.this, MenuPrincipal.class);
-                    startActivity(intent);
-                }else{
-                    Intent intent = new Intent(BuscarProducto.this, MenuPrincipalUsuarioComun.class);
-                    startActivity(intent);
+                if (usuario != null && usuario.getTipoUsuario() != null) {
+                    if (usuario.getTipoUsuario().getId() == 1) {
+                        Intent intent = new Intent(BuscarProducto.this, MenuPrincipal.class);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(BuscarProducto.this, MenuPrincipalUsuarioComun.class);
+                        startActivity(intent);
+                    }
+                } else {
+
+                    onBackPressed();
                 }
             }
         });
+
+
 
         agregarProducto.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -42,7 +42,7 @@
         android:insetBottom="10dp"
         android:onClick="mensaje"
         android:text="@string/msj_btn_enviar"
-        android:textColor="@color/crema"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:cornerRadius="10dp"

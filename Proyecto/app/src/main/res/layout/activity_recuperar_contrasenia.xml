@@ -119,9 +119,10 @@
         android:insetTop="10dp"
         android:insetBottom="10dp"
         android:text="Enviar"
-        android:textColor="@color/crema"
-        android:textSize="18sp"
+        android:textColor="@color/white"
         android:textStyle="bold"
+        android:textSize="18sp"
+
         app:cornerRadius="10dp"
         app:iconPadding="10dp"
         android:onClick="resetpassword"

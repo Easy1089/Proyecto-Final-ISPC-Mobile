@@ -104,7 +104,7 @@
         android:layout_marginTop="280dp"
         android:backgroundTint="@color/bordo"
         android:text="Buscar"
-        android:textColor="@color/crema"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:cornerRadius="10dp"
@@ -190,7 +190,8 @@
                     android:backgroundTint="@color/bordo"
                     android:text="Modificar"
                     android:textSize="10dp"
-                    android:textColor="@color/crema"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
 
                 <Button
                     android:id="@+id/buttonEliminarA"
@@ -199,7 +200,8 @@
                     android:backgroundTint="@color/bordo"
                     android:text="Eliminar"
                     android:textSize="10dp"
-                    android:textColor="@color/crema"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
 
                 <Button
                     android:id="@+id/buttonActivarA"
@@ -208,7 +210,8 @@
                     android:backgroundTint="@color/bordo"
                     android:text="Activar"
                     android:textSize="10dp"
-                    android:textColor="@color/crema"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -261,7 +264,8 @@
                     android:backgroundTint="@color/bordo"
                     android:text="Modificar"
                     android:textSize="10dp"
-                    android:textColor="@color/crema"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
 
                 <Button
                     android:id="@+id/buttonEliminarB"
@@ -270,7 +274,8 @@
                     android:backgroundTint="@color/bordo"
                     android:text="Eliminar"
                     android:textSize="10dp"
-                    android:textColor="@color/crema"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
 
                 <Button
                     android:id="@+id/buttonActivarB"
@@ -279,7 +284,8 @@
                     android:backgroundTint="@color/bordo"
                     android:text="Activar"
                     android:textSize="10dp"
-                    android:textColor="@color/crema"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -333,7 +339,8 @@
                     android:backgroundTint="@color/bordo"
                     android:text="Modificar"
                     android:textSize="10dp"
-                    android:textColor="@color/crema"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
 
                 <Button
                     android:id="@+id/buttonEliminarC"
@@ -342,7 +349,8 @@
                     android:backgroundTint="@color/bordo"
                     android:text="Eliminar"
                     android:textSize="10dp"
-                    android:textColor="@color/crema"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
 
                 <Button
                     android:id="@+id/buttonActivarC"
@@ -351,7 +359,8 @@
                     android:backgroundTint="@color/bordo"
                     android:text="Activar"
                     android:textSize="10dp"
-                    android:textColor="@color/crema"/>
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -402,8 +411,9 @@
                             android:layout_height="match_parent"
                             android:backgroundTint="@color/bordo"
                             android:text="Modificar"
-                            android:textSize="10dp"
-                            android:textColor="@color/crema"/>
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="10dp" />
 
                         <Button
                             android:id="@+id/buttonEliminarD"
@@ -412,7 +422,8 @@
                             android:backgroundTint="@color/bordo"
                             android:text="Eliminar"
                             android:textSize="10dp"
-                            android:textColor="@color/crema"/>
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
 
                         <Button
                             android:id="@+id/buttonActivarD"
@@ -421,7 +432,8 @@
                             android:backgroundTint="@color/bordo"
                             android:text="Activar"
                             android:textSize="10dp"
-                            android:textColor="@color/crema"/>
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>  -->
